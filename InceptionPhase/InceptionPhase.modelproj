@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0ab2df7b-7c06-4730-b3da-8f7a27dda4a9}</ProjectGuid>
+    <ArchitectureToolsVersion>2.0.0.0</ArchitectureToolsVersion>
+    <Name>InceptionPhase</Name>
+    <RootNamespace>InceptionPhase</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'NoPhase' ">
+    <OutputPath>bin\NoPhase\</OutputPath>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" Condition="'$(VSToolsPath)' != ''" />
+  <ItemGroup>
+    <Content Include="ElabVisualization.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ElabVisualization.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>ElabVisualization.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Map.activitydiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Map.activitydiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Map.activitydiagram</DependentUpon>
+    </Content>
+    <Content Include="UMLComponentDiagram1.componentdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UMLComponentDiagram1.componentdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>UMLComponentDiagram1.componentdiagram</DependentUpon>
+    </Content>
+    <Content Include="VisualSubsystem.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="VisualSubsystem.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>VisualSubsystem.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="VizAnnotation.activitydiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="VizAnnotation.activitydiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>VizAnnotation.activitydiagram</DependentUpon>
+    </Content>
+    <Content Include="VizMeteoData.activitydiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="VizMeteoData.activitydiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>VizMeteoData.activitydiagram</DependentUpon>
+    </Content>
+    <Folder Include="ModelDefinition\" />
+    <Content Include="InceptionAnnoData.usecasediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="InceptionAnnoData.usecasediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>InceptionAnnoData.usecasediagram</DependentUpon>
+    </Content>
+    <Content Include="InceptionAnnoViz.usecasediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="InceptionAnnoViz.usecasediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>InceptionAnnoViz.usecasediagram</DependentUpon>
+    </Content>
+    <Content Include="InceptionMap.usecasediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="InceptionMap.usecasediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>InceptionMap.usecasediagram</DependentUpon>
+    </Content>
+    <Content Include="InceptionMeteoData.usecasediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="InceptionMeteoData.usecasediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>InceptionMeteoData.usecasediagram</DependentUpon>
+    </Content>
+    <Content Include="InceptionMeteoViz.usecasediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="InceptionMeteoViz.usecasediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>InceptionMeteoViz.usecasediagram</DependentUpon>
+    </Content>
+    <Content Include="ModelDefinition\InceptionPhase.uml">
+      <SubType>Content</SubType>
+    </Content>
+  </ItemGroup>
+</Project>

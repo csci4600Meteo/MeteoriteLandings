@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm11="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm12="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="7fb09f74-a74c-4f86-b692-d30a2579c5ed" name="VizAnnotation" linkedPackageId="142104bf-ca2f-4531-a570-bff420872bd2" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+  <appliedStereotypesInternal>
+    <stereotypeInstance Id="dffc738f-fad2-4a9c-a853-0df11b40eea6" name="namespace" profile="CSharpProfile">
+      <elementDefinition Id="8e5a92ef-4842-4948-afd1-aa90279715fe" />
+      <propertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="9c6700b6-4ed6-45d0-8021-1d168a6d4770">
+          <propertyInstance Id="d5533484-9147-4cb8-b929-b821c525979b" name="BaseName">
+            <elementDefinition Id="d896b1c4-323d-4882-83d5-f4c46d4b4126" />
+          </propertyInstance>
+          <elementDefinition Id="246e9a1f-387e-474a-bbe2-a70bbd41977e" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="f5e3e79f-2b51-433c-b6d4-979cab7091a5">
+          <propertyInstance Id="15811a3d-e8ce-461c-b91c-3ceba795f660" name="ClrAttributes">
+            <elementDefinition Id="960fea90-4656-4bde-bf8b-90498eac7dea" />
+          </propertyInstance>
+          <elementDefinition Id="f0065c83-a14e-475b-b3b8-96359b7c69d0" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="d7cb6bf5-4ed9-43af-b7f0-5891f21a26f4">
+          <propertyInstance Id="9ab3ec6c-575a-4898-82ea-dcd172bbfafd" name="Usings">
+            <elementDefinition Id="6389cb55-7f2c-4c71-87ba-31701b4a9030" />
+          </propertyInstance>
+          <elementDefinition Id="d94abb07-ed75-4264-b58d-ec30e102102a" />
+        </stereotypeInstanceHasPropertyInstances>
+      </propertyInstances>
+    </stereotypeInstance>
+    <stereotypeInstance Id="e854eb4e-3653-4640-8552-99aa6a940b0c" name="TextTemplateBindings" profile="TextTemplateBindings">
+      <elementDefinition Id="dc53fcda-22be-4d77-ab75-9222b67ed8ef" />
+      <propertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="3b2dab72-3873-427b-b61c-79bcd0151891">
+          <propertyInstance Id="2ce54ab8-e3d4-4227-92f1-0c138bfc85f2" name="Alias" value="ClassTemplate|EnumTemplate|InterfaceTemplate|StructTemplate">
+            <elementDefinition Id="23b5c4cf-8f8d-48e1-b02d-b01bd734fac3" />
+          </propertyInstance>
+          <elementDefinition Id="503a2947-cf7e-41f6-a0d8-cb5a33426584" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="71b6320f-d5c1-4922-bce9-2ea6101e8024">
+          <propertyInstance Id="b33b22c0-5474-4769-a2c3-688c055e02c8" name="TemplateFilePath" value="ClassTemplate=E:\VS2015\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\ClassTemplate.t4|EnumTemplate=E:\VS2015\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\EnumTemplate.t4|InterfaceTemplate=E:\VS2015\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\InterfaceTemplate.t4|StructTemplate=E:\VS2015\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\StructTemplate.t4">
+            <elementDefinition Id="f47ed708-7c57-4d0c-949a-fba852fd2ef4" />
+          </propertyInstance>
+          <elementDefinition Id="11edd059-b307-4309-89d6-8685da9a1642" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="6e5dfd18-2adf-4d27-b9e6-fd42dd1e1807">
+          <propertyInstance Id="5ffc8c24-4b2a-41e6-8633-828b6cbc7161" name="ProjectPath" value="ClassTemplate=..\InceptionPhaseLib\InceptionPhaseLib.csproj|EnumTemplate=..\InceptionPhaseLib\InceptionPhaseLib.csproj|InterfaceTemplate=..\InceptionPhaseLib\InceptionPhaseLib.csproj|StructTemplate=..\InceptionPhaseLib\InceptionPhaseLib.csproj">
+            <elementDefinition Id="61aeaccc-ef07-4fed-a373-9394c385fbb8" />
+          </propertyInstance>
+          <elementDefinition Id="f5275e46-3fc0-486a-a091-53af501efaa1" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="23ab177c-7c2d-47d2-ad82-c0c737f8d0b8">
+          <propertyInstance Id="49e3980b-7db1-4973-9be0-880202953e5d" name="TargetDirectory" value="ClassTemplate=GeneratedCode\{PackageStructure}|EnumTemplate=GeneratedCode\{PackageStructure}|InterfaceTemplate=GeneratedCode\{PackageStructure}|StructTemplate=GeneratedCode\{PackageStructure}">
+            <elementDefinition Id="3bc79ac5-07af-430d-9e03-d6d62eefc86c" />
+          </propertyInstance>
+          <elementDefinition Id="c2e48bed-5068-428a-8a8a-19a473fef92c" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="30a16ec9-893f-49f7-80b7-ad5ab39208bb">
+          <propertyInstance Id="605dbd1c-b260-4006-852d-41ed84b219b0" name="TargetName" value="ClassTemplate={Name}|EnumTemplate={Name}|InterfaceTemplate={Name}|StructTemplate={Name}">
+            <elementDefinition Id="1d88b15d-8188-4423-b7aa-3d71ccd642e4" />
+          </propertyInstance>
+          <elementDefinition Id="329f3eb0-cf40-4472-8212-835f08ec2d74" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="a696bbfc-dc9b-4a90-8682-0e9aae836b67">
+          <propertyInstance Id="b06eca0a-9290-4f95-a487-9fc80443f552" name="Overwrite" value="ClassTemplate=True|EnumTemplate=True|InterfaceTemplate=True|StructTemplate=True">
+            <elementDefinition Id="a8f6aca1-abf0-4d3a-abd8-54eae90a43bd" />
+          </propertyInstance>
+          <elementDefinition Id="27e6d182-0cee-4a03-bc89-fed69c412a13" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="91e4b843-a579-4063-9856-460f07c5f397">
+          <propertyInstance Id="0ea32abc-4b29-45f7-b8e3-21cc9038cfb5" name="Parameters">
+            <elementDefinition Id="d5a37c59-6d55-45fe-b750-be73a7944d7f" />
+          </propertyInstance>
+          <elementDefinition Id="d0a70e2b-c596-4c1b-aaf4-88cff234a820" />
+        </stereotypeInstanceHasPropertyInstances>
+      </propertyInstances>
+    </stereotypeInstance>
+  </appliedStereotypesInternal>
+  <profileInstances>
+    <packageHasProfileInstances Id="cf61b0b7-1605-43ce-941f-036623fa9a51">
+      <profileInstance Id="4262eb24-1870-48f6-8142-374440b5fbfc" name="CSharpProfile">
+        <elementDefinition Id="60859347-9a1e-4775-8f71-d13ef43b2d22" />
+      </profileInstance>
+      <elementDefinition Id="8a1cab12-f4f1-4c1a-9d3e-b98c9e8e00fd" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="56f09650-73d6-4d5a-b932-0f1f26d990f8">
+      <profileInstance Id="10119bd9-df95-4963-bcbe-fed95a5e1029" name="TextTemplateBindings">
+        <elementDefinition Id="c36793ce-6e40-405d-b795-707728678db6" />
+      </profileInstance>
+      <elementDefinition Id="c6f155c7-fa95-4893-9734-72a4c0bf0e7a" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <activityRootModelHasActivity>
+      <activity Id="309956cf-9d42-45b1-9cc2-c65e43e1f90e" name="VizAnnotation" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
+        <elementDefinition Id="ae316c5f-1612-44e6-87e6-eff917d5e86f" />
+        <nodes>
+          <initialNode Id="f79a2d66-999b-4133-a7e5-d987be4b5428" name="Initial1" isLeaf="false">
+            <elementDefinition Id="8f6a15fa-2ebc-488e-9eb4-79150bdbfa81" />
+            <flowNodeTargets>
+              <controlFlow Id="1804f4f4-d9b5-4541-82b7-93627d61c9d5" isLeaf="false">
+                <opaqueActionMoniker Id="594a0c6c-af1e-4562-82a6-d6ae4e87f115" LastKnownName="Receive Annotation Data" />
+                <elementDefinition Id="74b188df-79eb-4319-9f81-38fd85df5262" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction Id="594a0c6c-af1e-4562-82a6-d6ae4e87f115" name="Receive Annotation Data" isLeaf="false">
+            <elementDefinition Id="87cfee30-cf51-4549-a746-699004390130" />
+            <flowNodeTargets>
+              <controlFlow Id="9ef9ab70-a697-4dea-b19e-f7cfb4fc6da3" isLeaf="false">
+                <forkNodeMoniker Id="24db0c9e-1cf3-47b7-870e-d58f4a93bd8a" LastKnownName="Fork1" />
+                <elementDefinition Id="7c632670-e51c-4593-819a-c68506d474fb" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <forkNode Id="24db0c9e-1cf3-47b7-870e-d58f4a93bd8a" name="Fork1" isLeaf="false">
+            <elementDefinition Id="ecd16eb9-62e2-4cce-ba41-5d917f789bd5" />
+            <flowNodeTargets>
+              <controlFlow Id="b0b8f020-27e0-4dac-af2c-7e94ec7973ad" isLeaf="false">
+                <opaqueActionMoniker Id="861d9cca-eb18-45d9-9ec6-d7494fe1f0b9" LastKnownName="Create Annotation Pushpin" />
+                <elementDefinition Id="cd94c416-83b0-4791-a9b7-2bcdc75efa07" />
+              </controlFlow>
+              <controlFlow Id="1c688689-36fa-4b81-8bc2-58af83b6a53b" isLeaf="false">
+                <opaqueActionMoniker Id="6f47e834-b0a9-4dee-a3ed-67a9afe2f64c" LastKnownName="Create Annotation Shape" />
+                <elementDefinition Id="47936f0b-ca66-42d0-867b-54ca19f01459" />
+              </controlFlow>
+              <controlFlow Id="f1726f06-e84b-4a0c-8423-30f9ff78edb3" isLeaf="false">
+                <opaqueActionMoniker Id="74c98f92-d28c-42e9-93ff-d442e0e618d2" LastKnownName="Delete Annotation Pushpin" />
+                <elementDefinition Id="73bd8917-017b-4179-9e9c-f64e466be9db" />
+              </controlFlow>
+              <controlFlow Id="ebf95ad3-abc2-4085-84d5-d57967f8a676" isLeaf="false">
+                <opaqueActionMoniker Id="a3849593-ba02-4ad6-a1f1-70a58e556413" LastKnownName="Delete Annotation Shape" />
+                <elementDefinition Id="07975165-9b49-49ea-b0a7-46d1068680d8" />
+              </controlFlow>
+            </flowNodeTargets>
+          </forkNode>
+          <opaqueAction Id="861d9cca-eb18-45d9-9ec6-d7494fe1f0b9" name="Create Annotation Pushpin" isLeaf="false">
+            <elementDefinition Id="6e3213a6-66a5-46df-8913-76a748190289" />
+            <flowNodeTargets>
+              <controlFlow Id="91005a82-a290-4164-8665-29bee853aab0" isLeaf="false">
+                <mergeNodeMoniker Id="f858a423-2eb8-4207-9266-545b17bebc80" LastKnownName="Merge1" />
+                <elementDefinition Id="619b73e8-43f2-41c3-af08-5b52add7d157" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="6f47e834-b0a9-4dee-a3ed-67a9afe2f64c" name="Create Annotation Shape" isLeaf="false">
+            <elementDefinition Id="d598d996-af0e-42a1-a726-f68af8520fc6" />
+            <flowNodeTargets>
+              <controlFlow Id="11b53845-8c18-4243-b26b-2f4c126308bf" isLeaf="false">
+                <mergeNodeMoniker Id="f858a423-2eb8-4207-9266-545b17bebc80" LastKnownName="Merge1" />
+                <elementDefinition Id="0db2cbb1-7935-45e0-8be8-7a0801245560" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="f91ffe46-efce-41e1-a08c-dfa9cfb3408d" name="Send to Map" isLeaf="false">
+            <elementDefinition Id="e556c0d6-2af3-43bf-ac01-fca4a2b6ac06" />
+            <flowNodeTargets>
+              <controlFlow Id="6e51996d-9b18-4978-8e30-1a95387fd2d5" isLeaf="false">
+                <activityFinalNodeMoniker Id="84afe5c1-aee3-4eb9-bdf5-86e43c6cba79" LastKnownName="ActivityFinal1" />
+                <elementDefinition Id="57111a20-18ae-4a73-aeae-bd832967d06a" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <mergeNode Id="f858a423-2eb8-4207-9266-545b17bebc80" name="Merge1" isLeaf="false">
+            <elementDefinition Id="9b7f2837-80a4-459e-8d41-75eb3858d24f" />
+            <flowNodeTargets>
+              <controlFlow Id="9c69ed26-d23e-473d-bcdb-16b60a813e13" isLeaf="false">
+                <opaqueActionMoniker Id="f91ffe46-efce-41e1-a08c-dfa9cfb3408d" LastKnownName="Send to Map" />
+                <elementDefinition Id="e07f87bd-4eab-4304-b53e-f1c8f919afdf" />
+              </controlFlow>
+            </flowNodeTargets>
+          </mergeNode>
+          <activityFinalNode Id="84afe5c1-aee3-4eb9-bdf5-86e43c6cba79" name="ActivityFinal1" isLeaf="false">
+            <elementDefinition Id="68de7315-be43-483f-b1a8-f58814837e46" />
+          </activityFinalNode>
+          <opaqueAction Id="74c98f92-d28c-42e9-93ff-d442e0e618d2" name="Delete Annotation Pushpin" isLeaf="false">
+            <elementDefinition Id="dfd1b237-3123-433d-baf7-d9e6615c9a55" />
+            <flowNodeTargets>
+              <controlFlow Id="d8aa0ebe-9872-4152-af7e-95434399a232" isLeaf="false">
+                <mergeNodeMoniker Id="f858a423-2eb8-4207-9266-545b17bebc80" LastKnownName="Merge1" />
+                <elementDefinition Id="dd8dcc8e-a4e3-4115-ac3a-e6c235f0b34e" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="a3849593-ba02-4ad6-a1f1-70a58e556413" name="Delete Annotation Shape" isLeaf="false">
+            <elementDefinition Id="dec708fe-4d6a-45b7-a7f7-8e04c79f083b" />
+            <flowNodeTargets>
+              <controlFlow Id="3fe42acc-5152-4c61-8896-bb70ddba2bfe" isLeaf="false">
+                <mergeNodeMoniker Id="f858a423-2eb8-4207-9266-545b17bebc80" LastKnownName="Merge1" />
+                <elementDefinition Id="15eca5d7-bf13-4fe4-a209-788724328064" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+        </nodes>
+      </activity>
+    </activityRootModelHasActivity>
+  </packagedElements>
+  <package Id="142104bf-ca2f-4531-a570-bff420872bd2" name="InceptionPhase">
+    <elementDefinition Id="060ee48c-9086-4906-a9dd-888318cd2b23" />
+    <profileInstances>
+      <packageHasProfileInstances Id="c7ba39ca-b59b-4bff-b496-4af51269a09c">
+        <profileInstance Id="5506c67e-b4f8-4d41-bd0e-31c3a2c15cd0" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="18c7d3cb-bb91-4e53-b597-0f481da66400">
+        <profileInstance Id="6000e713-e8a9-413f-9919-eb31afc8e1e3" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</activityRootModel>

@@ -1,0 +1,353 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" xmlns:dm12="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="34dd3fed-e363-4e4a-ae68-689c66e83950" name="InceptionMeteoData" linkedPackageId="77fd6af5-9163-4d0b-89ee-65b73f45dd87" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <appliedStereotypesInternal>
+    <stereotypeInstance Id="79e4a322-df45-4dee-aa36-c45392a3a222" name="namespace" profile="CSharpProfile">
+      <elementDefinition Id="8e5a92ef-4842-4948-afd1-aa90279715fe" />
+      <propertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="0fa10d96-cf03-4e18-932f-5e7d386f1636">
+          <propertyInstance Id="9cf89577-e46c-48df-9619-a63f639d1f6d" name="BaseName">
+            <elementDefinition Id="d896b1c4-323d-4882-83d5-f4c46d4b4126" />
+          </propertyInstance>
+          <elementDefinition Id="246e9a1f-387e-474a-bbe2-a70bbd41977e" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="46671f79-7295-4c3f-ac39-30e28eec2596">
+          <propertyInstance Id="4661fc5d-e7b5-49bb-bcc5-51f67f7f6b0f" name="ClrAttributes">
+            <elementDefinition Id="960fea90-4656-4bde-bf8b-90498eac7dea" />
+          </propertyInstance>
+          <elementDefinition Id="f0065c83-a14e-475b-b3b8-96359b7c69d0" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="bd30640d-0d3e-4977-8710-041c1aca6308">
+          <propertyInstance Id="f0f957a3-9141-4695-9e0d-ccc308f679ac" name="Usings">
+            <elementDefinition Id="6389cb55-7f2c-4c71-87ba-31701b4a9030" />
+          </propertyInstance>
+          <elementDefinition Id="d94abb07-ed75-4264-b58d-ec30e102102a" />
+        </stereotypeInstanceHasPropertyInstances>
+      </propertyInstances>
+    </stereotypeInstance>
+    <stereotypeInstance Id="c3181160-c468-4dfc-bd92-3349fe133d0f" name="TextTemplateBindings" profile="TextTemplateBindings">
+      <elementDefinition Id="dc53fcda-22be-4d77-ab75-9222b67ed8ef" />
+      <propertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="c618e80d-baf6-4576-a958-be0d73ecaf47">
+          <propertyInstance Id="e841783c-f1a5-4c21-9aed-37cee91dca33" name="Alias" value="ClassTemplate|EnumTemplate|InterfaceTemplate|StructTemplate">
+            <elementDefinition Id="23b5c4cf-8f8d-48e1-b02d-b01bd734fac3" />
+          </propertyInstance>
+          <elementDefinition Id="503a2947-cf7e-41f6-a0d8-cb5a33426584" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="267bccda-733b-4f44-bf4b-c07d3466816c">
+          <propertyInstance Id="cb06e330-0ff2-4a1c-b649-718f5af62139" name="TemplateFilePath" value="ClassTemplate=E:\VS2015\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\ClassTemplate.t4|EnumTemplate=E:\VS2015\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\EnumTemplate.t4|InterfaceTemplate=E:\VS2015\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\InterfaceTemplate.t4|StructTemplate=E:\VS2015\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\StructTemplate.t4">
+            <elementDefinition Id="f47ed708-7c57-4d0c-949a-fba852fd2ef4" />
+          </propertyInstance>
+          <elementDefinition Id="11edd059-b307-4309-89d6-8685da9a1642" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="43f87d6c-28ae-4e54-aedc-4512f5989be7">
+          <propertyInstance Id="78fc3fd9-c431-4e3f-868e-14d1fa2e357d" name="ProjectPath" value="ClassTemplate=..\InceptionPhaseLib\InceptionPhaseLib.csproj|EnumTemplate=..\InceptionPhaseLib\InceptionPhaseLib.csproj|InterfaceTemplate=..\InceptionPhaseLib\InceptionPhaseLib.csproj|StructTemplate=..\InceptionPhaseLib\InceptionPhaseLib.csproj">
+            <elementDefinition Id="61aeaccc-ef07-4fed-a373-9394c385fbb8" />
+          </propertyInstance>
+          <elementDefinition Id="f5275e46-3fc0-486a-a091-53af501efaa1" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="67dd5925-39e2-47f8-9d91-28cc6d1499fe">
+          <propertyInstance Id="5395d5b8-4218-414f-9b5a-fe7571f8be7d" name="TargetDirectory" value="ClassTemplate=GeneratedCode\{PackageStructure}|EnumTemplate=GeneratedCode\{PackageStructure}|InterfaceTemplate=GeneratedCode\{PackageStructure}|StructTemplate=GeneratedCode\{PackageStructure}">
+            <elementDefinition Id="3bc79ac5-07af-430d-9e03-d6d62eefc86c" />
+          </propertyInstance>
+          <elementDefinition Id="c2e48bed-5068-428a-8a8a-19a473fef92c" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="be3342e9-b1f6-4589-83ba-7fb5e8e84adb">
+          <propertyInstance Id="fed8d783-5613-4165-8537-4288395dfde7" name="TargetName" value="ClassTemplate={Name}|EnumTemplate={Name}|InterfaceTemplate={Name}|StructTemplate={Name}">
+            <elementDefinition Id="1d88b15d-8188-4423-b7aa-3d71ccd642e4" />
+          </propertyInstance>
+          <elementDefinition Id="329f3eb0-cf40-4472-8212-835f08ec2d74" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="0da1cbf1-cb05-421d-8d31-1d69e3b7c26e">
+          <propertyInstance Id="839dd02f-7537-464f-b310-87a388e82dfa" name="Overwrite" value="ClassTemplate=True|EnumTemplate=True|InterfaceTemplate=True|StructTemplate=True">
+            <elementDefinition Id="a8f6aca1-abf0-4d3a-abd8-54eae90a43bd" />
+          </propertyInstance>
+          <elementDefinition Id="27e6d182-0cee-4a03-bc89-fed69c412a13" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="fb0fc730-fe1d-4153-a312-e5e59bb6691d">
+          <propertyInstance Id="ed20e35d-caf4-4915-bf97-61a6f316a991" name="Parameters">
+            <elementDefinition Id="d5a37c59-6d55-45fe-b750-be73a7944d7f" />
+          </propertyInstance>
+          <elementDefinition Id="d0a70e2b-c596-4c1b-aaf4-88cff234a820" />
+        </stereotypeInstanceHasPropertyInstances>
+      </propertyInstances>
+    </stereotypeInstance>
+  </appliedStereotypesInternal>
+  <profileInstances>
+    <packageHasProfileInstances Id="77b6c32e-bd2e-495b-962b-9af82872d062">
+      <profileInstance Id="aabd85f3-4536-46ad-b661-4f48759b5176" name="CSharpProfile">
+        <elementDefinition Id="60859347-9a1e-4775-8f71-d13ef43b2d22" />
+      </profileInstance>
+      <elementDefinition Id="8a1cab12-f4f1-4c1a-9d3e-b98c9e8e00fd" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="aad5c8c3-f024-469d-bf57-b040e42dbd62">
+      <profileInstance Id="b82592d8-a941-48fb-941f-c693a8dc0a40" name="TextTemplateBindings">
+        <elementDefinition Id="c36793ce-6e40-405d-b795-707728678db6" />
+      </profileInstance>
+      <elementDefinition Id="c6f155c7-fa95-4893-9734-72a4c0bf0e7a" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <actor Id="b4f00001-bd17-4e53-9f8f-d897796fcdc0" name="User" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="6d168c2d-bb1f-4cc0-9443-3f4d00b684d3" />
+        <targetEnds>
+          <association Id="1e21aa68-9e84-40a0-8507-4df94f5004a5" isDerived="false" sourceEndRoleName="User" targetEndRoleName="Study Meteorite Landing Data" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="5c767cc4-86c6-48ba-ba3b-ad45d451f04e" LastKnownName="Study Meteorite Landing Data" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="e0da4d73-74e1-433d-9e8f-0e8058f55302" name="User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="394e846c-5af2-4189-a724-92721dea2127" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="2d4fab37-1ea6-4e98-8a67-b0097fbd8b34" name="Study Meteorite Landing Data" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="3946c55a-e547-43d9-bffe-ab44e601bd3d" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="d9286505-1912-41a4-a0cc-6c74c9c278e9" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <subsystem Id="fd33f36b-e65a-4e3e-a424-a1330b725ed9" name="Meteorite Data Subsystem" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="cd589d6a-5882-485c-876e-9251904c5429" />
+      </subsystem>
+    </useCaseModelRootHasTypes>
+    <packageHasNamedElement>
+      <useCase Id="744ac721-baed-482c-a175-92024ae3c520" name="Print Data" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="b548ed3b-4138-4e75-9639-ccb846bb126d" />
+        <generalsInternal>
+          <generalization Id="805015c5-d784-464a-aa6b-93a2a35c776f" isSubstitutable="false">
+            <useCaseMoniker Id="5c767cc4-86c6-48ba-ba3b-ad45d451f04e" LastKnownName="Study Meteorite Landing Data" />
+            <elementDefinition Id="60061d30-4523-488e-8e3b-e889bd821adb" />
+          </generalization>
+        </generalsInternal>
+        <subjects>
+          <subsystemMoniker Id="fd33f36b-e65a-4e3e-a424-a1330b725ed9" LastKnownName="Meteorite Data Subsystem" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="5c767cc4-86c6-48ba-ba3b-ad45d451f04e" name="Study Meteorite Landing Data" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="189c98b0-af6b-48b4-9c1d-03854c3084d3" />
+        <subjects>
+          <subsystemMoniker Id="fd33f36b-e65a-4e3e-a424-a1330b725ed9" LastKnownName="Meteorite Data Subsystem" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="584a4749-48e7-4b25-9024-f71e7cb914b5" name="View Data in Table" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="5a811a82-c818-46c3-b755-d434a0f451a5" />
+        <generalsInternal>
+          <generalization Id="39e9ffc8-3b2a-4126-8e38-a70edf6ef7a8" isSubstitutable="false">
+            <useCaseMoniker Id="5c767cc4-86c6-48ba-ba3b-ad45d451f04e" LastKnownName="Study Meteorite Landing Data" />
+            <elementDefinition Id="da266d58-223a-49e8-bc2f-1d9d6a008565" />
+          </generalization>
+        </generalsInternal>
+        <subjects>
+          <subsystemMoniker Id="fd33f36b-e65a-4e3e-a424-a1330b725ed9" LastKnownName="Meteorite Data Subsystem" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="b71b3e10-d998-4518-8a3e-f3307a5ace50" name="Filter Data" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="3ddceb39-cb9e-4e38-a110-106647d0f9e2" />
+        <generalsInternal>
+          <generalization Id="5bbbf336-43ae-442d-8355-2e7f024b464c" isSubstitutable="false">
+            <useCaseMoniker Id="5c767cc4-86c6-48ba-ba3b-ad45d451f04e" LastKnownName="Study Meteorite Landing Data" />
+            <elementDefinition Id="c2cb5ae4-4312-4f9d-a193-09a425c9c9bc" />
+          </generalization>
+        </generalsInternal>
+        <subjects>
+          <subsystemMoniker Id="fd33f36b-e65a-4e3e-a424-a1330b725ed9" LastKnownName="Meteorite Data Subsystem" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="b0424865-acfd-4917-a500-c60bf10d67e3" name="Store Meteorite Landing Data" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="e6f5428f-c7b8-477d-b63e-50e45e91484d" />
+        <subjects>
+          <subsystemMoniker Id="fd33f36b-e65a-4e3e-a424-a1330b725ed9" LastKnownName="Meteorite Data Subsystem" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="8a3a6a74-de45-4fe4-bbdb-3424683be69f" name="Update Data" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="b3f95646-b51e-4821-be4f-6177aa007ab9" />
+        <generalsInternal>
+          <generalization Id="e499a3b8-016d-4ee7-aaab-38962396eb7b" isSubstitutable="false">
+            <useCaseMoniker Id="b0424865-acfd-4917-a500-c60bf10d67e3" LastKnownName="Store Meteorite Landing Data" />
+            <elementDefinition Id="7eb222fd-4907-482b-b8c4-47f71b937599" />
+          </generalization>
+        </generalsInternal>
+        <subjects>
+          <subsystemMoniker Id="fd33f36b-e65a-4e3e-a424-a1330b725ed9" LastKnownName="Meteorite Data Subsystem" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="180d0692-7112-4015-a571-ce2bcf65f55d" name="Extended Data" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="3c0e9c67-80ac-412e-870d-23219beab341" />
+        <suppliersInternal>
+          <dependency Id="1ff48b6c-80e8-46fa-9f96-0395fbd0cf2d">
+            <useCaseMoniker Id="5c767cc4-86c6-48ba-ba3b-ad45d451f04e" LastKnownName="Study Meteorite Landing Data" />
+            <elementDefinition Id="5e062840-97fc-4a2e-b529-94f5faca5add" />
+          </dependency>
+        </suppliersInternal>
+        <subjects>
+          <subsystemMoniker Id="fd33f36b-e65a-4e3e-a424-a1330b725ed9" LastKnownName="Meteorite Data Subsystem" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <useCaseModelRootHasTypes>
+      <actor Id="99f07cee-9026-42bc-9e53-f830abcad0d3" name="Meteorite Visualization Subsystem" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="d3764c1a-f320-462e-b5e0-8ade0e4da3b3" />
+        <targetEnds>
+          <association Id="ad2e0de8-923d-48aa-a405-1f616921f2e3" isDerived="false" sourceEndRoleName="Meteorite Visualization Subsystem" targetEndRoleName="Study Meteorite Landing Data" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="5c767cc4-86c6-48ba-ba3b-ad45d451f04e" LastKnownName="Study Meteorite Landing Data" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="6e1ff6ad-1094-4330-8bf6-647351f8a96e" name="Meteorite Visualization Subsystem" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="cee693f1-d302-4d3b-836f-779a3f1d2ee6" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="39a39b21-7867-40d1-80b1-b85164892353" name="Study Meteorite Landing Data" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="ab34b921-cbbb-4f04-bf0f-4a528b3829ab" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="6d803faa-6dfc-4983-bc98-99c4234109d7" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="04f4e2a4-b186-4e87-9def-387721d94ed9" name="Local Database" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="cdea9a2a-d875-434d-92cb-64b54671d9e3" />
+        <targetEnds>
+          <association Id="008aa897-13e9-4ce1-852c-dd87707439ba" isDerived="false" sourceEndRoleName="Local Database" targetEndRoleName="Store Data" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="b0424865-acfd-4917-a500-c60bf10d67e3" LastKnownName="Store Meteorite Landing Data" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="c41e4eaf-2ad8-4b99-a404-a941d9888168" name="Local Database" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="522b48aa-55e2-4cf0-98ee-9d434c7d7fe8" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="9efd3e17-b6aa-4e78-973a-639b2153d001" name="Store Data" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="42369bb3-1a2b-4e28-879f-e378eaa361c2" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="8e651ede-72ae-4d51-aac0-8ad300eb5130" />
+          </association>
+          <association Id="8554456a-f85d-4b39-bc0d-d2b154b8526f" isDerived="false" sourceEndRoleName="Local Database" targetEndRoleName="Study Meteorite Landing Data" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="5c767cc4-86c6-48ba-ba3b-ad45d451f04e" LastKnownName="Study Meteorite Landing Data" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="bcf9fac7-b7a4-4cef-8da8-358de00db10f" name="Local Database" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="139686e8-d77b-49b8-bc8d-e45759fbfb27" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="1203159c-3138-430d-b391-21a182513416" name="Study Meteorite Landing Data" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="8e8ebef1-b8d0-4517-878a-ea65042ebaae" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="c2cd856b-6e92-4fd8-b8d0-b27ce3c10f94" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="6a5d5f70-ce81-452b-a78c-d9d6408b92a6" name="Socrata" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="ffc982be-ff2f-4e37-a175-7685937bf31b" />
+        <targetEnds>
+          <association Id="b85bf87c-5a17-40b1-8327-2f03f9f9e21c" isDerived="false" sourceEndRoleName="Socrata" targetEndRoleName="Update Data" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="8a3a6a74-de45-4fe4-bbdb-3424683be69f" LastKnownName="Update Data" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="49041b62-d7b6-4ad6-81b2-3c16df894251" name="Socrata" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="ba81e44c-57fc-4e03-9631-806f2f2eff14" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="a54b90f7-fbd6-4156-9c03-660ed971768d" name="Update Data" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="516a6f7d-9045-456d-a31b-d64a1155d7de" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="ec381d75-e2c1-46bf-93d7-7ae801336795" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="b2e70c38-d9ca-4cc8-8ba6-b80838f5d5bf" name="World Wide Web" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="4c844de3-0c78-4b94-a702-9bd878fadeef" />
+        <targetEnds>
+          <association Id="444b1db4-5549-42f8-9f42-0ca85991b507" isDerived="false" sourceEndRoleName="World Wide Web" targetEndRoleName="Extended Data" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="180d0692-7112-4015-a571-ce2bcf65f55d" LastKnownName="Extended Data" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="0f852bd9-6551-40a9-a4f1-1c8b494a0ef9" name="World Wide Web" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="1428c2fa-b1a3-4307-940c-7d0321a9857a" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="8e77d91b-592c-4fc8-a223-0732f2694c75" name="Extended Data" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="4e07e781-3c1f-4173-9edb-16a4631dc88e" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="874fbee3-813d-4ca9-b6ce-7e079c840cca" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <artifact Id="663699ff-87da-4092-8d7f-b3be6606ebda" name="Meteorite Data Subsystem Artifact.docx" isAbstract="false" isLeaf="false" fileName="Meteorite Data Subsystem Artifact.docx">
+        <elementDefinition Id="b48853ca-69b6-433c-913e-5855d4a5489e" />
+        <targetEnds>
+          <association Id="8be5220d-04a3-4fbb-a738-23e0d95ed10e" isDerived="false" sourceEndRoleName="Meteorite Data Subsystem Artifact.docx" targetEndRoleName="Meteorite Data Subsystem" isLeaf="false" isAbstract="false">
+            <subsystemMoniker Id="fd33f36b-e65a-4e3e-a424-a1330b725ed9" LastKnownName="Meteorite Data Subsystem" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="e5bd7e95-42ac-40c4-8634-4a74037ec4c9" name="Meteorite Data Subsystem Artifact.docx" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="7142e245-a2c6-41c4-b5b4-605856c3d3d3" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="ea3624f8-0e16-4f0b-88bd-ec54868e36ae" name="Meteorite Data Subsystem" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="1b5466fc-da87-4762-8e4d-0ae14e08808c" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="851464b2-5e4b-4aee-921c-ed7eb303c2ad" />
+          </association>
+        </targetEnds>
+      </artifact>
+    </useCaseModelRootHasTypes>
+  </packagedElements>
+  <package Id="77fd6af5-9163-4d0b-89ee-65b73f45dd87" name="InceptionPhase">
+    <elementDefinition Id="060ee48c-9086-4906-a9dd-888318cd2b23" />
+    <profileInstances>
+      <packageHasProfileInstances Id="b739ba85-d70f-4e6e-99ec-9c06e43b43a6">
+        <profileInstance Id="1fd58c9d-680c-42f7-8277-5218b631eaeb" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="33dc2be0-e54d-48da-83e7-e06d3ff0ceb9">
+        <profileInstance Id="4abac2fc-61cc-4357-ad04-ca100d8d8c21" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</useCaseModelRoot>

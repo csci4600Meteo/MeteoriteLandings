@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="file:///E:/VS2015/COMMON7/IDE/EXTENSIONS/MICROSOFT/ARCHITECTURE TOOLS/EXTENSIBILITY/Logging/CodeGenLog.xslt"?>
+<Log xmlns="http://schemas.microsoft.com/VisualStudio/2010/CodeGen.RE.Log" Label="Code Generation/Text Transformation Log">
+  <MessageClass Name="Message" Label="Message" Option="Show informational messages" />
+  <MessageClass Name="Warning" Label="Warning" Option="Show warnings" />
+  <MessageClass Name="Error" Label="Error" Option="Show errors" />
+  <MessageClass Name="Property" Label="Property" Option="Show metadata" />
+  <MessageClass Name="Diagnostic" Label="Message" Option="Show diagnostic messages" />
+  <Message Timestamp="2016-03-02T23:31:34" Importance="High" Text="Code generation or text transformation started." />
+  <Message Timestamp="2016-03-02T23:31:34" Importance="Diagnostic" Text="Name = ClassTemplate" />
+  <Message Timestamp="2016-03-02T23:31:34" Importance="Diagnostic" Text="Overwrite = True" />
+  <Message Timestamp="2016-03-02T23:31:34" Importance="Diagnostic" Text="ProjectPath = ..\InceptionPhaseLib\InceptionPhaseLib.csproj" />
+  <Message Timestamp="2016-03-02T23:31:34" Importance="Diagnostic" Text="TargetDirectory = GeneratedCode\{PackageStructure}" />
+  <Message Timestamp="2016-03-02T23:31:34" Importance="Diagnostic" Text="TargetName = {Name}" />
+  <Message Timestamp="2016-03-02T23:31:34" Importance="Diagnostic" Text="TemplateFilePath = E:\VS2015\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\ClassTemplate.t4" />
+  <Message Timestamp="2016-03-02T23:31:34" Importance="Diagnostic" Text="ResolvedTemplateFilePath = E:\VS2015\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\ClassTemplate.t4" />
+  <Message Timestamp="2016-03-02T23:31:34" Importance="Medium" Text="InceptionPhase's Text Template Binding: 'ClassTemplate' will apply ClassTemplate.t4 to: 'InceptionPhase::MapVizContainer' -  (Class), 'InceptionPhase::Dictionary&lt;int,IMapViz&gt;' -  (Class), 'InceptionPhase::Location - Bing Map API' -  (Class), 'InceptionPhase::LocationCollection Bing Map API' -  (Class), 'InceptionPhase::MapPolygon - Bing Map API' -  (Class), 'InceptionPhase::Pushpin - Bing Map API' -  (Class), 'InceptionPhase::MeteoVizPoly' -  (Class), 'InceptionPhase::AnnoVizPoly' -  (Class), 'InceptionPhase::AnnoVizPushpin' -  (Class), 'InceptionPhase::MeteoVizPushpin' -  (Class) " />
+  <Message Timestamp="2016-03-02T23:31:35" Importance="Medium" Text="'InceptionPhase::MapVizContainer' -  (Class) : success (file replaced) - E:\OneDrive\CSCI4600\MeteoriteLandings\InceptionPhaseLib\GeneratedCode\MapVizContainer.cs" />
+  <Error Timestamp="2016-03-02T23:31:35" Importance="High" Text="'InceptionPhase::Dictionary&lt;int,IMapViz&gt;' -  (Class) : unable to create file, Illegal characters in path. - E:\OneDrive\CSCI4600\MeteoriteLandings\InceptionPhaseLib\GeneratedCode\Dictionary&lt;int,IMapViz&gt;.cs" />
+  <Message Timestamp="2016-03-02T23:31:35" Importance="Diagnostic" Text="'InceptionPhase::Dictionary&lt;int,IMapViz&gt;' -  (Class): no file generated because the 'AppliesToElement' method of the template 'ClassTemplate.t4' evaluated to false." />
+  <Message Timestamp="2016-03-02T23:31:35" Importance="Medium" Text="'InceptionPhase::Location - Bing Map API' -  (Class) : success (file replaced) - E:\OneDrive\CSCI4600\MeteoriteLandings\InceptionPhaseLib\GeneratedCode\Location - Bing Map API.cs" />
+  <Message Timestamp="2016-03-02T23:31:35" Importance="Medium" Text="'InceptionPhase::LocationCollection Bing Map API' -  (Class) : success (file replaced) - E:\OneDrive\CSCI4600\MeteoriteLandings\InceptionPhaseLib\GeneratedCode\LocationCollection Bing Map API.cs" />
+  <Message Timestamp="2016-03-02T23:31:35" Importance="Medium" Text="'InceptionPhase::MapPolygon - Bing Map API' -  (Class) : success (file replaced) - E:\OneDrive\CSCI4600\MeteoriteLandings\InceptionPhaseLib\GeneratedCode\MapPolygon - Bing Map API.cs" />
+  <Message Timestamp="2016-03-02T23:31:35" Importance="Medium" Text="'InceptionPhase::Pushpin - Bing Map API' -  (Class) : success (file replaced) - E:\OneDrive\CSCI4600\MeteoriteLandings\InceptionPhaseLib\GeneratedCode\Pushpin - Bing Map API.cs" />
+  <Message Timestamp="2016-03-02T23:31:35" Importance="Medium" Text="'InceptionPhase::MeteoVizPoly' -  (Class) : success (file replaced) - E:\OneDrive\CSCI4600\MeteoriteLandings\InceptionPhaseLib\GeneratedCode\MeteoVizPoly.cs" />
+  <Message Timestamp="2016-03-02T23:31:35" Importance="Medium" Text="'InceptionPhase::AnnoVizPoly' -  (Class) : success (file replaced) - E:\OneDrive\CSCI4600\MeteoriteLandings\InceptionPhaseLib\GeneratedCode\AnnoVizPoly.cs" />
+  <Message Timestamp="2016-03-02T23:31:36" Importance="Medium" Text="'InceptionPhase::AnnoVizPushpin' -  (Class) : success (file replaced) - E:\OneDrive\CSCI4600\MeteoriteLandings\InceptionPhaseLib\GeneratedCode\AnnoVizPushpin.cs" />
+  <Message Timestamp="2016-03-02T23:31:36" Importance="Medium" Text="'InceptionPhase::MeteoVizPushpin' -  (Class) : success (file replaced) - E:\OneDrive\CSCI4600\MeteoriteLandings\InceptionPhaseLib\GeneratedCode\MeteoVizPushpin.cs" />
+  <Message Timestamp="2016-03-02T23:31:36" Importance="Diagnostic" Text="Name = InterfaceTemplate" />
+  <Message Timestamp="2016-03-02T23:31:36" Importance="Diagnostic" Text="Overwrite = True" />
+  <Message Timestamp="2016-03-02T23:31:36" Importance="Diagnostic" Text="ProjectPath = ..\InceptionPhaseLib\InceptionPhaseLib.csproj" />
+  <Message Timestamp="2016-03-02T23:31:36" Importance="Diagnostic" Text="TargetDirectory = GeneratedCode\{PackageStructure}" />
+  <Message Timestamp="2016-03-02T23:31:36" Importance="Diagnostic" Text="TargetName = {Name}" />
+  <Message Timestamp="2016-03-02T23:31:36" Importance="Diagnostic" Text="TemplateFilePath = E:\VS2015\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\InterfaceTemplate.t4" />
+  <Message Timestamp="2016-03-02T23:31:36" Importance="Diagnostic" Text="ResolvedTemplateFilePath = E:\VS2015\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\InterfaceTemplate.t4" />
+  <Message Timestamp="2016-03-02T23:31:36" Importance="Medium" Text="InceptionPhase's Text Template Binding: 'InterfaceTemplate' will apply InterfaceTemplate.t4 to: 'InceptionPhase::IMapViz' -  (Interface) " />
+  <Message Timestamp="2016-03-02T23:31:36" Importance="Medium" Text="'InceptionPhase::IMapViz' -  (Interface) : success (file replaced) - E:\OneDrive\CSCI4600\MeteoriteLandings\InceptionPhaseLib\GeneratedCode\IMapViz.cs" />
+  <Message Timestamp="2016-03-02T23:31:36" Importance="Diagnostic" Text="Name = StructTemplate" />
+  <Message Timestamp="2016-03-02T23:31:36" Importance="Diagnostic" Text="Overwrite = True" />
+  <Message Timestamp="2016-03-02T23:31:36" Importance="Diagnostic" Text="ProjectPath = ..\InceptionPhaseLib\InceptionPhaseLib.csproj" />
+  <Message Timestamp="2016-03-02T23:31:36" Importance="Diagnostic" Text="TargetDirectory = GeneratedCode\{PackageStructure}" />
+  <Message Timestamp="2016-03-02T23:31:36" Importance="Diagnostic" Text="TargetName = {Name}" />
+  <Message Timestamp="2016-03-02T23:31:36" Importance="Diagnostic" Text="TemplateFilePath = E:\VS2015\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\StructTemplate.t4" />
+  <Message Timestamp="2016-03-02T23:31:36" Importance="Diagnostic" Text="ResolvedTemplateFilePath = E:\VS2015\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\StructTemplate.t4" />
+  <Message Timestamp="2016-03-02T23:31:36" Importance="Medium" Text="InceptionPhase's Text Template Binding: 'StructTemplate' will apply StructTemplate.t4 to: 'InceptionPhase::MapVizContainer' -  (Class), 'InceptionPhase::Dictionary&lt;int,IMapViz&gt;' -  (Class), 'InceptionPhase::Location - Bing Map API' -  (Class), 'InceptionPhase::LocationCollection Bing Map API' -  (Class), 'InceptionPhase::MapPolygon - Bing Map API' -  (Class), 'InceptionPhase::Pushpin - Bing Map API' -  (Class), 'InceptionPhase::MeteoVizPoly' -  (Class), 'InceptionPhase::AnnoVizPoly' -  (Class), 'InceptionPhase::AnnoVizPushpin' -  (Class), 'InceptionPhase::MeteoVizPushpin' -  (Class) " />
+  <Message Timestamp="2016-03-02T23:31:36" Importance="Diagnostic" Text="'InceptionPhase::MapVizContainer' -  (Class): no file generated because the 'AppliesToElement' method of the template 'StructTemplate.t4' evaluated to false." />
+  <Message Timestamp="2016-03-02T23:31:36" Importance="Diagnostic" Text="'InceptionPhase::Dictionary&lt;int,IMapViz&gt;' -  (Class): no file generated because the 'AppliesToElement' method of the template 'StructTemplate.t4' evaluated to false." />
+  <Message Timestamp="2016-03-02T23:31:36" Importance="Diagnostic" Text="'InceptionPhase::Location - Bing Map API' -  (Class): no file generated because the 'AppliesToElement' method of the template 'StructTemplate.t4' evaluated to false." />
+  <Message Timestamp="2016-03-02T23:31:36" Importance="Diagnostic" Text="'InceptionPhase::LocationCollection Bing Map API' -  (Class): no file generated because the 'AppliesToElement' method of the template 'StructTemplate.t4' evaluated to false." />
+  <Message Timestamp="2016-03-02T23:31:36" Importance="Diagnostic" Text="'InceptionPhase::MapPolygon - Bing Map API' -  (Class): no file generated because the 'AppliesToElement' method of the template 'StructTemplate.t4' evaluated to false." />
+  <Message Timestamp="2016-03-02T23:31:36" Importance="Diagnostic" Text="'InceptionPhase::Pushpin - Bing Map API' -  (Class): no file generated because the 'AppliesToElement' method of the template 'StructTemplate.t4' evaluated to false." />
+  <Message Timestamp="2016-03-02T23:31:36" Importance="Diagnostic" Text="'InceptionPhase::MeteoVizPoly' -  (Class): no file generated because the 'AppliesToElement' method of the template 'StructTemplate.t4' evaluated to false." />
+  <Message Timestamp="2016-03-02T23:31:36" Importance="Diagnostic" Text="'InceptionPhase::AnnoVizPoly' -  (Class): no file generated because the 'AppliesToElement' method of the template 'StructTemplate.t4' evaluated to false." />
+  <Message Timestamp="2016-03-02T23:31:36" Importance="Diagnostic" Text="'InceptionPhase::AnnoVizPushpin' -  (Class): no file generated because the 'AppliesToElement' method of the template 'StructTemplate.t4' evaluated to false." />
+  <Message Timestamp="2016-03-02T23:31:36" Importance="Diagnostic" Text="'InceptionPhase::MeteoVizPushpin' -  (Class): no file generated because the 'AppliesToElement' method of the template 'StructTemplate.t4' evaluated to false." />
+  <Message Timestamp="2016-03-02T23:31:36" Importance="Diagnostic" Text="The selection included 13 elements which were not bound to a template." />
+  <Message Timestamp="2016-03-02T23:31:36" Importance="Diagnostic" Text="'InceptionPhase::' -  (Association): no bound template." />
+  <Message Timestamp="2016-03-02T23:31:36" Importance="Diagnostic" Text="'f851c867-cbc9-48c6-a3e0-9faf02de4511' -  (Generalization): no bound template." />
+  <Message Timestamp="2016-03-02T23:31:36" Importance="Diagnostic" Text="'InceptionPhase::' -  (Association): no bound template." />
+  <Message Timestamp="2016-03-02T23:31:36" Importance="Diagnostic" Text="'InceptionPhase::' -  (Association): no bound template." />
+  <Message Timestamp="2016-03-02T23:31:36" Importance="Diagnostic" Text="'InceptionPhase::' -  (Association): no bound template." />
+  <Message Timestamp="2016-03-02T23:31:36" Importance="Diagnostic" Text="'InceptionPhase::' -  (InterfaceRealization): no bound template." />
+  <Message Timestamp="2016-03-02T23:31:36" Importance="Diagnostic" Text="'InceptionPhase::' -  (InterfaceRealization): no bound template." />
+  <Message Timestamp="2016-03-02T23:31:36" Importance="Diagnostic" Text="'InceptionPhase::' -  (InterfaceRealization): no bound template." />
+  <Message Timestamp="2016-03-02T23:31:36" Importance="Diagnostic" Text="'InceptionPhase::' -  (InterfaceRealization): no bound template." />
+  <Message Timestamp="2016-03-02T23:31:36" Importance="Diagnostic" Text="'e156c763-4a38-44eb-8b64-03afb84ba123' -  (Generalization): no bound template." />
+  <Message Timestamp="2016-03-02T23:31:36" Importance="Diagnostic" Text="'bc07a518-a8ca-4160-8304-b1cda3f07bea' -  (Generalization): no bound template." />
+  <Message Timestamp="2016-03-02T23:31:36" Importance="Diagnostic" Text="'b2758573-e57d-4026-ae2f-1945bc8d75a5' -  (Generalization): no bound template." />
+  <Message Timestamp="2016-03-02T23:31:36" Importance="Diagnostic" Text="'a469d89c-794b-4dd9-a729-c074dd00557f' -  (Generalization): no bound template." />
+  <Message Timestamp="2016-03-02T23:31:36" Importance="High" Text="Code generation complete. Errors: 1. Warnings: 0." />
+</Log>

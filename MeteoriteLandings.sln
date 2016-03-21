@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeteoriteLandings", "MeteoriteLandings\MeteoriteLandings.csproj", "{55306735-AF2A-4E7B-BCC1-81272AF80A63}"
+EndProject
+Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "InceptionPhase", "InceptionPhase\InceptionPhase.modelproj", "{0AB2DF7B-7C06-4730-B3DA-8F7A27DDA4A9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{75640553-5782-4F4C-B4E6-F07C84CCFD32}"
+	ProjectSection(SolutionItems) = preProject
+		Map Subsystem Show Data Clarification.docx = Map Subsystem Show Data Clarification.docx
+		Meteorite Data Subsystem Artifact.docx = Meteorite Data Subsystem Artifact.docx
+		Toggle Annotation Map Visibility Clarification.docx = Toggle Annotation Map Visibility Clarification.docx
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InceptionPhaseLib", "InceptionPhaseLib\InceptionPhaseLib.csproj", "{0EE43563-8830-46A9-A225-5F7D25998656}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Viz", "Viz\Viz.csproj", "{66C8AA03-D560-4847-9F89-71F8948DCE8A}"
+EndProject
+Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "ConstructionPhase", "ConstructionPhase\ConstructionPhase.modelproj", "{12D4A6C1-00DF-4C11-A9A6-98B4DFC6C21D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		NoPhase|Any CPU = NoPhase|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{55306735-AF2A-4E7B-BCC1-81272AF80A63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55306735-AF2A-4E7B-BCC1-81272AF80A63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55306735-AF2A-4E7B-BCC1-81272AF80A63}.NoPhase|Any CPU.ActiveCfg = NoPhase|Any CPU
+		{55306735-AF2A-4E7B-BCC1-81272AF80A63}.NoPhase|Any CPU.Build.0 = NoPhase|Any CPU
+		{55306735-AF2A-4E7B-BCC1-81272AF80A63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55306735-AF2A-4E7B-BCC1-81272AF80A63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0AB2DF7B-7C06-4730-B3DA-8F7A27DDA4A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AB2DF7B-7C06-4730-B3DA-8F7A27DDA4A9}.NoPhase|Any CPU.ActiveCfg = NoPhase|Any CPU
+		{0AB2DF7B-7C06-4730-B3DA-8F7A27DDA4A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EE43563-8830-46A9-A225-5F7D25998656}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EE43563-8830-46A9-A225-5F7D25998656}.NoPhase|Any CPU.ActiveCfg = NoPhase|Any CPU
+		{0EE43563-8830-46A9-A225-5F7D25998656}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66C8AA03-D560-4847-9F89-71F8948DCE8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66C8AA03-D560-4847-9F89-71F8948DCE8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66C8AA03-D560-4847-9F89-71F8948DCE8A}.NoPhase|Any CPU.ActiveCfg = NoPhase|Any CPU
+		{66C8AA03-D560-4847-9F89-71F8948DCE8A}.NoPhase|Any CPU.Build.0 = NoPhase|Any CPU
+		{66C8AA03-D560-4847-9F89-71F8948DCE8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66C8AA03-D560-4847-9F89-71F8948DCE8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12D4A6C1-00DF-4C11-A9A6-98B4DFC6C21D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12D4A6C1-00DF-4C11-A9A6-98B4DFC6C21D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12D4A6C1-00DF-4C11-A9A6-98B4DFC6C21D}.NoPhase|Any CPU.ActiveCfg = Release|Any CPU
+		{12D4A6C1-00DF-4C11-A9A6-98B4DFC6C21D}.NoPhase|Any CPU.Build.0 = Release|Any CPU
+		{12D4A6C1-00DF-4C11-A9A6-98B4DFC6C21D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12D4A6C1-00DF-4C11-A9A6-98B4DFC6C21D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

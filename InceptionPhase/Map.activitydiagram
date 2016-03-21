@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm11="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm12="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="97d9f984-2a7a-48ab-bb8e-e09ccf910ded" name="Map" linkedPackageId="c23d0c74-eee4-4f9c-ab3b-52335c400e4f" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+  <appliedStereotypesInternal>
+    <stereotypeInstance Id="bae834aa-08cd-42b0-b80d-60b18451799d" name="namespace" profile="CSharpProfile">
+      <elementDefinition Id="8e5a92ef-4842-4948-afd1-aa90279715fe" />
+      <propertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="5f971a64-5c2f-43c5-808b-8e042f28704c">
+          <propertyInstance Id="06077395-7100-4755-865f-692d61d3b07e" name="BaseName">
+            <elementDefinition Id="d896b1c4-323d-4882-83d5-f4c46d4b4126" />
+          </propertyInstance>
+          <elementDefinition Id="246e9a1f-387e-474a-bbe2-a70bbd41977e" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="e58cb867-0626-4910-86c6-3ffd23c3ec0e">
+          <propertyInstance Id="1ee1a7ca-cefb-419c-bbfe-b501712b5a77" name="ClrAttributes">
+            <elementDefinition Id="960fea90-4656-4bde-bf8b-90498eac7dea" />
+          </propertyInstance>
+          <elementDefinition Id="f0065c83-a14e-475b-b3b8-96359b7c69d0" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="2922d3c2-ded3-4d0f-baa9-13572e4cc4a3">
+          <propertyInstance Id="171d9066-e52d-4836-928e-57324d8af345" name="Usings">
+            <elementDefinition Id="6389cb55-7f2c-4c71-87ba-31701b4a9030" />
+          </propertyInstance>
+          <elementDefinition Id="d94abb07-ed75-4264-b58d-ec30e102102a" />
+        </stereotypeInstanceHasPropertyInstances>
+      </propertyInstances>
+    </stereotypeInstance>
+    <stereotypeInstance Id="931271e3-ead9-4a49-b71e-f4daa67785cd" name="TextTemplateBindings" profile="TextTemplateBindings">
+      <elementDefinition Id="dc53fcda-22be-4d77-ab75-9222b67ed8ef" />
+      <propertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="0e52ca39-4457-4314-8691-b91d447f2a9e">
+          <propertyInstance Id="045453a4-c81e-4400-a536-1a4becd8ac98" name="Alias" value="ClassTemplate|EnumTemplate|InterfaceTemplate|StructTemplate">
+            <elementDefinition Id="23b5c4cf-8f8d-48e1-b02d-b01bd734fac3" />
+          </propertyInstance>
+          <elementDefinition Id="503a2947-cf7e-41f6-a0d8-cb5a33426584" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="8e1cb335-2cdd-40a9-b4ad-d634d57c7416">
+          <propertyInstance Id="63b5a893-66c3-4426-bd91-c58a4b146edb" name="TemplateFilePath" value="ClassTemplate=E:\VS2015\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\ClassTemplate.t4|EnumTemplate=E:\VS2015\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\EnumTemplate.t4|InterfaceTemplate=E:\VS2015\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\InterfaceTemplate.t4|StructTemplate=E:\VS2015\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\StructTemplate.t4">
+            <elementDefinition Id="f47ed708-7c57-4d0c-949a-fba852fd2ef4" />
+          </propertyInstance>
+          <elementDefinition Id="11edd059-b307-4309-89d6-8685da9a1642" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="681471fd-32d0-4f3e-8229-b8696b08c402">
+          <propertyInstance Id="b018cbb9-5734-4a0a-ad9e-80c85829f594" name="ProjectPath" value="ClassTemplate=..\InceptionPhaseLib\InceptionPhaseLib.csproj|EnumTemplate=..\InceptionPhaseLib\InceptionPhaseLib.csproj|InterfaceTemplate=..\InceptionPhaseLib\InceptionPhaseLib.csproj|StructTemplate=..\InceptionPhaseLib\InceptionPhaseLib.csproj">
+            <elementDefinition Id="61aeaccc-ef07-4fed-a373-9394c385fbb8" />
+          </propertyInstance>
+          <elementDefinition Id="f5275e46-3fc0-486a-a091-53af501efaa1" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="f604a8b5-0f5d-4047-8c28-5c3f74bb7ed7">
+          <propertyInstance Id="ef47c9f2-7f9d-4231-9a57-2a865d494ddd" name="TargetDirectory" value="ClassTemplate=GeneratedCode\{PackageStructure}|EnumTemplate=GeneratedCode\{PackageStructure}|InterfaceTemplate=GeneratedCode\{PackageStructure}|StructTemplate=GeneratedCode\{PackageStructure}">
+            <elementDefinition Id="3bc79ac5-07af-430d-9e03-d6d62eefc86c" />
+          </propertyInstance>
+          <elementDefinition Id="c2e48bed-5068-428a-8a8a-19a473fef92c" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="ea155d9f-f344-40b1-8387-ef1487943d23">
+          <propertyInstance Id="2f783586-706b-4504-83d9-f85d28e747d7" name="TargetName" value="ClassTemplate={Name}|EnumTemplate={Name}|InterfaceTemplate={Name}|StructTemplate={Name}">
+            <elementDefinition Id="1d88b15d-8188-4423-b7aa-3d71ccd642e4" />
+          </propertyInstance>
+          <elementDefinition Id="329f3eb0-cf40-4472-8212-835f08ec2d74" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="8e528537-1a4a-41b6-823d-40c9c2dafb74">
+          <propertyInstance Id="36a941a8-adde-4dcc-bcdb-fe072e992af6" name="Overwrite" value="ClassTemplate=True|EnumTemplate=True|InterfaceTemplate=True|StructTemplate=True">
+            <elementDefinition Id="a8f6aca1-abf0-4d3a-abd8-54eae90a43bd" />
+          </propertyInstance>
+          <elementDefinition Id="27e6d182-0cee-4a03-bc89-fed69c412a13" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="ea825814-ca1f-421f-98ff-07e999ba044e">
+          <propertyInstance Id="d8b09826-e101-45a0-8dfc-c819cc1ff81e" name="Parameters">
+            <elementDefinition Id="d5a37c59-6d55-45fe-b750-be73a7944d7f" />
+          </propertyInstance>
+          <elementDefinition Id="d0a70e2b-c596-4c1b-aaf4-88cff234a820" />
+        </stereotypeInstanceHasPropertyInstances>
+      </propertyInstances>
+    </stereotypeInstance>
+  </appliedStereotypesInternal>
+  <profileInstances>
+    <packageHasProfileInstances Id="bfa6c28c-5579-414b-b401-b328e2038b01">
+      <profileInstance Id="3b4b84d8-3f25-400f-86cd-cb9d6966ffc4" name="CSharpProfile">
+        <elementDefinition Id="60859347-9a1e-4775-8f71-d13ef43b2d22" />
+      </profileInstance>
+      <elementDefinition Id="8a1cab12-f4f1-4c1a-9d3e-b98c9e8e00fd" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="682b0d52-dcb0-4862-9465-e53c7c1f5122">
+      <profileInstance Id="629eb8ec-d988-4b41-90d2-1d739c55a1b8" name="TextTemplateBindings">
+        <elementDefinition Id="c36793ce-6e40-405d-b795-707728678db6" />
+      </profileInstance>
+      <elementDefinition Id="c6f155c7-fa95-4893-9734-72a4c0bf0e7a" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <activityRootModelHasActivity>
+      <activity Id="2016ec4c-57c8-4e11-89ee-0db7b3edf623" name="Map" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
+        <elementDefinition Id="672ba9e5-9b88-44b2-a562-fec45a1cde0f" />
+        <nodes>
+          <initialNode Id="835d7885-9b72-4ad0-bde1-6608f653ab6a" name="Initial2" isLeaf="false">
+            <elementDefinition Id="00670297-85cd-4d9e-864d-a65b9c9d7294" />
+            <flowNodeTargets>
+              <controlFlow Id="1293f67a-8cb2-4ae8-8016-d37210258d3e" isLeaf="false">
+                <opaqueActionMoniker Id="9b107692-dd7c-4862-9286-b1571efb2b0f" LastKnownName="Receive Visualization Data" />
+                <elementDefinition Id="728907a8-44f7-4cb7-8b29-9623d8ba0240" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction Id="9b107692-dd7c-4862-9286-b1571efb2b0f" name="Receive Visualization Data" isLeaf="false">
+            <elementDefinition Id="7440fa75-e2fb-4b06-9654-0b6716976fa6" />
+            <flowNodeTargets>
+              <controlFlow Id="fad22081-0370-4886-85fb-7fd7b7984723" isLeaf="false">
+                <forkNodeMoniker Id="3dfda75b-f2ac-4356-b8a4-d51b93060f90" LastKnownName="Fork2" />
+                <elementDefinition Id="0a5de594-a73a-4c36-b1fb-9bbd1b65f0ec" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="92907a4b-b083-4c2f-a7e1-81be0a043250" name="Add Visualization to Map as Child" isLeaf="false">
+            <elementDefinition Id="ef09187d-c942-4eb5-87fb-8c1a07ea5503" />
+            <flowNodeTargets>
+              <controlFlow Id="9d90a572-4176-4932-8c07-c7ee3e8e2224" isLeaf="false">
+                <mergeNodeMoniker Id="f0604273-169a-4577-8e40-ba0ee8199afc" LastKnownName="Merge2" />
+                <elementDefinition Id="e00f6ea3-0036-4adc-9f09-f7df0139e5a4" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="ee6dc5c5-38d2-4fe3-bc68-043a7bfd0ded" name="Refresh Map  Children" isLeaf="false">
+            <elementDefinition Id="d993ae66-02a0-4b7f-bb9b-e8490ebdb526" />
+            <flowNodeTargets>
+              <controlFlow Id="7e572c5b-d8e6-4e6d-9992-4b1bbd3f9c0a" isLeaf="false">
+                <opaqueActionMoniker Id="5b508b3f-faed-493a-8933-27d9e93c2726" LastKnownName="Render Map Children" />
+                <elementDefinition Id="96be154f-9ccc-4bee-8508-1d23ca6cd15a" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="5b508b3f-faed-493a-8933-27d9e93c2726" name="Render Map Children" isLeaf="false">
+            <elementDefinition Id="35084f38-8502-4e6b-9461-32278be04bc2" />
+            <flowNodeTargets>
+              <controlFlow Id="d9af3a61-1461-4408-a805-07d2e56d953b" isLeaf="false">
+                <activityFinalNodeMoniker Id="d3c0956a-84b5-4449-abc3-389ff8395f73" LastKnownName="ActivityFinal2" />
+                <elementDefinition Id="d5187205-bcb1-4e2c-99c5-7d935591d6e8" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="51d98e69-3a36-43d2-a1f5-7d9e952bd739" name="Remove Visualization  Child from Map" isLeaf="false">
+            <elementDefinition Id="9649cf83-ef27-462d-8326-e694250f7d07" />
+            <flowNodeTargets>
+              <controlFlow Id="fccccef0-c3a1-4845-922a-2f72fa51ac24" isLeaf="false">
+                <mergeNodeMoniker Id="f0604273-169a-4577-8e40-ba0ee8199afc" LastKnownName="Merge2" />
+                <elementDefinition Id="189731c3-ac48-41cf-ad03-6684ca728e68" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <mergeNode Id="f0604273-169a-4577-8e40-ba0ee8199afc" name="Merge2" isLeaf="false">
+            <elementDefinition Id="76b950a5-bad5-4d1f-b36b-55eddc157663" />
+            <flowNodeTargets>
+              <controlFlow Id="57e881b9-d6d4-4677-9aac-f3cce50c1e55" isLeaf="false">
+                <opaqueActionMoniker Id="ee6dc5c5-38d2-4fe3-bc68-043a7bfd0ded" LastKnownName="Refresh Map  Children" />
+                <elementDefinition Id="a5287094-65d5-4024-abaf-d37e8d4fe1f3" />
+              </controlFlow>
+            </flowNodeTargets>
+          </mergeNode>
+          <forkNode Id="3dfda75b-f2ac-4356-b8a4-d51b93060f90" name="Fork2" isLeaf="false">
+            <elementDefinition Id="9e3a5804-c258-47bc-9da0-5707254c2289" />
+            <flowNodeTargets>
+              <controlFlow Id="6cea6dca-8acd-4b9a-9f30-d6bf117140be" isLeaf="false">
+                <opaqueActionMoniker Id="92907a4b-b083-4c2f-a7e1-81be0a043250" LastKnownName="Add Visualization to Map as Child" />
+                <elementDefinition Id="13ae0d5b-1e78-4614-9693-395ba4306e8e" />
+              </controlFlow>
+              <controlFlow Id="f280234e-b77c-4904-9565-94929ac43cbe" isLeaf="false">
+                <opaqueActionMoniker Id="51d98e69-3a36-43d2-a1f5-7d9e952bd739" LastKnownName="Remove Visualization  Child from Map" />
+                <elementDefinition Id="c5d8947d-d6ee-4f3b-95a4-0629d182abff" />
+              </controlFlow>
+            </flowNodeTargets>
+          </forkNode>
+          <activityFinalNode Id="d3c0956a-84b5-4449-abc3-389ff8395f73" name="ActivityFinal2" isLeaf="false">
+            <elementDefinition Id="60727095-946f-4441-a36e-364576b8bcd5" />
+          </activityFinalNode>
+        </nodes>
+      </activity>
+    </activityRootModelHasActivity>
+  </packagedElements>
+  <package Id="c23d0c74-eee4-4f9c-ab3b-52335c400e4f" name="InceptionPhase">
+    <elementDefinition Id="060ee48c-9086-4906-a9dd-888318cd2b23" />
+    <profileInstances>
+      <packageHasProfileInstances Id="7e216e12-b4fb-4206-b89a-6b9d7b721871">
+        <profileInstance Id="1fb89020-c0b3-423b-ada2-0697a96e0257" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="230f01d6-3065-48b1-830d-db592678c72c">
+        <profileInstance Id="af2fdacd-91ef-4e9c-aa70-b527f8647ecc" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</activityRootModel>

@@ -1,0 +1,373 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" xmlns:dm12="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="bab1ee1c-a2e4-4a74-b10c-cef74ac5bfb4" name="InceptionMeteoViz" linkedPackageId="19cd85a7-1d26-4f6c-8b7c-9814856032ae" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <appliedStereotypesInternal>
+    <stereotypeInstance Id="7f681c54-cb69-4ab8-8de9-4736b79602ea" name="namespace" profile="CSharpProfile">
+      <elementDefinition Id="8e5a92ef-4842-4948-afd1-aa90279715fe" />
+      <propertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="c9201ff0-8c7c-4d86-b482-80f86f8f1fce">
+          <propertyInstance Id="faa2d27a-4327-46d9-8eae-6f65b3b5c565" name="BaseName">
+            <elementDefinition Id="d896b1c4-323d-4882-83d5-f4c46d4b4126" />
+          </propertyInstance>
+          <elementDefinition Id="246e9a1f-387e-474a-bbe2-a70bbd41977e" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="1dd63d72-349c-48a7-839a-2915c2d2ebb7">
+          <propertyInstance Id="4d39a5e1-f1b8-4b28-80ba-401c92111a30" name="ClrAttributes">
+            <elementDefinition Id="960fea90-4656-4bde-bf8b-90498eac7dea" />
+          </propertyInstance>
+          <elementDefinition Id="f0065c83-a14e-475b-b3b8-96359b7c69d0" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="fe3e0bc3-2316-4278-bc98-7f48f4790bc7">
+          <propertyInstance Id="31e39448-1a3b-438d-bde4-fbf991d263f5" name="Usings">
+            <elementDefinition Id="6389cb55-7f2c-4c71-87ba-31701b4a9030" />
+          </propertyInstance>
+          <elementDefinition Id="d94abb07-ed75-4264-b58d-ec30e102102a" />
+        </stereotypeInstanceHasPropertyInstances>
+      </propertyInstances>
+    </stereotypeInstance>
+    <stereotypeInstance Id="c07355dc-7018-40ef-a4a9-6211230ab35c" name="TextTemplateBindings" profile="TextTemplateBindings">
+      <elementDefinition Id="dc53fcda-22be-4d77-ab75-9222b67ed8ef" />
+      <propertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="4efdb62f-0875-4af2-8a86-b31d355daeb7">
+          <propertyInstance Id="f4146602-0215-46be-947e-64c1af0ef280" name="Alias" value="ClassTemplate|EnumTemplate|InterfaceTemplate|StructTemplate">
+            <elementDefinition Id="23b5c4cf-8f8d-48e1-b02d-b01bd734fac3" />
+          </propertyInstance>
+          <elementDefinition Id="503a2947-cf7e-41f6-a0d8-cb5a33426584" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="c59f140c-b947-40e9-be99-e75d174ef111">
+          <propertyInstance Id="c0d86c82-e811-4851-95ad-faecca9bd4b8" name="TemplateFilePath" value="ClassTemplate=E:\VS2015\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\ClassTemplate.t4|EnumTemplate=E:\VS2015\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\EnumTemplate.t4|InterfaceTemplate=E:\VS2015\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\InterfaceTemplate.t4|StructTemplate=E:\VS2015\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\StructTemplate.t4">
+            <elementDefinition Id="f47ed708-7c57-4d0c-949a-fba852fd2ef4" />
+          </propertyInstance>
+          <elementDefinition Id="11edd059-b307-4309-89d6-8685da9a1642" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="ee1cec1f-89b6-4511-8741-1abf06b61270">
+          <propertyInstance Id="a0b41695-c2e6-4bfb-9f9e-8113426a5d79" name="ProjectPath" value="ClassTemplate=..\InceptionPhaseLib\InceptionPhaseLib.csproj|EnumTemplate=..\InceptionPhaseLib\InceptionPhaseLib.csproj|InterfaceTemplate=..\InceptionPhaseLib\InceptionPhaseLib.csproj|StructTemplate=..\InceptionPhaseLib\InceptionPhaseLib.csproj">
+            <elementDefinition Id="61aeaccc-ef07-4fed-a373-9394c385fbb8" />
+          </propertyInstance>
+          <elementDefinition Id="f5275e46-3fc0-486a-a091-53af501efaa1" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="d63fc96e-72ef-40ef-8f37-9e9b9bfab3ad">
+          <propertyInstance Id="5e961d9e-8d4e-44bd-a12b-4e97d95f476f" name="TargetDirectory" value="ClassTemplate=GeneratedCode\{PackageStructure}|EnumTemplate=GeneratedCode\{PackageStructure}|InterfaceTemplate=GeneratedCode\{PackageStructure}|StructTemplate=GeneratedCode\{PackageStructure}">
+            <elementDefinition Id="3bc79ac5-07af-430d-9e03-d6d62eefc86c" />
+          </propertyInstance>
+          <elementDefinition Id="c2e48bed-5068-428a-8a8a-19a473fef92c" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="57eebf86-a842-4580-a94c-63c1885604d4">
+          <propertyInstance Id="36dd20cf-70c9-4ed4-8085-4cc21bed2d11" name="TargetName" value="ClassTemplate={Name}|EnumTemplate={Name}|InterfaceTemplate={Name}|StructTemplate={Name}">
+            <elementDefinition Id="1d88b15d-8188-4423-b7aa-3d71ccd642e4" />
+          </propertyInstance>
+          <elementDefinition Id="329f3eb0-cf40-4472-8212-835f08ec2d74" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="89647e6a-5d74-44e6-9ae3-0671c9808bbe">
+          <propertyInstance Id="39c3fa73-d0ad-4606-807f-721aac62fe42" name="Overwrite" value="ClassTemplate=True|EnumTemplate=True|InterfaceTemplate=True|StructTemplate=True">
+            <elementDefinition Id="a8f6aca1-abf0-4d3a-abd8-54eae90a43bd" />
+          </propertyInstance>
+          <elementDefinition Id="27e6d182-0cee-4a03-bc89-fed69c412a13" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="d9555966-3dbc-470d-bd1d-00081c35b92d">
+          <propertyInstance Id="43a3bf13-1960-4a82-90b2-d2827be55e63" name="Parameters">
+            <elementDefinition Id="d5a37c59-6d55-45fe-b750-be73a7944d7f" />
+          </propertyInstance>
+          <elementDefinition Id="d0a70e2b-c596-4c1b-aaf4-88cff234a820" />
+        </stereotypeInstanceHasPropertyInstances>
+      </propertyInstances>
+    </stereotypeInstance>
+  </appliedStereotypesInternal>
+  <profileInstances>
+    <packageHasProfileInstances Id="2bffbf4b-46c1-46a3-b294-a765c15d4b93">
+      <profileInstance Id="09deb27c-4d4b-4d1e-9067-dac57049ec0c" name="CSharpProfile">
+        <elementDefinition Id="60859347-9a1e-4775-8f71-d13ef43b2d22" />
+      </profileInstance>
+      <elementDefinition Id="8a1cab12-f4f1-4c1a-9d3e-b98c9e8e00fd" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="72375abb-1a18-4fe8-bec4-8ec0d1a6c783">
+      <profileInstance Id="0d15593a-e482-4e1b-91ce-d4734f2923ae" name="TextTemplateBindings">
+        <elementDefinition Id="c36793ce-6e40-405d-b795-707728678db6" />
+      </profileInstance>
+      <elementDefinition Id="c6f155c7-fa95-4893-9734-72a4c0bf0e7a" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <actor Id="a2041d15-0e14-41f2-9a25-8c865c0095a0" name="Meteorite Data Subsystem" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="6a5a244e-9a13-4e3c-b6f9-238ea75900da" />
+        <targetEnds>
+          <association Id="58c8d60b-d54b-42f9-b3d7-9b4e1f4da6c2" isDerived="false" sourceEndRoleName="Meteorite Data Subsystem" targetEndRoleName="Vizualize Meteorite Data on Map" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="c7de06d7-64ac-4c6f-a3b1-048dfa4127f6" LastKnownName="Vizualize Meteorite Data on Map" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="be00e4df-910a-4bad-953a-96e63eb38c8c" name="Meteorite Data Subsystem" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="ac60b30d-b5f7-4739-92f8-3b436a241e8b" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="1f0d0e80-59b7-4133-8409-3978cb07623e" name="Vizualize Meteorite Data on Map" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="78c5a758-161b-42c8-96b9-d86f5ce5a0eb" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="6e9be5c2-5b9a-407b-af62-d1a012983080" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <subsystem Id="3c88a4fc-a18c-4e65-b9e1-3e3066cfa0ac" name="Meteorite Vizualization Subsystem" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="985356e6-86ce-4a8f-84a4-3a9903091790" />
+      </subsystem>
+    </useCaseModelRootHasTypes>
+    <packageHasNamedElement>
+      <useCase Id="55fa3bc9-a8a2-4183-b753-d8b6d7305ade" name="Delete Pushpin" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="2c281fe7-3595-4797-9282-363795f23538" />
+        <generalsInternal>
+          <generalization Id="7d4222f8-3d2b-4f48-8bda-98758428cd2d" isSubstitutable="false">
+            <useCaseMoniker Id="fb693532-558e-4be2-9315-9bc82e12232d" LastKnownName="Vizualize Pushpins" />
+            <elementDefinition Id="cd8df4de-ee8d-4042-b1df-49e59a63e12d" />
+          </generalization>
+        </generalsInternal>
+        <subjects>
+          <subsystemMoniker Id="9128a464-4efd-4c0e-8e7a-106a0f1dca67" LastKnownName="Pushpin Subsystem" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="28fdc623-3008-4905-a77a-94e04fdd63b7" name="Create Pushpin" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="d263bf38-2a93-4704-b081-c255ad3277ca" />
+        <generalsInternal>
+          <generalization Id="8481e641-9668-44b2-a00b-ec624497eddd" isSubstitutable="false">
+            <useCaseMoniker Id="fb693532-558e-4be2-9315-9bc82e12232d" LastKnownName="Vizualize Pushpins" />
+            <elementDefinition Id="fbb466c0-cdf9-4bd4-8025-baa90176f4e3" />
+          </generalization>
+        </generalsInternal>
+        <subjects>
+          <subsystemMoniker Id="9128a464-4efd-4c0e-8e7a-106a0f1dca67" LastKnownName="Pushpin Subsystem" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="7edee74e-294c-477a-9c37-08b4f4172b20" name="Manipulate Pushpin" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="9cfd7144-317e-460b-8a61-75ec27426b02" />
+        <generalsInternal>
+          <generalization Id="d94249ba-8ce8-4fdf-bb77-1c87359671df" isSubstitutable="false">
+            <useCaseMoniker Id="fb693532-558e-4be2-9315-9bc82e12232d" LastKnownName="Vizualize Pushpins" />
+            <elementDefinition Id="e4dab084-4384-4fe8-a01f-db933ff4e6ef" />
+          </generalization>
+        </generalsInternal>
+        <subjects>
+          <subsystemMoniker Id="9128a464-4efd-4c0e-8e7a-106a0f1dca67" LastKnownName="Pushpin Subsystem" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="3d77dd2e-7d1b-404e-985a-9041ea56dfdb" name="Hide Pushpin" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="64673348-f2cf-4622-9126-31c9317643e4" />
+        <generalsInternal>
+          <generalization Id="b57da15f-2ce2-413e-942e-ab85e6b79a58" isSubstitutable="false">
+            <useCaseMoniker Id="fb693532-558e-4be2-9315-9bc82e12232d" LastKnownName="Vizualize Pushpins" />
+            <elementDefinition Id="08b32944-e811-4216-9bd8-e1d29832f0ac" />
+          </generalization>
+        </generalsInternal>
+        <subjects>
+          <subsystemMoniker Id="9128a464-4efd-4c0e-8e7a-106a0f1dca67" LastKnownName="Pushpin Subsystem" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="c7de06d7-64ac-4c6f-a3b1-048dfa4127f6" name="Vizualize Meteorite Data on Map" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="b16e3703-0214-4181-9a00-f701fc7e60d1" />
+        <subjects>
+          <subsystemMoniker Id="3c88a4fc-a18c-4e65-b9e1-3e3066cfa0ac" LastKnownName="Meteorite Vizualization Subsystem" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="1bb06aa6-661a-43e5-a449-d09d9d076120" name="Show Pushpin" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="d30a3d6b-8645-464a-aafa-33a6868aa014" />
+        <generalsInternal>
+          <generalization Id="9fd3a833-c863-41b3-80cf-c784f4e89abb" isSubstitutable="false">
+            <useCaseMoniker Id="fb693532-558e-4be2-9315-9bc82e12232d" LastKnownName="Vizualize Pushpins" />
+            <elementDefinition Id="1f210f75-a2a4-46e3-9c7a-f79f64607d06" />
+          </generalization>
+        </generalsInternal>
+        <subjects>
+          <subsystemMoniker Id="9128a464-4efd-4c0e-8e7a-106a0f1dca67" LastKnownName="Pushpin Subsystem" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="fc37413b-c5f1-435c-91ff-efd98d4b92a9" name="Visualize Shape Overlays" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="63fe220c-03bd-4125-94f2-4120a827548f" />
+        <generalsInternal>
+          <generalization Id="23f0f4b3-4fb8-4b20-9636-e83dbc723cf9" isSubstitutable="false">
+            <useCaseMoniker Id="c7de06d7-64ac-4c6f-a3b1-048dfa4127f6" LastKnownName="Vizualize Meteorite Data on Map" />
+            <elementDefinition Id="b267bfff-a465-4368-a3c2-dea43ad3ff6a" />
+          </generalization>
+        </generalsInternal>
+        <subjects>
+          <subsystemMoniker Id="19b7ecf0-277d-4796-b4b9-c1c2d01e5871" LastKnownName="Shape Subsystem" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="bcb29e05-b62a-438a-beaf-836cdb65e698" name="Create Shape" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="6466a18d-1c06-45f3-8e6f-15d1ce66b1ae" />
+        <generalsInternal>
+          <generalization Id="4f11592d-b1df-4ef4-bfa5-f4572ca0b8ea" isSubstitutable="false">
+            <useCaseMoniker Id="fc37413b-c5f1-435c-91ff-efd98d4b92a9" LastKnownName="Visualize Shape Overlays" />
+            <elementDefinition Id="b7b0b9d7-452a-4d1e-a8cb-5030ae9a324c" />
+          </generalization>
+        </generalsInternal>
+        <subjects>
+          <subsystemMoniker Id="19b7ecf0-277d-4796-b4b9-c1c2d01e5871" LastKnownName="Shape Subsystem" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <useCaseModelRootHasTypes>
+      <actor Id="dc0dbabf-b17c-4ff2-b8cd-2adee6df46cf" name="Map" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="cc9a2a33-0475-4250-a62d-9ef540385b27" />
+        <targetEnds>
+          <association Id="2225d8b5-ac14-4648-819c-cd9db0689152" isDerived="false" sourceEndRoleName="Map" targetEndRoleName="Vizualize Meteorite Data on Map" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="c7de06d7-64ac-4c6f-a3b1-048dfa4127f6" LastKnownName="Vizualize Meteorite Data on Map" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="98ca7c9a-87d0-43e4-ac0c-74242b3072a6" name="Map" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="d42742f1-3d7a-4996-b3dc-936eb4b9f703" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="a76bff40-c70a-4038-b80e-6d3ebf73ff7c" name="Vizualize Meteorite Data on Map" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="e9769f4d-016c-4ef2-b9c5-a615f92d620a" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="ef45bc55-b6a1-4660-bfee-db1ccbfce2ac" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <packageHasNamedElement>
+      <useCase Id="fb693532-558e-4be2-9315-9bc82e12232d" name="Vizualize Pushpins" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="16161a88-f47d-4a65-8856-9c89f5ab7a73" />
+        <generalsInternal>
+          <generalization Id="9b14497b-7cfa-4bc5-a02b-f4bc9825c58f" isSubstitutable="false">
+            <useCaseMoniker Id="c7de06d7-64ac-4c6f-a3b1-048dfa4127f6" LastKnownName="Vizualize Meteorite Data on Map" />
+            <elementDefinition Id="06ba57ae-bd65-40e8-aa49-fa85365da8b1" />
+          </generalization>
+        </generalsInternal>
+        <subjects>
+          <subsystemMoniker Id="9128a464-4efd-4c0e-8e7a-106a0f1dca67" LastKnownName="Pushpin Subsystem" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="116c89d9-78c9-456f-870e-4c83ad9df6cc" name="Delete Shape" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="cd459ee6-ab2e-490d-afd2-49387129ee5d" />
+        <generalsInternal>
+          <generalization Id="c67e11cc-7656-49a2-a830-0c9c2d50651b" isSubstitutable="false">
+            <useCaseMoniker Id="fc37413b-c5f1-435c-91ff-efd98d4b92a9" LastKnownName="Visualize Shape Overlays" />
+            <elementDefinition Id="fd6e9570-8713-4ced-9996-f1a1a3efda03" />
+          </generalization>
+        </generalsInternal>
+        <subjects>
+          <subsystemMoniker Id="19b7ecf0-277d-4796-b4b9-c1c2d01e5871" LastKnownName="Shape Subsystem" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="e1c8e1ce-1917-4d0a-a112-b1a6971093c2" name="Show Shape" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="7a494457-b987-4784-97e3-c20abfa7d3f7" />
+        <generalsInternal>
+          <generalization Id="02a83a08-520a-48fa-8e09-72f532b50736" isSubstitutable="false">
+            <useCaseMoniker Id="fc37413b-c5f1-435c-91ff-efd98d4b92a9" LastKnownName="Visualize Shape Overlays" />
+            <elementDefinition Id="03db55f8-686d-4b23-b6c8-b6b1a9d724a3" />
+          </generalization>
+        </generalsInternal>
+        <subjects>
+          <subsystemMoniker Id="19b7ecf0-277d-4796-b4b9-c1c2d01e5871" LastKnownName="Shape Subsystem" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="932fc594-6d7e-4fe8-9c0e-499e0269213d" name="Manipulate Shape" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="1feb7c5a-ddd8-4f65-9e60-dc5a40559cb6" />
+        <generalsInternal>
+          <generalization Id="950976d2-4345-46c7-8a75-0d33ae1ea3a9" isSubstitutable="false">
+            <useCaseMoniker Id="fc37413b-c5f1-435c-91ff-efd98d4b92a9" LastKnownName="Visualize Shape Overlays" />
+            <elementDefinition Id="e2cab33f-d3b1-4930-854d-6c0923e5e3dd" />
+          </generalization>
+        </generalsInternal>
+        <subjects>
+          <subsystemMoniker Id="19b7ecf0-277d-4796-b4b9-c1c2d01e5871" LastKnownName="Shape Subsystem" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="e53591bf-e103-4eba-aa68-95f2108dcdff" name="Hide Shape" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="258ef5a8-8210-4787-99fe-e1998bc85fe1" />
+        <generalsInternal>
+          <generalization Id="a74d8872-dfc8-4632-86de-ff38d30be04f" isSubstitutable="false">
+            <useCaseMoniker Id="fc37413b-c5f1-435c-91ff-efd98d4b92a9" LastKnownName="Visualize Shape Overlays" />
+            <elementDefinition Id="8f165aca-07da-4fec-b298-8d7fd13cf842" />
+          </generalization>
+        </generalsInternal>
+        <subjects>
+          <subsystemMoniker Id="19b7ecf0-277d-4796-b4b9-c1c2d01e5871" LastKnownName="Shape Subsystem" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <useCaseModelRootHasTypes>
+      <subsystem Id="9128a464-4efd-4c0e-8e7a-106a0f1dca67" name="Pushpin Subsystem" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="d9344091-62a0-4d29-90ee-aa7bd83afa61" />
+      </subsystem>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <subsystem Id="19b7ecf0-277d-4796-b4b9-c1c2d01e5871" name="Shape Subsystem" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="939b9d45-e0a6-4d76-91ff-31bdb301a922" />
+      </subsystem>
+    </useCaseModelRootHasTypes>
+    <packageHasNamedElement>
+      <useCase Id="0533ef8d-ec8d-46e0-936c-4a4f3101f8cf" name="Draw Visualization" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="38a2298f-130f-4b60-bf99-27ce94aec89d" />
+        <generalsInternal>
+          <generalization Id="617cf132-ccfb-4fc5-8df3-c3a8a86350fb" isSubstitutable="false">
+            <useCaseMoniker Id="c7de06d7-64ac-4c6f-a3b1-048dfa4127f6" LastKnownName="Vizualize Meteorite Data on Map" />
+            <elementDefinition Id="4266e792-e6b2-4238-bd53-339157e0748b" />
+          </generalization>
+        </generalsInternal>
+        <subjects>
+          <subsystemMoniker Id="3c88a4fc-a18c-4e65-b9e1-3e3066cfa0ac" LastKnownName="Meteorite Vizualization Subsystem" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="29510f19-8306-41bc-b1bf-1419eaa74bf1" name="Delete Visualization" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="47e34c00-777c-4b36-9567-c3b73b3ced82" />
+        <generalsInternal>
+          <generalization Id="695b4444-686b-416c-9f40-70f2182868b5" isSubstitutable="false">
+            <useCaseMoniker Id="c7de06d7-64ac-4c6f-a3b1-048dfa4127f6" LastKnownName="Vizualize Meteorite Data on Map" />
+            <elementDefinition Id="0951f78b-2b54-43ad-a614-772b79ead02a" />
+          </generalization>
+        </generalsInternal>
+        <subjects>
+          <subsystemMoniker Id="3c88a4fc-a18c-4e65-b9e1-3e3066cfa0ac" LastKnownName="Meteorite Vizualization Subsystem" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+  </packagedElements>
+  <package Id="19cd85a7-1d26-4f6c-8b7c-9814856032ae" name="InceptionPhase">
+    <elementDefinition Id="060ee48c-9086-4906-a9dd-888318cd2b23" />
+    <profileInstances>
+      <packageHasProfileInstances Id="977ad71d-69ce-4285-98cd-5384e6dc0415">
+        <profileInstance Id="31379c3f-50e8-4341-a797-53995b1d97ac" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="c9de8a8c-8224-4fcc-bcc3-d63e41a0ffcc">
+        <profileInstance Id="5dea567c-7f06-4544-a086-45012fcd535c" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</useCaseModelRoot>

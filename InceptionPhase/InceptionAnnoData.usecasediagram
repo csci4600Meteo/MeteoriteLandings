@@ -1,0 +1,338 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" xmlns:dm12="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="7fe82404-5da7-45b6-9b8f-33752d3d7e05" name="InceptionAnnoData" linkedPackageId="1d0a9c59-837b-49d0-acd8-a58d12e04cb0" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <appliedStereotypesInternal>
+    <stereotypeInstance Id="8907054a-c225-462d-9f11-e0c3e18b2db3" name="namespace" profile="CSharpProfile">
+      <elementDefinition Id="8e5a92ef-4842-4948-afd1-aa90279715fe" />
+      <propertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="354110e3-491c-4e89-aaa5-9dd6a3e514b9">
+          <propertyInstance Id="a377b22f-7627-48e2-ada5-afd1afeb32a4" name="BaseName">
+            <elementDefinition Id="d896b1c4-323d-4882-83d5-f4c46d4b4126" />
+          </propertyInstance>
+          <elementDefinition Id="246e9a1f-387e-474a-bbe2-a70bbd41977e" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="02cbb1ea-1944-46fb-9ea9-6b64865f5a1c">
+          <propertyInstance Id="123e26d4-1340-4f38-8b1c-6539d75f539c" name="ClrAttributes">
+            <elementDefinition Id="960fea90-4656-4bde-bf8b-90498eac7dea" />
+          </propertyInstance>
+          <elementDefinition Id="f0065c83-a14e-475b-b3b8-96359b7c69d0" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="4080d954-6391-499f-b8b4-fe8a1861d721">
+          <propertyInstance Id="f3d7d645-a0b3-4d9d-be41-e3f3dc606790" name="Usings">
+            <elementDefinition Id="6389cb55-7f2c-4c71-87ba-31701b4a9030" />
+          </propertyInstance>
+          <elementDefinition Id="d94abb07-ed75-4264-b58d-ec30e102102a" />
+        </stereotypeInstanceHasPropertyInstances>
+      </propertyInstances>
+    </stereotypeInstance>
+    <stereotypeInstance Id="96184b49-bc73-4b75-954d-4113555acac6" name="TextTemplateBindings" profile="TextTemplateBindings">
+      <elementDefinition Id="dc53fcda-22be-4d77-ab75-9222b67ed8ef" />
+      <propertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="a63338d7-349f-4204-b387-7aa85da1ef98">
+          <propertyInstance Id="d328ca71-632f-4e28-a993-1c2af6aa8225" name="Alias" value="ClassTemplate|EnumTemplate|InterfaceTemplate|StructTemplate">
+            <elementDefinition Id="23b5c4cf-8f8d-48e1-b02d-b01bd734fac3" />
+          </propertyInstance>
+          <elementDefinition Id="503a2947-cf7e-41f6-a0d8-cb5a33426584" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="8ab29043-1c1d-4054-9ba0-af5f44d4a5bf">
+          <propertyInstance Id="69bc0a18-3c02-44d8-877f-fd22672ff1af" name="TemplateFilePath" value="ClassTemplate=E:\VS2015\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\ClassTemplate.t4|EnumTemplate=E:\VS2015\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\EnumTemplate.t4|InterfaceTemplate=E:\VS2015\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\InterfaceTemplate.t4|StructTemplate=E:\VS2015\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\StructTemplate.t4">
+            <elementDefinition Id="f47ed708-7c57-4d0c-949a-fba852fd2ef4" />
+          </propertyInstance>
+          <elementDefinition Id="11edd059-b307-4309-89d6-8685da9a1642" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="22be461f-9d47-42d0-bb6a-15c2c934ce03">
+          <propertyInstance Id="b9b3c349-8cd7-49f6-b01c-a8d6d3e5181a" name="ProjectPath" value="ClassTemplate=..\InceptionPhaseLib\InceptionPhaseLib.csproj|EnumTemplate=..\InceptionPhaseLib\InceptionPhaseLib.csproj|InterfaceTemplate=..\InceptionPhaseLib\InceptionPhaseLib.csproj|StructTemplate=..\InceptionPhaseLib\InceptionPhaseLib.csproj">
+            <elementDefinition Id="61aeaccc-ef07-4fed-a373-9394c385fbb8" />
+          </propertyInstance>
+          <elementDefinition Id="f5275e46-3fc0-486a-a091-53af501efaa1" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="b1f89550-c96c-4c5a-8319-dbacf03c3b6a">
+          <propertyInstance Id="05d9520f-20d3-4a0d-ba52-e34bfb2be109" name="TargetDirectory" value="ClassTemplate=GeneratedCode\{PackageStructure}|EnumTemplate=GeneratedCode\{PackageStructure}|InterfaceTemplate=GeneratedCode\{PackageStructure}|StructTemplate=GeneratedCode\{PackageStructure}">
+            <elementDefinition Id="3bc79ac5-07af-430d-9e03-d6d62eefc86c" />
+          </propertyInstance>
+          <elementDefinition Id="c2e48bed-5068-428a-8a8a-19a473fef92c" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="b1dd3796-5f23-4a76-90bb-917c65d06a31">
+          <propertyInstance Id="6e558c4f-879d-48c0-968d-58d4b1e54361" name="TargetName" value="ClassTemplate={Name}|EnumTemplate={Name}|InterfaceTemplate={Name}|StructTemplate={Name}">
+            <elementDefinition Id="1d88b15d-8188-4423-b7aa-3d71ccd642e4" />
+          </propertyInstance>
+          <elementDefinition Id="329f3eb0-cf40-4472-8212-835f08ec2d74" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="08dd94a0-d042-4859-9635-99f5a98b2c28">
+          <propertyInstance Id="64a6cfae-792e-41a9-8ee0-f985681ebb0c" name="Overwrite" value="ClassTemplate=True|EnumTemplate=True|InterfaceTemplate=True|StructTemplate=True">
+            <elementDefinition Id="a8f6aca1-abf0-4d3a-abd8-54eae90a43bd" />
+          </propertyInstance>
+          <elementDefinition Id="27e6d182-0cee-4a03-bc89-fed69c412a13" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="bd652c43-f8a6-43b5-b194-15d315339dbd">
+          <propertyInstance Id="f6373744-1e16-4457-bbe1-c7aff0d28333" name="Parameters">
+            <elementDefinition Id="d5a37c59-6d55-45fe-b750-be73a7944d7f" />
+          </propertyInstance>
+          <elementDefinition Id="d0a70e2b-c596-4c1b-aaf4-88cff234a820" />
+        </stereotypeInstanceHasPropertyInstances>
+      </propertyInstances>
+    </stereotypeInstance>
+  </appliedStereotypesInternal>
+  <profileInstances>
+    <packageHasProfileInstances Id="f3697fb4-5ec1-41c1-b170-cd98618f1abc">
+      <profileInstance Id="67be5495-1109-4f7f-a324-46c570f79eed" name="CSharpProfile">
+        <elementDefinition Id="60859347-9a1e-4775-8f71-d13ef43b2d22" />
+      </profileInstance>
+      <elementDefinition Id="8a1cab12-f4f1-4c1a-9d3e-b98c9e8e00fd" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="c8c41f4b-6899-4d0e-bc7a-70b43e3e986b">
+      <profileInstance Id="2e9efc33-6f4c-46d9-a881-1cd5c040be45" name="TextTemplateBindings">
+        <elementDefinition Id="c36793ce-6e40-405d-b795-707728678db6" />
+      </profileInstance>
+      <elementDefinition Id="c6f155c7-fa95-4893-9734-72a4c0bf0e7a" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <actor Id="bf3d5a9d-320a-45d6-bc38-780cf274b509" name="User" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="4b008d46-c246-47d0-ac83-5de063e27fe9" />
+        <targetEnds>
+          <association Id="376b9de2-c411-4375-9924-f4d260eea80c" isDerived="false" sourceEndRoleName="User" targetEndRoleName="Annotate Map/Meteorite" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="5ca77b87-088d-4867-8554-d78d1c24b930" LastKnownName="Annotate Map/Meteorite" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="6c885f0c-76b6-42bc-8ed6-746d997e1958" name="User" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="b88d2754-e8e8-4016-a16e-02fb46373cc0" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="28cc6b56-4232-4e91-aae8-5370964aa994" name="Annotate Map/Meteorite" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="cf7607f8-d171-45dc-a4a8-a26bd089cbbd" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="cf2bdb10-9516-4342-ab32-c7a5ddf0cbab" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <subsystem Id="d0d9b524-cec8-47d8-96d1-e3b16f58bdb4" name="Annotation Data Subsystem" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="75a5c0d7-0d59-428d-b962-4ba9439014c0" />
+      </subsystem>
+    </useCaseModelRootHasTypes>
+    <packageHasNamedElement>
+      <useCase Id="8afd17b4-1567-4f59-9949-88a6bdb26e4d" name="Create Annotation" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="4854a287-0a0f-4df0-9daa-b099622b8221" />
+        <generalsInternal>
+          <generalization Id="506601de-6fc4-4902-b4fb-f9b08f0b21a6" isSubstitutable="false">
+            <useCaseMoniker Id="5ca77b87-088d-4867-8554-d78d1c24b930" LastKnownName="Annotate Map/Meteorite" />
+            <elementDefinition Id="5d681243-39f6-41e8-a353-a62c3d812dd1" />
+          </generalization>
+        </generalsInternal>
+        <subjects>
+          <subsystemMoniker Id="d0d9b524-cec8-47d8-96d1-e3b16f58bdb4" LastKnownName="Annotation Data Subsystem" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="fc1f18e7-aeba-4f66-8594-2104e1b50a58" name="Delete Annotation" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="cefa5e92-9595-4c12-80bc-3ca5eb97d8b5" />
+        <generalsInternal>
+          <generalization Id="5cca0f7c-421a-44b3-8231-724848eb10ab" isSubstitutable="false">
+            <useCaseMoniker Id="5ca77b87-088d-4867-8554-d78d1c24b930" LastKnownName="Annotate Map/Meteorite" />
+            <elementDefinition Id="9ff9e603-435b-484e-b048-62949d43a583" />
+          </generalization>
+        </generalsInternal>
+        <subjects>
+          <subsystemMoniker Id="d0d9b524-cec8-47d8-96d1-e3b16f58bdb4" LastKnownName="Annotation Data Subsystem" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="4c6ff13f-e3f1-4836-83d1-72d32e019f16" name="Edit Annotation" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="2e26efba-2253-4764-9d3d-6649a1778970" />
+        <generalsInternal>
+          <generalization Id="129fa005-4f50-43d2-bcb6-2d716d0362c9" isSubstitutable="false">
+            <useCaseMoniker Id="5ca77b87-088d-4867-8554-d78d1c24b930" LastKnownName="Annotate Map/Meteorite" />
+            <elementDefinition Id="91dbb75d-358b-4c39-b401-97531e0595f1" />
+          </generalization>
+        </generalsInternal>
+        <subjects>
+          <subsystemMoniker Id="d0d9b524-cec8-47d8-96d1-e3b16f58bdb4" LastKnownName="Annotation Data Subsystem" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="9dfd0602-49ef-485e-afd2-79a775a5fa01" name="Toggle Annotation Map Visibility" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="5aa67f34-e8df-4b44-b8bb-6c97313d0ae3" />
+        <extendedCases>
+          <extend Id="6cc692cd-add4-48ea-a49d-07ed94564cbd">
+            <useCaseMoniker Id="566a67e5-3adb-4af4-92af-1048edf77f2e" LastKnownName="View Annotaiton" />
+            <elementDefinition Id="6fdc0aae-6e33-4406-818a-e69806614e55" />
+          </extend>
+        </extendedCases>
+        <subjects>
+          <subsystemMoniker Id="d0d9b524-cec8-47d8-96d1-e3b16f58bdb4" LastKnownName="Annotation Data Subsystem" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="566a67e5-3adb-4af4-92af-1048edf77f2e" name="View Annotaiton" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="5f3d3057-8768-477d-922a-48323ff79ab0" />
+        <generalsInternal>
+          <generalization Id="4f2ecc7f-16c5-47e7-9d47-648f418b30f4" isSubstitutable="false">
+            <useCaseMoniker Id="5ca77b87-088d-4867-8554-d78d1c24b930" LastKnownName="Annotate Map/Meteorite" />
+            <elementDefinition Id="64d1d60f-327e-4b4a-8120-2a17ed35bc34" />
+          </generalization>
+        </generalsInternal>
+        <subjects>
+          <subsystemMoniker Id="d0d9b524-cec8-47d8-96d1-e3b16f58bdb4" LastKnownName="Annotation Data Subsystem" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <useCaseModelRootHasTypes>
+      <actor Id="2747953a-72ca-444a-9f70-0ab0d78fdd98" name="Annotation Visualization Subsystem" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="cc0cfc66-1659-44a0-b2c0-3242a1277feb" />
+        <targetEnds>
+          <association Id="c4398a4f-19c8-465c-bdd6-3099be8101f3" isDerived="false" sourceEndRoleName="Annotation Visualization Subsystem" targetEndRoleName="Toggle Annotation Map Visibility" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="9dfd0602-49ef-485e-afd2-79a775a5fa01" LastKnownName="Toggle Annotation Map Visibility" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="8e65316e-1ec1-42ff-8f5a-053222e7a649" name="Annotation Visualization Subsystem" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="57eac67c-1c61-417d-af70-c9f2167accda" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="e8b8c6f0-3311-4060-a18e-c6803c0c54d3" name="Toggle Annotation Map Visibility" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="33728afd-ade0-49a2-8864-b3db582e6b7b" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="65f6ffc6-f66e-4f5e-8b2d-a40e666a16b8" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="089ddfb6-e33c-4448-9a50-7147495dcaff" name="Local Database" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="3ec79758-6a44-42a4-ac65-7fd3403219fa" />
+        <targetEnds>
+          <association Id="ec979a04-b0f5-4b01-b0cb-c0f9798d00a5" isDerived="false" sourceEndRoleName="Local Database" targetEndRoleName="Create Annotation" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="8afd17b4-1567-4f59-9949-88a6bdb26e4d" LastKnownName="Create Annotation" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="9a55bfa6-1363-41ee-98db-917023e4af4e" name="Local Database" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="2133f823-fbe7-4b05-b187-c72084f3edd7" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="52dc6007-a0b7-4869-8a3b-6fd78a095b52" name="Create Annotation" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="875272c9-5fac-4bbd-9171-06e5c8914306" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="dfb04c49-48e2-41c8-9387-54d52df76e6f" />
+          </association>
+          <association Id="d5266b9d-65d8-49f8-b151-11f11f7d1881" isDerived="false" sourceEndRoleName="Local Database" targetEndRoleName="Delete Annotation" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="fc1f18e7-aeba-4f66-8594-2104e1b50a58" LastKnownName="Delete Annotation" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="b4d80669-5238-4c0a-9a66-afdec7e6cd8b" name="Local Database" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="43452e78-4787-482e-b5bb-de182ed22c98" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="3385613d-fa68-4951-9b0b-595d0795e812" name="Delete Annotation" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="a75c07d1-aa51-4286-9d33-d915f11ca423" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="9cf83210-e3ac-40e2-b2f5-abe5417b11f1" />
+          </association>
+          <association Id="d22232d8-5b42-499c-b32f-344e2f4426d4" isDerived="false" sourceEndRoleName="Local Database" targetEndRoleName="Edit Annotation" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="4c6ff13f-e3f1-4836-83d1-72d32e019f16" LastKnownName="Edit Annotation" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="a09e4910-4367-46bb-ac9c-056d45f60fbe" name="Local Database" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="c83f8de5-3ca5-4d9f-993c-ec45f5bbd6b7" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="2280f22c-5afa-4d3c-be44-dff2ea59ccdb" name="Edit Annotation" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="6be7a142-19c7-4c87-8681-46dae024c32c" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="1b4469c3-6d3a-4edd-8140-eb1090d8f2ad" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="0714e37d-4d28-4277-925e-6f456b28f795" name="Meteorite Data Subsystem" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="3bd55b4d-f08c-418e-8389-b2559d8194f8" />
+        <targetEnds>
+          <association Id="87650242-c01f-404b-9cc9-79b058c92f7f" isDerived="false" sourceEndRoleName="Meteorite Data Subsystem" targetEndRoleName="View Annotaiton" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="566a67e5-3adb-4af4-92af-1048edf77f2e" LastKnownName="View Annotaiton" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="f55549c1-2853-4ac2-a872-c4e0aaa1c82e" name="Meteorite Data Subsystem" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="90834d2a-4fa1-4a42-9aa6-abf8740111f3" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="7a1f832c-8a92-4025-bca5-b409898d2f18" name="View Annotaiton" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="fde643f5-8ec0-46a1-93d2-44a78046e545" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="3ba38bc4-a331-4783-912c-f1337a6d0a62" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <packageHasNamedElement>
+      <useCase Id="5ca77b87-088d-4867-8554-d78d1c24b930" name="Annotate Map/Meteorite" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="d3d65cb8-6031-4096-a65b-e084053d5a46" />
+        <subjects>
+          <subsystemMoniker Id="d0d9b524-cec8-47d8-96d1-e3b16f58bdb4" LastKnownName="Annotation Data Subsystem" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <useCaseModelRootHasTypes>
+      <artifact Id="d542aa3d-a713-4eba-877b-143ad9973cbb" name="Toggle Annotation Map Visibility Clarification.docx" isAbstract="false" isLeaf="false" fileName="Toggle Annotation Map Visibility Clarification.docx">
+        <elementDefinition Id="cb2dc6e5-f3f0-49c3-bd66-2af60e8d59ca" />
+        <targetEnds>
+          <association Id="5b496355-5520-4c1e-b50f-aa268b4af2a0" isDerived="false" sourceEndRoleName="Toggle Annotation Map Visibility Clarification.docx" targetEndRoleName="Toggle Annotation Map Visibility" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="9dfd0602-49ef-485e-afd2-79a775a5fa01" LastKnownName="Toggle Annotation Map Visibility" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="a4b6a92a-883c-4a05-91ef-e002f54aea28" name="Toggle Annotation Map Visibility Clarification.docx" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="d7be0596-65db-40ba-8e55-28fb4f13e471" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="e93a4546-5c89-44a7-a720-5c4c9e657d0c" name="Toggle Annotation Map Visibility" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="6452e308-079c-4077-8f46-17fb4acc1d20" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="5149d6ad-148b-4a1f-b490-c4481166acd4" />
+          </association>
+        </targetEnds>
+      </artifact>
+    </useCaseModelRootHasTypes>
+  </packagedElements>
+  <package Id="1d0a9c59-837b-49d0-acd8-a58d12e04cb0" name="InceptionPhase">
+    <elementDefinition Id="060ee48c-9086-4906-a9dd-888318cd2b23" />
+    <profileInstances>
+      <packageHasProfileInstances Id="18aa11a8-af1b-4e06-8f1d-b9e1b0bf33b9">
+        <profileInstance Id="573cd1f7-0c30-444c-abe0-445ef8f68233" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="0ffc59b0-1f2c-44f2-8d03-8fa396fb9c05">
+        <profileInstance Id="a0e2bb0a-f3ae-4a81-b7e3-53c670daca14" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</useCaseModelRoot>
