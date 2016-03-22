@@ -9,7 +9,7 @@
         Title="MainWindow" Height="350" Width="525">
     
         <Grid >
-            <m:Map x:Name="mainMap" CredentialsProvider="AvC9ZkUzrNp4aDRAOiS8_QFU-s_EmjYI8Ni3v98Qk-nyMLxdhCtIcEJIR6RxStC6" Mode="Aerial" 
+            <m:Map x:Name="mainMap" CredentialsProvider="replace with appropriate key" Mode="Aerial" 
                Center="36.533676, -87.353065" ZoomLevel="19"/>
     </Grid>
     
