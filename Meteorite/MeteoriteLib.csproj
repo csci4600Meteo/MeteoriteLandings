@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{05BF07A9-3520-428B-84BF-AE04E0EECE26}</ProjectGuid>
+    <ProjectGuid>{4A7491FD-93BC-41D8-A358-90FE13ECDF1A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Meteorite</RootNamespace>
