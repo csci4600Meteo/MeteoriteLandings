@@ -43,9 +43,9 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Meteorite\Meteorite.csproj">
+    <ProjectReference Include="..\Meteorite\MeteoriteLib.csproj">
       <Project>{05BF07A9-3520-428B-84BF-AE04E0EECE26}</Project>
-      <Name>Meteorite</Name>
+      <Name>MeteoriteLib</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
