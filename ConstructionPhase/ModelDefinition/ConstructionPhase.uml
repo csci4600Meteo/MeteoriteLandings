@@ -3,6 +3,78 @@
   dslVersion="1.0.0.0"
   Id="c58cda7a-3e8b-4f74-b689-4a7b9b3dc39b"
   name="ConstructionPhase" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <ownedCommentsInternal>
+    <comment
+      Id="ac9f0152-6593-47b2-b934-d6b599b84c9b">
+      <body>This Meteorite Database will be a local database that is, as far as what it contains in the table, a mirror of the database socrata is going to pull from the internet, I'm not familiar with how to represent it in a class diagram so ill try</body>
+      <annotatedElements>
+        <classMoniker
+          Id="e2ac5426-04b9-4376-b020-9e5e2a0d9e29"
+          LastKnownName="MeteoriteDatabase"
+          LastKnownLocation="ConstructionPhase.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="356fa1b1-243c-4a3c-b462-e06132aee42d">
+      <body>The marshaller will be responisible for taking the raw data from the local database, deciding how to handle "bad" data (data that doesnt fit nicely in the object) and then send it to the interim data set</body>
+      <annotatedElements>
+        <classMoniker
+          Id="6d888ac8-2f9c-4ff4-a350-7f8ca6f87720"
+          LastKnownName="Marshaller"
+          LastKnownLocation="ConstructionPhase.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="1cb39208-b86d-4a35-a12b-7991625e05a0">
+      <body>The socrata reader will pull data from the external database on the net at the start of the application, each subsequent time the application runs, it will check for updates, if the size of the set has changed it will pull the dataset and update the one we have</body>
+      <annotatedElements>
+        <classMoniker
+          Id="6caeda63-ebba-4b5e-9296-88b6bb820c40"
+          LastKnownName="ExternalReader"
+          LastKnownLocation="ConstructionPhase.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="b381706d-083b-4677-ad9c-f3e9dde12f92">
+      <body>this interim dataset will hold all the data from the database and be ready to manipulate it in any way we choose</body>
+      <annotatedElements>
+        <classMoniker
+          Id="f8bfc544-404a-4461-a183-1dcd77ec000c"
+          LastKnownName="Interim Data source"
+          LastKnownLocation="ConstructionPhase.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="20593f72-c8e8-49f8-bbe3-6706ef16b5e5">
+      <body>the polishedd dataset will be the one actually attached to the data grid, whenever infor in the interim set is manipulated, the set will be copied over to the polished set, so the interim set remains the same, and the new set is exactly what we want it to be</body>
+      <annotatedElements>
+        <classMoniker
+          Id="aa6da45b-a842-4402-af66-0141aa6a6c1f"
+          LastKnownName="Polished Dataset"
+          LastKnownLocation="ConstructionPhase.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="b728405f-1b4f-49b5-9483-82f58a43f70a">
+      <body>wasnt sure if it depends on it, or if it is composed of it, or how to accurately portray that relationship, it so i used both connectors</body>
+    </comment>
+    <comment
+      Id="bf993215-36bb-46fa-98ce-3b61dde68a67">
+      <body>I added this dependency because the data in the meteorite is dependant on the data from the marshaller, never will a meteorite exist that isnt created by the marshaller, because it is the only path to the data from the database
+</body>
+    </comment>
+    <comment
+      Id="3cd97906-64d0-4bc1-b2e8-fda5149538d2">
+      <body>This meteorite class is the container for the information from the tables, all the members are set to private and the constructor is the only way to set values, because the only way we want to add a meteor is if the marshaller createsit, all the other operations are meant to be read only properties.
+</body>
+      <annotatedElements>
+        <classMoniker
+          Id="ffad95f5-989a-4471-a304-8f3af6bbd57a"
+          LastKnownName="Meteorite1"
+          LastKnownLocation="ConstructionPhase.uml" />
+      </annotatedElements>
+    </comment>
+  </ownedCommentsInternal>
   <profileInstances>
     <packageHasProfileInstances
       Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b">
@@ -696,6 +768,45 @@
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
+          <association
+            Id="160e33ee-65ad-4174-b66d-8494760a5993"
+            isDerived="false"
+            sourceEndRoleName="MeteoVizPushpin"
+            targetEndRoleName="Meteorite1"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="ffad95f5-989a-4471-a304-8f3af6bbd57a"
+              LastKnownName="Meteorite1"
+              LastKnownLocation="ConstructionPhase.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="adf16c87-b60a-4678-a17d-5f2f3b2a9423"
+                  name="MeteoVizPushpin"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="03393909-cb84-41e2-88fa-78d8e056b93b"
+                  name="Meteorite1"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
         </targetEnds>
         <ownedOperationsInternal>
           <operation
@@ -839,6 +950,45 @@
                       value="*" />
                   </upperValueInternal>
                 </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="c55afaff-0c02-4c27-ad64-40679838cfe3"
+            isDerived="false"
+            sourceEndRoleName="MeteoVizPoly"
+            targetEndRoleName="Meteorite1"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="ffad95f5-989a-4471-a304-8f3af6bbd57a"
+              LastKnownName="Meteorite1"
+              LastKnownLocation="ConstructionPhase.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="1f5d0a6d-8b44-4251-9a9c-27e309dd76b6"
+                  name="MeteoVizPoly"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="3f24f079-5a1f-425f-b743-683f0ed14dc8"
+                  name="Meteorite1"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true" />
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
@@ -1480,6 +1630,574 @@
       <undefinedType
         Id="1d02b4ae-cafe-4881-a97c-f8d19341f4fb"
         name="bool" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="ffad95f5-989a-4471-a304-8f3af6bbd57a"
+        name="Meteorite1"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="71c0f75f-a2b6-421d-a10b-9274b96e750b">
+            <classMoniker
+              Id="6d888ac8-2f9c-4ff4-a350-7f8ca6f87720"
+              LastKnownName="Marshaller"
+              LastKnownLocation="ConstructionPhase.uml" />
+          </dependency>
+        </suppliersInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="04119b64-f501-4e82-9dfd-4f5e1b2eec29"
+            name="string name"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="5ac5b5e6-46a3-4aed-9730-1ac4935ec48c"
+            name="int id"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="04fa3ce6-51cc-436b-b63e-e689d8640681"
+            name="int mass"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="4e72fb1e-4fc4-4174-8803-55791f988fe4"
+            name="string reclass"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="a0fb7736-4046-45ba-a86f-6dd91866c589"
+            name="DateTime date"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="b39d094b-88dc-420a-99cf-b2a8538033c2"
+            name="double rectLat"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="37117044-365b-4d7b-a96f-ea54d4293fbf"
+            name="double rectLong"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="3a16fd14-90fb-4419-b521-afe0bb8888ab"
+            name="string fall"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="d794417b-b46f-4ff8-845b-6ab7a53fc79f"
+            name="Id"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="851a3fbc-a752-436c-b513-7e468ace484c"
+            name="Date"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="9689829d-0910-4be8-96bf-4709ff2ec5ad"
+            name="Mass"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="c418b4db-a7f2-4c68-a293-933b9ee05849"
+            name="RectLat"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="134163fe-0180-4079-ac62-c7dc232faea7"
+            name="RectLong"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="c80ae509-a211-44e9-8898-75ad8564c9cd"
+            name="Name"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="e634ff6a-1b86-44ff-b9a3-4b4540cf2b5f"
+            name="Reclass"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="063e02ff-19f2-48a9-ab36-2afe5bf25a7d"
+            name="Meteorite"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="61b71688-d09a-402a-91f3-44c6f97fe1b1"
+                  name="int tid"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="74a01e51-e901-4782-8571-593394ff279a"
+                  name="int tmass"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="bfa52f88-b907-44ba-85cc-d0f952a3c84a"
+                  name="string tname"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="b3910d0b-46b2-4542-b54a-11cf239b0283"
+                  name="string tfall"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="e8d8aab4-1d88-4841-a859-e155ed47eee0"
+                  name="string treclass"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="9c510bd1-a5e8-4261-924a-1d7e7fb7fa92"
+                  name="double trectlat"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="f5ca30a7-dd4c-4609-9ffc-e7f9f574dd3d"
+                  name="double trectlong"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="ca9611a2-bccc-47e7-8682-69270e3f3158"
+                  name="DateTime tdate"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="6caeda63-ebba-4b5e-9296-88b6bb820c40"
+        name="ExternalReader"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedAttributesInternal>
+          <property
+            Id="761b8e58-3676-4bab-ab95-3627c3717899"
+            name="unpolishedDataSet"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="21f71ac4-baa9-4417-8299-73185fb655e7"
+            name="PullData"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="515fb6a7-c1af-47b5-80cb-4054265958e7"
+            name="CheckUpdate"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="e2ac5426-04b9-4376-b020-9e5e2a0d9e29"
+        name="MeteoriteDatabase"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="3758ff07-fa03-4813-9a09-750c05c7a89d">
+            <classMoniker
+              Id="6caeda63-ebba-4b5e-9296-88b6bb820c40"
+              LastKnownName="ExternalReader"
+              LastKnownLocation="ConstructionPhase.uml" />
+          </dependency>
+        </suppliersInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="3dcd566b-6139-44cb-b519-2dbace718107"
+            name="meteoriteTable"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="f8bfc544-404a-4461-a183-1dcd77ec000c"
+        name="Interim Data source"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="6e15bddc-7337-425f-a81b-cfd2618e192d">
+            <classMoniker
+              Id="6d888ac8-2f9c-4ff4-a350-7f8ca6f87720"
+              LastKnownName="Marshaller"
+              LastKnownLocation="ConstructionPhase.uml" />
+          </dependency>
+        </suppliersInternal>
+        <targetEnds>
+          <association
+            Id="2bd2449d-c175-4620-adf9-7991c4fc709c"
+            isDerived="false"
+            sourceEndRoleName="Interim Data source"
+            targetEndRoleName="Meteorite"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="ffad95f5-989a-4471-a304-8f3af6bbd57a"
+              LastKnownName="Meteorite1"
+              LastKnownLocation="ConstructionPhase.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="b8f7b2e8-cb5c-4616-87d4-31d6539d6ed5"
+                  name="Interim Data source"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Shared"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="bc052df3-2478-45d3-9dd9-fc541d56647c"
+                  name="Meteorite"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="a2953d4a-7a37-4fc2-89d5-ead5be32d3d0"
+                      name="Lower"
+                      value="1 to many" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="718f7fb8-bd5b-4e94-94ca-da0cf7b9a459"
+                      name="Upper"
+                      value="1 to many" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="562794a8-906c-4a61-8051-a7b5c7640885"
+            name="List Meteorites"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="594bfe15-dac8-4c2b-940e-488139c54222"
+            name="filterByArg"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="22c323a9-edc9-4e00-81a8-0cb11b422f4f"
+            name="filterByAssociation"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="6d888ac8-2f9c-4ff4-a350-7f8ca6f87720"
+        name="Marshaller"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="f0c60c4f-ffff-434b-ade3-be548bc25344">
+            <classMoniker
+              Id="e2ac5426-04b9-4376-b020-9e5e2a0d9e29"
+              LastKnownName="MeteoriteDatabase"
+              LastKnownLocation="ConstructionPhase.uml" />
+          </dependency>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="31a4960f-1223-4ae3-aaa1-5ee395558cce"
+            name="ParseToMeteorite"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="aa6da45b-a842-4402-af66-0141aa6a6c1f"
+        name="Polished Dataset"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="f6846c6c-2a24-47a0-ac03-fba7d9616da0">
+            <classMoniker
+              Id="f8bfc544-404a-4461-a183-1dcd77ec000c"
+              LastKnownName="Interim Data source"
+              LastKnownLocation="ConstructionPhase.uml" />
+          </dependency>
+        </suppliersInternal>
+        <targetEnds>
+          <association
+            Id="e4dc2817-2a97-47e4-90b7-1b36bc70a49f"
+            isDerived="false"
+            sourceEndRoleName="Polished Dataset"
+            targetEndRoleName="Meteorite"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="ffad95f5-989a-4471-a304-8f3af6bbd57a"
+              LastKnownName="Meteorite1"
+              LastKnownLocation="ConstructionPhase.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="fb9084ae-3a8f-4f70-8d28-b79a6f8f057e"
+                  name="Polished Dataset"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Shared"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="0eff98f2-7168-4b12-96dc-94b4a39582a9"
+                  name="Meteorite"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="c120b0ac-bee9-43e1-bade-d2d5f5c88acf"
+                      name="Lower"
+                      value="1 to many" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="a37e06e8-465e-4f47-b970-c738c0cb7373"
+                      name="Upper"
+                      value="1 to many" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="5fecfe1d-40a8-44a5-add1-c0562e5b19c3"
+            isDerived="false"
+            sourceEndRoleName="Polished Dataset"
+            targetEndRoleName="Interim Data source"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="f8bfc544-404a-4461-a183-1dcd77ec000c"
+              LastKnownName="Interim Data source"
+              LastKnownLocation="ConstructionPhase.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="692ab0de-02ad-42d1-bb66-eb2b96b0f714"
+                  name="Polished Dataset"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="fdde1648-1eed-4fe2-9818-9b6ec2df3d33"
+                  name="Interim Data source"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="6a5dc347-abaf-4371-affa-71ff95524135"
+            name="List Meteorites"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+      </class>
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType
