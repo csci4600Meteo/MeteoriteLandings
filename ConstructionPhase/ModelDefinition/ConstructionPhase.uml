@@ -74,6 +74,45 @@
           LastKnownLocation="ConstructionPhase.uml" />
       </annotatedElements>
     </comment>
+    <comment
+      Id="78a395e4-0a42-43ea-813a-02432ef6ffa5">
+      <body>AnnoList is the interface used for the functionality of the window that is populated with Meteorite annotations, adding the ability to select Meteorites based on their annotations and to open an editor to change them or link different Meteorites.</body>
+      <annotatedElements>
+        <interfaceMoniker
+          Id="04752b84-62a8-4861-8807-c9e820a5f30a"
+          LastKnownName="AnnoList"
+          LastKnownLocation="ConstructionPhase.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="2de82597-c137-444d-aada-0067f0d27077">
+      <body>The adapter is windows defined, and used to marshall the data that is to be sent to the database through the use of SQL Commands.</body>
+      <annotatedElements>
+        <classMoniker
+          Id="5095a58c-94cc-440e-9590-3006cf377f0e"
+          LastKnownName="Adapter"
+          LastKnownLocation="ConstructionPhase.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="c4e42f23-8ea3-4428-9b82-e8ed0e72f765">
+      <body>Each Annotation can be linked to a Meteorite or exist on its own, and each Meteorite can have multiple annotations linked to it. The annotation has either a Location associated or a Polygon, which is a collection of locations.</body>
+      <annotatedElements>
+        <classMoniker
+          Id="225a3c35-664c-4675-acf3-68ee5696dde7"
+          LastKnownName="Annotation"
+          LastKnownLocation="ConstructionPhase.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="e63cbbdc-e74d-486b-b550-a4dafc1c1c0d">
+      <body>Composite Design Pattern
+MapVizContainer is the composition of IMapViz Components with MeteoVizPoly, AnnoVIzPoly, MeteoVizPushpin, and AnnoVizPushpin acting as leaves</body>
+    </comment>
+    <comment
+      Id="eb2dc08a-8dce-4e0b-8adf-93ea4cd7f690">
+      <body>Object-Relational Mapping Design Pattern</body>
+    </comment>
   </ownedCommentsInternal>
   <profileInstances>
     <packageHasProfileInstances
@@ -1087,20 +1126,20 @@
         </generalsInternal>
         <targetEnds>
           <association
-            Id="729774e4-b8e7-4130-b911-cb8ae1244cda"
+            Id="c0ba5cf8-e601-487a-aec0-36116d35dd48"
             isDerived="false"
             sourceEndRoleName="AnnoVizPushpin"
             targetEndRoleName="Annotation"
             isLeaf="false"
             isAbstract="false">
             <classMoniker
-              Id="994d7b69-06d3-47ef-a5b9-0c5acd7b9baa"
+              Id="225a3c35-664c-4675-acf3-68ee5696dde7"
               LastKnownName="Annotation"
               LastKnownLocation="ConstructionPhase.uml" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="cd82169f-2bdb-4d16-9ae3-d8c87cf98450"
+                  Id="70621676-4584-4924-8b45-f240c026d9d4"
                   name="AnnoVizPushpin"
                   isLeaf="false"
                   isStatic="false"
@@ -1113,7 +1152,7 @@
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="b7619723-ffba-45f9-8410-ae91dc370fe1"
+                  Id="3c11ea4d-521c-4bd4-9768-2590915ae31e"
                   name="Annotation"
                   isLeaf="false"
                   isStatic="false"
@@ -1220,20 +1259,20 @@
         </generalsInternal>
         <targetEnds>
           <association
-            Id="39f1d8df-14c4-4a83-8801-f1efa9c87943"
+            Id="fd369cac-af2f-4097-b80e-409c4e3ad95a"
             isDerived="false"
             sourceEndRoleName="AnnoVizPoly"
             targetEndRoleName="Annotation"
             isLeaf="false"
             isAbstract="false">
             <classMoniker
-              Id="994d7b69-06d3-47ef-a5b9-0c5acd7b9baa"
+              Id="225a3c35-664c-4675-acf3-68ee5696dde7"
               LastKnownName="Annotation"
               LastKnownLocation="ConstructionPhase.uml" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="aa222dbd-c38c-45ab-8e24-138e513d06bc"
+                  Id="f1ab2779-dd5a-4846-b9f2-e12f188e1ff6"
                   name="AnnoVizPoly"
                   isLeaf="false"
                   isStatic="false"
@@ -1246,7 +1285,7 @@
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="bed3a2a8-5f00-4843-8982-c67d6d77a5b5"
+                  Id="2be93dd4-8ee4-4e03-bd14-c92cc10b9d30"
                   name="Annotation"
                   isLeaf="false"
                   isStatic="false"
@@ -1254,20 +1293,7 @@
                   isDerived="false"
                   isDerivedUnion="false"
                   aggregation="None"
-                  isComposite="false">
-                  <lowerValueInternal>
-                    <literalString
-                      Id="35c997c9-adf3-46d1-a64f-97e78da76553"
-                      name="Lower"
-                      value="1" />
-                  </lowerValueInternal>
-                  <upperValueInternal>
-                    <literalString
-                      Id="22fa15a6-8c2f-4db9-96c3-56cabfb4325e"
-                      name="Upper"
-                      value="*" />
-                  </upperValueInternal>
-                </memberEnd>
+                  isComposite="false" />
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
@@ -1621,10 +1647,177 @@
     <packageHasNamedElement>
       <class
         Id="994d7b69-06d3-47ef-a5b9-0c5acd7b9baa"
-        name="Annotation"
+        name="AnnoTable"
         isAbstract="false"
         isLeaf="false"
-        isActiveClass="false" />
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="ea403c62-5266-4d0c-bb8f-c82a23afe29c">
+            <interfaceMoniker
+              Id="04752b84-62a8-4861-8807-c9e820a5f30a"
+              LastKnownName="AnnoList"
+              LastKnownLocation="ConstructionPhase.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <targetEnds>
+          <association
+            Id="23fad76d-a16d-4019-a2a4-625240b667ce"
+            isDerived="false"
+            sourceEndRoleName="AnnoTable"
+            targetEndRoleName="Annotation"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="225a3c35-664c-4675-acf3-68ee5696dde7"
+              LastKnownName="Annotation"
+              LastKnownLocation="ConstructionPhase.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="662a5848-1fc9-498e-90b3-dcc0b67f8816"
+                  name="AnnoTable"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Shared"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="0b791ac0-0031-442d-b018-f7847343baca"
+                  name="Annotation"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="09bdc90c-9afc-46d0-a933-2de6cae2d46d"
+                      name="Lower"
+                      value="0" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="40414991-326f-43e8-868e-7af7faeba4bc"
+                      name="Upper"
+                      value=".*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="9c148699-4a80-4e50-a80a-da66d05b93aa"
+            name="Annotation [] list"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="54758314-8c02-4c43-9f5d-764fe82b1055"
+            name="addAnno"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="3b802798-55b2-46f2-880d-275af3ab158a"
+                  name="int"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="028460e4-3151-4568-bd7e-819e7aa4263d"
+            name="filterByData"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="e7d8bbce-4770-4693-8eb3-5d98980ca94b"
+                  name="Meteorite"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="2773d2b0-5a6b-4955-a523-e41345b22c3e"
+            name="openEditor"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="a0afae2c-804f-4fac-a191-f433bef79670"
+            name="selectAnno"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="27cd00d4-2b4d-47ea-88e0-48a0f2d15b13"
+                  name="int"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="43513783-24ae-4bdd-8857-6c46e9b7b326"
+            name="sendData"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="7e7a8a5e-5f7b-4318-a441-7569001d96a7"
+                  name="Command"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="2143c808-8a8e-4d9d-a277-674d53f1f35f"
+            name="populateList"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
       <undefinedType
@@ -1647,6 +1840,60 @@
               LastKnownLocation="ConstructionPhase.uml" />
           </dependency>
         </suppliersInternal>
+        <targetEnds>
+          <association
+            Id="1df59e1f-2c92-4c73-b4f8-825cc376929c"
+            isDerived="false"
+            sourceEndRoleName="Meteorite1"
+            targetEndRoleName="Annotation"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="225a3c35-664c-4675-acf3-68ee5696dde7"
+              LastKnownName="Annotation"
+              LastKnownLocation="ConstructionPhase.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="11d54c81-966a-498c-939a-200bae020e2d"
+                  name="Meteorite1"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Shared"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="a0c9e381-5fd8-4312-acb8-eee81f2da7a5"
+                  name="Annotation"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="45891f40-8147-4dc4-b809-86bb4c104708"
+                      name="Lower"
+                      value="0" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="780e6560-b257-4ebe-a832-b74a0d4aef69"
+                      name="Upper"
+                      value=".*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
         <ownedAttributesInternal>
           <property
             Id="04119b64-f501-4e82-9dfd-4f5e1b2eec29"
@@ -2188,6 +2435,626 @@
           <property
             Id="6a5dc347-abaf-4371-affa-71ff95524135"
             name="List Meteorites"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="225a3c35-664c-4675-acf3-68ee5696dde7"
+        name="Annotation"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="ae295402-1dd3-42c9-b526-5fa101821f1d"
+            isDerived="false"
+            sourceEndRoleName="Annotation"
+            targetEndRoleName="Polygon"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="71b3fd21-cdad-41b2-8df4-976db63199c3"
+              LastKnownName="Polygon"
+              LastKnownLocation="ConstructionPhase.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="263e2e06-0784-431b-adfe-b475e71decab"
+                  name="Annotation"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Shared"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="53dc1ba8-fd48-48ca-a38d-73baede33340"
+                  name="Polygon"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="0db61771-205d-46c0-944b-f3ff619b9139"
+                      name="Lower"
+                      value="0,1" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="65cd7557-cc37-4256-97ec-69a586e20da3"
+                      name="Upper"
+                      value="0,1" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="341c21a1-b349-42e3-ad61-b28c2c6e512a"
+            isDerived="false"
+            sourceEndRoleName="Annotation"
+            targetEndRoleName="Location"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="81dc0570-8650-411a-a428-de8ddebc82fe"
+              LastKnownName="Location"
+              LastKnownLocation="ConstructionPhase.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="260605f3-2de5-4dec-b016-62b20cd4cb3e"
+                  name="Annotation"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Shared"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="6e65783a-64d0-4db8-a6a6-5a4b5a699c7a"
+                  name="Location"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="b840708e-4f80-4b13-90aa-a6d6220c870e"
+                      name="Lower"
+                      value="0,1" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="a6d6d78b-5ebc-4345-8a85-731602e60dc3"
+                      name="Upper"
+                      value="0,1" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="4f8c3aef-c899-4cbb-b6ab-db2420d40f6a"
+            name="int id"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="d79073c9-fb67-455e-8121-c85d17906d58"
+            name="string anno"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="b5c5bf24-98c3-42a4-b69e-5f4948667f95"
+            name="Meteorite meteorite"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="70bbae68-50a9-4fb6-bdae-e27ae5a4ba7d"
+            name="Location"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="04752b84-62a8-4861-8807-c9e820a5f30a"
+        name="AnnoList"
+        isAbstract="false"
+        isLeaf="false">
+        <ownedOperations>
+          <operation
+            Id="9227bf2b-b577-4c45-94cb-8c7cb4e8d0d1"
+            name="addAnno"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="78a39bbf-4fdf-4967-8843-7913aa9e3505"
+                  name="int"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="9f45f75a-a9c1-4fa2-b0a5-2715507cc135"
+            name="filterByData"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="747bb3e2-1d66-494a-8372-8882cdd67ce0"
+                  name="Meteorite"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="684b6909-cc47-43ea-b83e-988f917561df"
+            name="openEditor"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="009aed5b-466b-41a3-a869-f671f0c38a29"
+            name="selectAnno"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="4453f291-c385-4fba-9317-c9ca7b90577b"
+                  name="int"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="ae68d6ea-8278-49b6-9667-acf895fc118c"
+            name="sendData"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="5d1daafb-3ff2-42ba-938e-2bab9ca6d416"
+                  name="Command"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="44b4dcdc-75b5-4a24-85b0-af48ef0f66df"
+            name="populateList"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperations>
+      </Interface>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="7cbb6777-2654-4dfb-8d8c-028e89bf2960"
+        name="AnnoEditor"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="f6dce847-0d2d-4210-b25c-7436516393a6">
+            <interfaceMoniker
+              Id="04752b84-62a8-4861-8807-c9e820a5f30a"
+              LastKnownName="AnnoList"
+              LastKnownLocation="ConstructionPhase.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="8b21f825-674d-41d7-bc07-36e970a55146"
+            name="editAnno"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="38304391-dee8-4fac-a30d-24969afc23d5"
+                  name="string"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="a87bf879-bab4-495e-9e2a-81b3c7878c99"
+            name="appendToMeteor"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="975d70fb-a3ce-4ccc-b14e-123f94ef471d"
+                  name="int"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="c2dc9796-02df-40f4-a9ec-dddba937edf5"
+            name="addAnno"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="045d0303-dd63-4654-a01d-c9af9d6967c0"
+                  name="int"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="f7d913e6-eae5-4a55-b80c-407bf74054d9"
+            name="filterByData"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="b1f498f4-9b4c-44de-89c1-544ad8ade148"
+                  name="Meteorite"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="0358918d-9222-4281-994c-474e12cb2c34"
+            name="openEditor"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="39f960d5-f813-45a9-b1af-01cde5958a48"
+            name="selectAnno"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="f1827e16-5759-41e8-b722-e9918fda91fa"
+                  name="int"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="6ef022c3-04a3-4f86-b6d9-8109abe7a862"
+            name="sendData"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="9e7d25c1-b121-4b62-84ae-ccaf29f13c0d"
+                  name="Command"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="1406c576-49be-46f8-af3a-38e3250bd89a"
+            name="populateList"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="5095a58c-94cc-440e-9590-3006cf377f0e"
+        name="Adapter"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="196f51d8-44a3-4b48-bc04-331b4bfc6f0f"
+            isDerived="false"
+            sourceEndRoleName="Adapter"
+            targetEndRoleName="AnnoTable"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="994d7b69-06d3-47ef-a5b9-0c5acd7b9baa"
+              LastKnownName="AnnoTable"
+              LastKnownLocation="ConstructionPhase.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="7dafb503-ae3e-4c37-bd9f-832a5554b858"
+                  name="Adapter"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="c98b5937-00f9-46ba-a70c-2fd88967988a"
+                  name="AnnoTable"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="7b1f02ba-7485-4984-90cb-37080463373e"
+            isDerived="false"
+            sourceEndRoleName="Adapter"
+            targetEndRoleName="Command"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="dbf3e55f-a519-4971-92d1-df3e306364d0"
+              LastKnownName="SQLCommand"
+              LastKnownLocation="ConstructionPhase.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="67e3ab10-5301-4c46-9bf1-ad17cda81f98"
+                  name="Adapter"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Shared"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="608906bb-5b49-40e7-8982-d89d5c51e73c"
+                  name="Command"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedOperationsInternal>
+          <operation
+            Id="d4508cfb-5f75-4646-baf9-49367ee83f93"
+            name="connectToDB"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="fea8b61a-30ca-4f95-8aec-8d6f17e01a0a"
+                  name="SQLCommand"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="dbf3e55f-a519-4971-92d1-df3e306364d0"
+        name="SQLCommand"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="71b3fd21-cdad-41b2-8df4-976db63199c3"
+        name="Polygon"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="81097904-d8ba-40e2-8348-d957806c2701"
+            isDerived="false"
+            sourceEndRoleName="Polygon"
+            targetEndRoleName="Location"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="81dc0570-8650-411a-a428-de8ddebc82fe"
+              LastKnownName="Location"
+              LastKnownLocation="ConstructionPhase.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="100b01ee-7720-47aa-8434-fcfb5ddde602"
+                  name="Polygon"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Shared"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="439a4105-a739-4df0-bacd-6f9f2b4ae361"
+                  name="Location"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="00db307c-8927-4895-b070-93e30171f570"
+                      name="Lower"
+                      value="3" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="b37e4180-deb0-4fd0-8a53-17623a39f7a9"
+                      name="Upper"
+                      value=".*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="27aa66db-9696-4297-aeb3-01a0e4a55d7a"
+            name="Location [] Locations"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="81dc0570-8650-411a-a428-de8ddebc82fe"
+        name="Location"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedAttributesInternal>
+          <property
+            Id="d9ab2d79-b356-4cca-a27a-455fd1b304b9"
+            name="int [] coords"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"

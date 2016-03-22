@@ -53,6 +53,36 @@
         <classMoniker Id="f5e262e9-0cb2-4a83-96c6-7b37c9b8de63" LastKnownName="Meteorite1" />
       </annotatedElements>
     </comment>
+    <comment Id="9842b27e-d7f4-4585-9e2e-11ee588f9b13">
+      <elementDefinition Id="78a395e4-0a42-43ea-813a-02432ef6ffa5" />
+      <body>AnnoList is the interface used for the functionality of the window that is populated with Meteorite annotations, adding the ability to select Meteorites based on their annotations and to open an editor to change them or link different Meteorites.</body>
+      <annotatedElements>
+        <interfaceMoniker Id="862f5e5c-49b7-4467-9c1a-3db2a23fa179" LastKnownName="AnnoList" />
+      </annotatedElements>
+    </comment>
+    <comment Id="e126aef3-2fc7-4d3d-9e4f-5e70747a5f16">
+      <elementDefinition Id="2de82597-c137-444d-aada-0067f0d27077" />
+      <body>The adapter is windows defined, and used to marshall the data that is to be sent to the database through the use of SQL Commands.</body>
+      <annotatedElements>
+        <classMoniker Id="a60dde5a-6053-4359-a5fb-74c819214da7" LastKnownName="Adapter" />
+      </annotatedElements>
+    </comment>
+    <comment Id="ed80a9cf-c986-4e7c-acd5-aa1e4e1a478f">
+      <elementDefinition Id="c4e42f23-8ea3-4428-9b82-e8ed0e72f765" />
+      <body>Each Annotation can be linked to a Meteorite or exist on its own, and each Meteorite can have multiple annotations linked to it. The annotation has either a Location associated or a Polygon, which is a collection of locations.</body>
+      <annotatedElements>
+        <classMoniker Id="b0f28deb-30f4-46e2-aa16-b3f8894617ee" LastKnownName="Annotation" />
+      </annotatedElements>
+    </comment>
+    <comment Id="91a93d50-791e-4707-9058-e9122047a5c9">
+      <elementDefinition Id="e63cbbdc-e74d-486b-b550-a4dafc1c1c0d" />
+      <body>Composite Design Pattern
+MapVizContainer is the composition of IMapViz Components with MeteoVizPoly, AnnoVIzPoly, MeteoVizPushpin, and AnnoVizPushpin acting as leaves</body>
+    </comment>
+    <comment Id="b370ea11-be0b-4c4c-9ea5-546e2464f586">
+      <elementDefinition Id="eb2dc08a-8dce-4e0b-8adf-93ea4cd7f690" />
+      <body>Object-Relational Mapping Design Pattern</body>
+    </comment>
   </ownedCommentsInternal>
   <packagedElements>
     <packageHasNamedElement>
@@ -686,21 +716,21 @@
           </generalization>
         </generalsInternal>
         <targetEnds>
-          <association Id="7fc2074c-7e7e-4eaf-a768-85544bb657bf" isDerived="false" sourceEndRoleName="AnnoVizPushpin" targetEndRoleName="Annotation" isLeaf="false" isAbstract="false">
-            <classMoniker Id="032c36c2-6fb0-41f3-a784-cd5973aa80b9" LastKnownName="Annotation" />
+          <association Id="98dfe529-ef8e-49a0-8c23-cefb324c6540" isDerived="false" sourceEndRoleName="AnnoVizPushpin" targetEndRoleName="Annotation" isLeaf="false" isAbstract="false">
+            <classMoniker Id="b0f28deb-30f4-46e2-aa16-b3f8894617ee" LastKnownName="Annotation" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
-                <memberEnd Id="d897fe42-31e4-4186-9160-653aad8c1e5c" name="AnnoVizPushpin" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
-                  <elementDefinition Id="cd82169f-2bdb-4d16-9ae3-d8c87cf98450" />
+                <memberEnd Id="5fe23b36-2b36-461a-a96f-13e5936cc2d8" name="AnnoVizPushpin" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="70621676-4584-4924-8b45-f240c026d9d4" />
                 </memberEnd>
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
-                <memberEnd Id="92823af5-fa2e-4467-8787-f7d6ef6053bb" name="Annotation" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                  <elementDefinition Id="b7619723-ffba-45f9-8410-ae91dc370fe1" />
+                <memberEnd Id="d2ef7f24-8c1d-492c-a651-5721ea4d8781" name="Annotation" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="3c11ea4d-521c-4bd4-9768-2590915ae31e" />
                 </memberEnd>
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
-            <elementDefinition Id="729774e4-b8e7-4130-b911-cb8ae1244cda" />
+            <elementDefinition Id="c0ba5cf8-e601-487a-aec0-36116d35dd48" />
           </association>
         </targetEnds>
         <ownedOperationsInternal>
@@ -770,31 +800,21 @@
           </generalization>
         </generalsInternal>
         <targetEnds>
-          <association Id="9e18bf3f-c776-4962-af5d-228816a9ccf9" isDerived="false" sourceEndRoleName="AnnoVizPoly" targetEndRoleName="Annotation" isLeaf="false" isAbstract="false">
-            <classMoniker Id="032c36c2-6fb0-41f3-a784-cd5973aa80b9" LastKnownName="Annotation" />
+          <association Id="bf3feb04-2509-4181-b082-3042471a356f" isDerived="false" sourceEndRoleName="AnnoVizPoly" targetEndRoleName="Annotation" isLeaf="false" isAbstract="false">
+            <classMoniker Id="b0f28deb-30f4-46e2-aa16-b3f8894617ee" LastKnownName="Annotation" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
-                <memberEnd Id="d470c2e9-b381-414b-bdf7-e479164d5e43" name="AnnoVizPoly" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
-                  <elementDefinition Id="aa222dbd-c38c-45ab-8e24-138e513d06bc" />
+                <memberEnd Id="611b459c-fa6b-45a6-91b7-85a08942c73b" name="AnnoVizPoly" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="f1ab2779-dd5a-4846-b9f2-e12f188e1ff6" />
                 </memberEnd>
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
-                <memberEnd Id="db52dfd8-2af4-4d73-ae63-720cd210aeef" name="Annotation" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                  <lowerValueInternal>
-                    <literalString Id="faf481dd-0645-4fbe-bc93-8670a2d1ff67" name="Lower" value="1">
-                      <elementDefinition Id="35c997c9-adf3-46d1-a64f-97e78da76553" />
-                    </literalString>
-                  </lowerValueInternal>
-                  <upperValueInternal>
-                    <literalString Id="9d4d16ee-bfc0-490b-b909-669a37668f7f" name="Upper" value="*">
-                      <elementDefinition Id="22fa15a6-8c2f-4db9-96c3-56cabfb4325e" />
-                    </literalString>
-                  </upperValueInternal>
-                  <elementDefinition Id="bed3a2a8-5f00-4843-8982-c67d6d77a5b5" />
+                <memberEnd Id="4ebd7b85-c840-48c6-a1fb-8b425a0c6a51" name="Annotation" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="2be93dd4-8ee4-4e03-bd14-c92cc10b9d30" />
                 </memberEnd>
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
-            <elementDefinition Id="39f1d8df-14c4-4a83-8801-f1efa9c87943" />
+            <elementDefinition Id="fd369cac-af2f-4097-b80e-409c4e3ad95a" />
           </association>
         </targetEnds>
         <ownedOperationsInternal>
@@ -1013,8 +1033,95 @@
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
-      <class Id="032c36c2-6fb0-41f3-a784-cd5973aa80b9" name="Annotation" isAbstract="false" isLeaf="false" isActiveClass="false">
+      <class Id="032c36c2-6fb0-41f3-a784-cd5973aa80b9" name="AnnoTable" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="994d7b69-06d3-47ef-a5b9-0c5acd7b9baa" />
+        <suppliersInternal>
+          <interfaceRealization Id="420eeb6b-dd02-451e-b2b6-52b4092bf6b6">
+            <interfaceMoniker Id="862f5e5c-49b7-4467-9c1a-3db2a23fa179" LastKnownName="AnnoList" />
+            <elementDefinition Id="ea403c62-5266-4d0c-bb8f-c82a23afe29c" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <targetEnds>
+          <association Id="d90bbfaa-a095-45a7-ae39-a2d92435e919" isDerived="false" sourceEndRoleName="AnnoTable" targetEndRoleName="Annotation" isLeaf="false" isAbstract="false">
+            <classMoniker Id="b0f28deb-30f4-46e2-aa16-b3f8894617ee" LastKnownName="Annotation" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="77df5ab8-1169-4ee0-a639-f0fa54ebb024" name="AnnoTable" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="662a5848-1fc9-498e-90b3-dcc0b67f8816" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="6b5097b3-e3d9-465b-be33-239fd840516d" name="Annotation" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <lowerValueInternal>
+                    <literalString Id="6dd029f4-aa60-4701-9cfb-248d81a0ccbe" name="Lower" value="0">
+                      <elementDefinition Id="09bdc90c-9afc-46d0-a933-2de6cae2d46d" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="8e4d4ce5-5985-4c8a-b7ff-f934fe26e5b7" name="Upper" value=".*">
+                      <elementDefinition Id="40414991-326f-43e8-868e-7af7faeba4bc" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="0b791ac0-0031-442d-b018-f7847343baca" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="23fad76d-a16d-4019-a2a4-625240b667ce" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="6cf9ee1d-6c62-4b39-83ed-b7cab17e3c28" name="Annotation [] list" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="9c148699-4a80-4e50-a80a-da66d05b93aa" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="70718d27-39e7-4e7b-ab9b-309d0451e68b" name="addAnno" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="54758314-8c02-4c43-9f5d-764fe82b1055" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="5ac24645-95e7-46ac-b8bd-99d783067cff" name="int" direction="In" isUnique="false">
+                  <elementDefinition Id="3b802798-55b2-46f2-880d-275af3ab158a" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="4f4b797d-c977-4e6f-92aa-065040cccb25" name="filterByData" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="028460e4-3151-4568-bd7e-819e7aa4263d" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="776ee5b3-08e8-48e3-8606-f497f5eef3fe" name="Meteorite" direction="In" isUnique="false">
+                  <elementDefinition Id="e7d8bbce-4770-4693-8eb3-5d98980ca94b" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="a0039b99-0678-4dff-92be-f24d9a0a6b3d" name="openEditor" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="2773d2b0-5a6b-4955-a523-e41345b22c3e" />
+          </operation>
+          <operation Id="76b6cd22-92cb-4539-8044-956a6c8132d4" name="selectAnno" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="a0afae2c-804f-4fac-a191-f433bef79670" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="bb64e24a-fb86-45ee-a779-8dd8441a2174" name="int" direction="In" isUnique="false">
+                  <elementDefinition Id="27cd00d4-2b4d-47ea-88e0-48a0f2d15b13" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="525ba6ec-9baa-4096-a7ad-15a8e79b0b5a" name="sendData" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="43513783-24ae-4bdd-8857-6c46e9b7b326" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="412b88bf-7c12-4f6a-acd4-694a98f11b7e" name="Command" direction="In" isUnique="false">
+                  <elementDefinition Id="7e7a8a5e-5f7b-4318-a441-7569001d96a7" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="49b11895-189e-4e66-b919-0f6bb3fb85d7" name="populateList" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="2143c808-8a8e-4d9d-a277-674d53f1f35f" />
+          </operation>
+        </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
     <packageHasNamedElement>
@@ -1046,6 +1153,34 @@
             <elementDefinition Id="71c0f75f-a2b6-421d-a10b-9274b96e750b" />
           </dependency>
         </suppliersInternal>
+        <targetEnds>
+          <association Id="b32fb9b2-7a0e-48f6-bdce-aeba329e8aad" isDerived="false" sourceEndRoleName="Meteorite1" targetEndRoleName="Annotation" isLeaf="false" isAbstract="false">
+            <classMoniker Id="b0f28deb-30f4-46e2-aa16-b3f8894617ee" LastKnownName="Annotation" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="cac7d0f4-c7fe-44f4-bc9d-0270e0c18e8c" name="Meteorite1" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="11d54c81-966a-498c-939a-200bae020e2d" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="39c65a0f-91fc-4c3c-afa8-b2da4e75cf3f" name="Annotation" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <lowerValueInternal>
+                    <literalString Id="c23ec435-2c2d-4013-9d11-86220ddac704" name="Lower" value="0">
+                      <elementDefinition Id="45891f40-8147-4dc4-b809-86bb4c104708" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="ad5d420d-7a47-4d0d-9234-40cbee2e20d5" name="Upper" value=".*">
+                      <elementDefinition Id="780e6560-b257-4ebe-a832-b74a0d4aef69" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="a0c9e381-5fd8-4312-acb8-eee81f2da7a5" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="1df59e1f-2c92-4c73-b4f8-825cc376929c" />
+          </association>
+        </targetEnds>
         <ownedAttributesInternal>
           <property Id="2a89cab0-2655-4609-a19b-dd41363a8118" name="string name" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="04119b64-f501-4e82-9dfd-4f5e1b2eec29" />
@@ -1300,6 +1435,317 @@
         <ownedAttributesInternal>
           <property Id="d42ca2eb-9db3-41e0-9508-a00680ad7942" name="List Meteorites" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="6a5dc347-abaf-4371-affa-71ff95524135" />
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="b0f28deb-30f4-46e2-aa16-b3f8894617ee" name="Annotation" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="225a3c35-664c-4675-acf3-68ee5696dde7" />
+        <targetEnds>
+          <association Id="467bace0-5ee9-4b7c-97ff-d8617a516f48" isDerived="false" sourceEndRoleName="Annotation" targetEndRoleName="Polygon" isLeaf="false" isAbstract="false">
+            <classMoniker Id="681f7045-bf57-4ac7-962c-2e63f6ac079d" LastKnownName="Polygon" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="ebbaaa28-078e-4a87-97e4-6f78893542b5" name="Annotation" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="263e2e06-0784-431b-adfe-b475e71decab" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="cbde3cd5-83ed-425c-be2b-572d014f9534" name="Polygon" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <lowerValueInternal>
+                    <literalString Id="0644797a-8bbf-4825-8d50-375a4c6e5556" name="Lower" value="0,1">
+                      <elementDefinition Id="0db61771-205d-46c0-944b-f3ff619b9139" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="cf94b1a9-ac1e-4638-bbe3-ebb16e44058d" name="Upper" value="0,1">
+                      <elementDefinition Id="65cd7557-cc37-4256-97ec-69a586e20da3" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="53dc1ba8-fd48-48ca-a38d-73baede33340" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="ae295402-1dd3-42c9-b526-5fa101821f1d" />
+          </association>
+          <association Id="4688ea5d-4a1f-43e9-9a7a-41028a1a17a2" isDerived="false" sourceEndRoleName="Annotation" targetEndRoleName="Location" isLeaf="false" isAbstract="false">
+            <classMoniker Id="e0019e46-b39d-41d7-9e75-ceab71cce791" LastKnownName="Location" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="839d8e10-75aa-4765-b9c3-7720c66f440e" name="Annotation" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="260605f3-2de5-4dec-b016-62b20cd4cb3e" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="f24c0f0e-5416-45ff-a018-0d22f339b272" name="Location" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <lowerValueInternal>
+                    <literalString Id="3387cd27-a722-4db2-aeb2-9ffe144a5e9e" name="Lower" value="0,1">
+                      <elementDefinition Id="b840708e-4f80-4b13-90aa-a6d6220c870e" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="70725ac2-e4a8-432e-86df-40c7eb4cd59b" name="Upper" value="0,1">
+                      <elementDefinition Id="a6d6d78b-5ebc-4345-8a85-731602e60dc3" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="6e65783a-64d0-4db8-a6a6-5a4b5a699c7a" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="341c21a1-b349-42e3-ad61-b28c2c6e512a" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="3f9583cc-09da-434b-bcbe-78abe29752be" name="int id" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="4f8c3aef-c899-4cbb-b6ab-db2420d40f6a" />
+          </property>
+          <property Id="fd73b229-e7f0-43c4-9356-231c81b2f97d" name="string anno" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="d79073c9-fb67-455e-8121-c85d17906d58" />
+          </property>
+          <property Id="1a09c5ad-6b0a-4d49-b736-8b81c6bd7e23" name="Meteorite meteorite" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="b5c5bf24-98c3-42a4-b69e-5f4948667f95" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="3972bfe4-80f5-45b4-88fe-99be6e51223f" name="Location" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="70bbae68-50a9-4fb6-bdae-e27ae5a4ba7d" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="862f5e5c-49b7-4467-9c1a-3db2a23fa179" name="AnnoList" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="04752b84-62a8-4861-8807-c9e820a5f30a" />
+        <ownedOperations>
+          <operation Id="4f45e127-fc0b-424e-9a05-cd08e026dbd9" name="addAnno" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="9227bf2b-b577-4c45-94cb-8c7cb4e8d0d1" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="a989cff4-bf6c-4741-87a2-06e9fb78bb88" name="int" direction="In" isUnique="false">
+                  <elementDefinition Id="78a39bbf-4fdf-4967-8843-7913aa9e3505" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="8b0a6211-bb10-456e-916f-e53754fe75b6" name="filterByData" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="9f45f75a-a9c1-4fa2-b0a5-2715507cc135" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="d10b521e-0262-4ab2-8ed5-f64da49f42f4" name="Meteorite" direction="In" isUnique="false">
+                  <elementDefinition Id="747bb3e2-1d66-494a-8372-8882cdd67ce0" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="d01e67e3-270d-4fa1-8270-704b49aa8754" name="openEditor" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="684b6909-cc47-43ea-b83e-988f917561df" />
+          </operation>
+          <operation Id="feb68e6b-8940-4ae7-9fea-2c689a9561ea" name="selectAnno" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="009aed5b-466b-41a3-a869-f671f0c38a29" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="b636f66d-2216-4e45-8cca-1d64a9aff6e8" name="int" direction="In" isUnique="false">
+                  <elementDefinition Id="4453f291-c385-4fba-9317-c9ca7b90577b" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="0dde8af7-2f3a-41eb-97b7-1ade1179df46" name="sendData" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="ae68d6ea-8278-49b6-9667-acf895fc118c" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="e59ce565-7c14-4d27-a69e-79228385ec00" name="Command" direction="In" isUnique="false">
+                  <elementDefinition Id="5d1daafb-3ff2-42ba-938e-2bab9ca6d416" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="efa9636b-4057-4f57-b059-633501bfd327" name="populateList" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="44b4dcdc-75b5-4a24-85b0-af48ef0f66df" />
+          </operation>
+        </ownedOperations>
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="dfe33d4d-0c8d-4f8f-ac22-a71ac7c1d9f6" name="AnnoEditor" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="7cbb6777-2654-4dfb-8d8c-028e89bf2960" />
+        <suppliersInternal>
+          <interfaceRealization Id="d20c3cb5-7d40-4ede-a712-2252e39103c0">
+            <interfaceMoniker Id="862f5e5c-49b7-4467-9c1a-3db2a23fa179" LastKnownName="AnnoList" />
+            <elementDefinition Id="f6dce847-0d2d-4210-b25c-7436516393a6" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation Id="10404ff6-f19b-4123-83fc-f109c053fc27" name="editAnno" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="8b21f825-674d-41d7-bc07-36e970a55146" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="6ca4d3a6-55bc-4bfe-894a-633e896660e2" name="string" direction="In" isUnique="false">
+                  <elementDefinition Id="38304391-dee8-4fac-a30d-24969afc23d5" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="c66b6b98-d517-43b5-aa9b-9bdec472c8a4" name="appendToMeteor" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="a87bf879-bab4-495e-9e2a-81b3c7878c99" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="8302d15b-eb6b-4a54-8f21-43a6a26ea9e7" name="int" direction="In" isUnique="false">
+                  <elementDefinition Id="975d70fb-a3ce-4ccc-b14e-123f94ef471d" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="304191af-30b6-48d7-94be-4cb267d78459" name="addAnno" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="c2dc9796-02df-40f4-a9ec-dddba937edf5" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="e0ffa5d4-ab3c-453f-a9ed-a8a056425b43" name="int" direction="In" isUnique="false">
+                  <elementDefinition Id="045d0303-dd63-4654-a01d-c9af9d6967c0" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="e6c3fa27-b3a0-4fa1-a9e6-87f31473e011" name="filterByData" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="f7d913e6-eae5-4a55-b80c-407bf74054d9" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="895663d2-57cf-4cd0-a234-4b6c9c7ecd9c" name="Meteorite" direction="In" isUnique="false">
+                  <elementDefinition Id="b1f498f4-9b4c-44de-89c1-544ad8ade148" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="f63330ed-8474-4d3a-89c3-e858b39bedef" name="openEditor" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="0358918d-9222-4281-994c-474e12cb2c34" />
+          </operation>
+          <operation Id="2a5ce688-5430-4b8f-8aaf-2274f1ab8228" name="selectAnno" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="39f960d5-f813-45a9-b1af-01cde5958a48" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="573da1e7-33d2-4433-b90a-95b444e4fdec" name="int" direction="In" isUnique="false">
+                  <elementDefinition Id="f1827e16-5759-41e8-b722-e9918fda91fa" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="cd5fe5ec-07bb-4fc7-84af-f4a00a0af424" name="sendData" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="6ef022c3-04a3-4f86-b6d9-8109abe7a862" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="ed519dbf-bd29-4537-9144-4a4c5116cc7d" name="Command" direction="In" isUnique="false">
+                  <elementDefinition Id="9e7d25c1-b121-4b62-84ae-ccaf29f13c0d" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="38266bc3-6717-4e3e-bd68-4d343868f660" name="populateList" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="1406c576-49be-46f8-af3a-38e3250bd89a" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="a60dde5a-6053-4359-a5fb-74c819214da7" name="Adapter" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="5095a58c-94cc-440e-9590-3006cf377f0e" />
+        <targetEnds>
+          <association Id="99ac2e6b-8a8c-4af7-be9e-e6ba2a206693" isDerived="false" sourceEndRoleName="Adapter" targetEndRoleName="AnnoTable" isLeaf="false" isAbstract="false">
+            <classMoniker Id="032c36c2-6fb0-41f3-a784-cd5973aa80b9" LastKnownName="AnnoTable" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="059be0fb-5f03-4af1-a79e-358463f51ab9" name="Adapter" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="7dafb503-ae3e-4c37-bd9f-832a5554b858" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="f30c4b0b-1914-412e-96bc-77c0d90fda6e" name="AnnoTable" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="c98b5937-00f9-46ba-a70c-2fd88967988a" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="196f51d8-44a3-4b48-bc04-331b4bfc6f0f" />
+          </association>
+          <association Id="b45a63f6-1227-41d2-abcf-e8b9915bdcd9" isDerived="false" sourceEndRoleName="Adapter" targetEndRoleName="Command" isLeaf="false" isAbstract="false">
+            <classMoniker Id="fc7e5dd5-51db-4cf6-95a3-d848cc673820" LastKnownName="SQLCommand" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="af93fb04-9939-47db-bd62-5f704118d515" name="Adapter" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="67e3ab10-5301-4c46-9bf1-ad17cda81f98" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="92be1da2-c644-49de-866d-f1b9812d397a" name="Command" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="608906bb-5b49-40e7-8982-d89d5c51e73c" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="7b1f02ba-7485-4984-90cb-37080463373e" />
+          </association>
+        </targetEnds>
+        <ownedOperationsInternal>
+          <operation Id="160471c9-afc2-4939-baa2-d6a38876d1cf" name="connectToDB" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="d4508cfb-5f75-4646-baf9-49367ee83f93" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="ed122472-b2b2-4eba-8475-3e10b958429a" name="SQLCommand" direction="In" isUnique="false">
+                  <elementDefinition Id="fea8b61a-30ca-4f95-8aec-8d6f17e01a0a" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="fc7e5dd5-51db-4cf6-95a3-d848cc673820" name="SQLCommand" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="dbf3e55f-a519-4971-92d1-df3e306364d0" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="681f7045-bf57-4ac7-962c-2e63f6ac079d" name="Polygon" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="71b3fd21-cdad-41b2-8df4-976db63199c3" />
+        <targetEnds>
+          <association Id="4172a500-d2e4-49e4-8fbb-b6825ed9fcce" isDerived="false" sourceEndRoleName="Polygon" targetEndRoleName="Location" isLeaf="false" isAbstract="false">
+            <classMoniker Id="e0019e46-b39d-41d7-9e75-ceab71cce791" LastKnownName="Location" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="8eacef74-26b2-4a72-95a6-e01535d43a0d" name="Polygon" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="100b01ee-7720-47aa-8434-fcfb5ddde602" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="204ea854-8171-4802-b8f2-2cd8e25b204c" name="Location" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <lowerValueInternal>
+                    <literalString Id="a60c8275-dcbb-4798-a48d-3d955aa5d69e" name="Lower" value="3">
+                      <elementDefinition Id="00db307c-8927-4895-b070-93e30171f570" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="ee599408-274a-46b3-814b-fa91acb07d8e" name="Upper" value=".*">
+                      <elementDefinition Id="b37e4180-deb0-4fd0-8a53-17623a39f7a9" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="439a4105-a739-4df0-bacd-6f9f2b4ae361" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="81097904-d8ba-40e2-8348-d957806c2701" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="2c48e7e8-9a87-4e89-a8e0-2064cc46b45f" name="Location [] Locations" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="27aa66db-9696-4297-aeb3-01a0e4a55d7a" />
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="e0019e46-b39d-41d7-9e75-ceab71cce791" name="Location" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="81dc0570-8650-411a-a428-de8ddebc82fe" />
+        <ownedAttributesInternal>
+          <property Id="29992593-0845-40c9-9273-9e633ae5f487" name="int [] coords" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="d9ab2d79-b356-4cca-a27a-455fd1b304b9" />
           </property>
         </ownedAttributesInternal>
       </class>
