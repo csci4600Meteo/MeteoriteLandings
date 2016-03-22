@@ -104,6 +104,15 @@
           LastKnownLocation="ConstructionPhase.uml" />
       </annotatedElements>
     </comment>
+    <comment
+      Id="e63cbbdc-e74d-486b-b550-a4dafc1c1c0d">
+      <body>Composite Design Pattern
+MapVizContainer is the composition of IMapViz Components with MeteoVizPoly, AnnoVIzPoly, MeteoVizPushpin, and AnnoVizPushpin acting as leaves</body>
+    </comment>
+    <comment
+      Id="eb2dc08a-8dce-4e0b-8adf-93ea4cd7f690">
+      <body>Object-Relational Mapping Design Pattern</body>
+    </comment>
   </ownedCommentsInternal>
   <profileInstances>
     <packageHasProfileInstances

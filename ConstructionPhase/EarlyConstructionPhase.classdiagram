@@ -74,6 +74,15 @@
         <classMoniker Id="b0f28deb-30f4-46e2-aa16-b3f8894617ee" LastKnownName="Annotation" />
       </annotatedElements>
     </comment>
+    <comment Id="91a93d50-791e-4707-9058-e9122047a5c9">
+      <elementDefinition Id="e63cbbdc-e74d-486b-b550-a4dafc1c1c0d" />
+      <body>Composite Design Pattern
+MapVizContainer is the composition of IMapViz Components with MeteoVizPoly, AnnoVIzPoly, MeteoVizPushpin, and AnnoVizPushpin acting as leaves</body>
+    </comment>
+    <comment Id="b370ea11-be0b-4c4c-9ea5-546e2464f586">
+      <elementDefinition Id="eb2dc08a-8dce-4e0b-8adf-93ea4cd7f690" />
+      <body>Object-Relational Mapping Design Pattern</body>
+    </comment>
   </ownedCommentsInternal>
   <packagedElements>
     <packageHasNamedElement>
