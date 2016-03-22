@@ -20,11 +20,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Viz", "Viz\Viz.csproj", "{6
 EndProject
 Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "ConstructionPhase", "ConstructionPhase\ConstructionPhase.modelproj", "{12D4A6C1-00DF-4C11-A9A6-98B4DFC6C21D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VizTests", "..\..\..\OneDrive\CSCI4600\MeteoriteLandings\VizTests\VizTests.csproj", "{F0C07B0B-1BFE-4F70-86EC-66CACC41DCCD}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeteoriteLib", "Meteorite\MeteoriteLib.csproj", "{4A7491FD-93BC-41D8-A358-90FE13ECDF1A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeteoriteLibTests", "MeteoriteLibTests\MeteoriteLibTests.csproj", "{E1EA4A38-74D1-4185-886E-96EBF8317CF8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VizTests", "VizTests\VizTests.csproj", "{472E163F-2DDE-482A-9A04-23725E908CB0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,11 +57,6 @@ Global
 		{12D4A6C1-00DF-4C11-A9A6-98B4DFC6C21D}.NoPhase|Any CPU.Build.0 = Release|Any CPU
 		{12D4A6C1-00DF-4C11-A9A6-98B4DFC6C21D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{12D4A6C1-00DF-4C11-A9A6-98B4DFC6C21D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F0C07B0B-1BFE-4F70-86EC-66CACC41DCCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F0C07B0B-1BFE-4F70-86EC-66CACC41DCCD}.NoPhase|Any CPU.ActiveCfg = Release|Any CPU
-		{F0C07B0B-1BFE-4F70-86EC-66CACC41DCCD}.NoPhase|Any CPU.Build.0 = Release|Any CPU
-		{F0C07B0B-1BFE-4F70-86EC-66CACC41DCCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F0C07B0B-1BFE-4F70-86EC-66CACC41DCCD}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4A7491FD-93BC-41D8-A358-90FE13ECDF1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4A7491FD-93BC-41D8-A358-90FE13ECDF1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4A7491FD-93BC-41D8-A358-90FE13ECDF1A}.NoPhase|Any CPU.ActiveCfg = Release|Any CPU
@@ -74,6 +69,12 @@ Global
 		{E1EA4A38-74D1-4185-886E-96EBF8317CF8}.NoPhase|Any CPU.Build.0 = Release|Any CPU
 		{E1EA4A38-74D1-4185-886E-96EBF8317CF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E1EA4A38-74D1-4185-886E-96EBF8317CF8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{472E163F-2DDE-482A-9A04-23725E908CB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{472E163F-2DDE-482A-9A04-23725E908CB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{472E163F-2DDE-482A-9A04-23725E908CB0}.NoPhase|Any CPU.ActiveCfg = Release|Any CPU
+		{472E163F-2DDE-482A-9A04-23725E908CB0}.NoPhase|Any CPU.Build.0 = Release|Any CPU
+		{472E163F-2DDE-482A-9A04-23725E908CB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{472E163F-2DDE-482A-9A04-23725E908CB0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
