@@ -6,18 +6,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
+using MeteoriteLib;
 
 namespace Viz
 {
     public class MeteoVizPushpin : Pushpin , IMapViz
     {
         
+        public Meteorite Meteorite { get; }
         public Guid Id { get; set; }
        
 
 
-        public MeteoVizPushpin()
+        public MeteoVizPushpin(Meteorite meteo)
         {
+            this.Meteorite = meteo;
             this.Id = Guid.NewGuid();
         }
         protected override void OnMouseEnter(MouseEventArgs e)

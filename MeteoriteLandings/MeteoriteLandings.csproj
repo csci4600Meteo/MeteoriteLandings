@@ -109,6 +109,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Meteorite\MeteoriteLib.csproj">
+      <Project>{4a7491fd-93bc-41d8-a358-90fe13ecdf1a}</Project>
+      <Name>MeteoriteLib</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Viz\Viz.csproj">
       <Project>{66c8aa03-d560-4847-9f89-71f8948dce8a}</Project>
       <Name>Viz</Name>
