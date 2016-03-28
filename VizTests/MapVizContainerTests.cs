@@ -52,9 +52,9 @@ namespace Viz.Tests
         {
             MapVizContainer target = new MapVizContainer();
             Map map = new Map();
-            ApplicationIdCredentialsProvider creds = new ApplicationIdCredentialsProvider();
-            creds.ApplicationId = "AvC9ZkUzrNp4aDRAOiS8_QFU-s_EmjYI8Ni3v98Qk-nyMLxdhCtIcEJIR6RxStC6";
-            map.CredentialsProvider = creds;
+            //ApplicationIdCredentialsProvider creds = new ApplicationIdCredentialsProvider();
+            //creds.ApplicationId = "put api key here";
+            //map.CredentialsProvider = creds;
             int childrenCount = map.Children.Count;
             Assert.AreEqual(0,childrenCount);
             target.Add(Guid.NewGuid(), new AnnoVizPoly());
