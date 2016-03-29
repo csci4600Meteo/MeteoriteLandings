@@ -33,19 +33,32 @@ namespace Viz.Tests
             Assert.IsTrue(target.showPushpins);
             target.showPushpins = false;
             Assert.IsFalse(target.showPushpins);
-
-            target.Add(Guid.NewGuid(), new AnnoVizPoly());
-            target.Add(Guid.NewGuid(), new AnnoVizPushpin());
-            target.Add(Guid.NewGuid(), new MeteoVizPoly(new Meteorite("",1,1,"","",DateTime.Now,1.1,2.2)));
-            target.Add(Guid.NewGuid(), new MeteoVizPushpin(new Meteorite("", 1, 1, "", "", DateTime.Now, 1.1, 2.2)));
+            Guid guid = Guid.NewGuid();
+            Guid guid2 = Guid.NewGuid();
+            Guid guid3 = Guid.NewGuid();
+            Guid guid4 = Guid.NewGuid();
+            target.Add(guid, new AnnoVizPoly());
+            target.Add(guid2, new AnnoVizPushpin());
+            target.Add(guid3, new MeteoVizPoly(new Meteorite("",1,1,"","",DateTime.Now,1.1,2.2)));
+            target.Add(guid4, new MeteoVizPushpin(new Meteorite("", 1, 1, "", "", DateTime.Now, 1.1, 2.2)));
             Assert.AreEqual(4, target.Count);
 
-            //target.Remove(target.Keys.GetEnumerator().Current);
-            //target.Remove(target.Keys.GetEnumerator().Current);
-            //target.Remove(target.Keys.GetEnumerator().Current);
-            //target.Remove(target.Keys.GetEnumerator().Current);
-            target.Clear();
+            target.Remove(guid);
+            Assert.AreEqual(3, target.Count);
+            target.Remove(guid2);
+            Assert.AreEqual(2, target.Count);
+            target.Remove(guid3);
+            Assert.AreEqual(1, target.Count);
+            target.Remove(guid4);
             Assert.AreEqual(0,target.Count);
+
+            target.Add(guid, new AnnoVizPoly());
+            target.Add(guid2, new AnnoVizPushpin());
+            target.Add(guid3, new MeteoVizPoly(new Meteorite("", 1, 1, "", "", DateTime.Now, 1.1, 2.2)));
+            target.Add(guid4, new MeteoVizPushpin(new Meteorite("", 1, 1, "", "", DateTime.Now, 1.1, 2.2)));
+            Assert.AreEqual(4, target.Count);
+            target.Clear();
+            Assert.AreEqual(0, target.Count);
         }
 
         [TestMethod()]
@@ -53,25 +66,33 @@ namespace Viz.Tests
         {
             MapVizContainer target = new MapVizContainer();
             Map map = new Map();
-            //ApplicationIdCredentialsProvider creds = new ApplicationIdCredentialsProvider();
-            //creds.ApplicationId = "put api key here";
-            //map.CredentialsProvider = creds;
+
             int childrenCount = map.Children.Count;
             Assert.AreEqual(0,childrenCount);
-            target.Add(Guid.NewGuid(), new AnnoVizPoly());
-            target.Add(Guid.NewGuid(), new AnnoVizPushpin());
-            target.Add(Guid.NewGuid(), new MeteoVizPoly(new Meteorite("", 1, 1, "", "", DateTime.Now, 1.1, 2.2)));
-            target.Add(Guid.NewGuid(), new MeteoVizPushpin(new Meteorite("", 1, 1, "", "", DateTime.Now, 1.1, 2.2)));
+
+            Guid guid = Guid.NewGuid();
+            Guid guid2 = Guid.NewGuid();
+            Guid guid3 = Guid.NewGuid();
+            Guid guid4 = Guid.NewGuid();
+
+            target.Add(guid, new AnnoVizPoly());
+            target.Add(guid2, new AnnoVizPushpin());
+            target.Add(guid3, new MeteoVizPoly(new Meteorite("", 1, 1, "", "", DateTime.Now, 1.1, 2.2)));
+            target.Add(guid4, new MeteoVizPushpin(new Meteorite("", 1, 1, "", "", DateTime.Now, 1.1, 2.2)));
 
             target.updateMap(map);
             childrenCount = map.Children.Count;
             Assert.AreEqual(4,childrenCount);
 
-            //target.Remove(target.Keys.GetEnumerator().Current);
+            target.Remove(guid);
+
+            target.updateMap(map);
+            childrenCount = map.Children.Count;
+            Assert.AreEqual(3,childrenCount);
             target.Clear();
             target.updateMap(map);
             childrenCount = map.Children.Count;
-            Assert.AreEqual(0,childrenCount);
+            Assert.AreEqual(0, childrenCount);
         }
     }
 }
