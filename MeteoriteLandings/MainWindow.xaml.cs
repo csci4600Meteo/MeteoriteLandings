@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Viz;
+using MeteoriteLib;
 
 namespace MeteoriteLandings
 {
@@ -27,9 +28,9 @@ namespace MeteoriteLandings
             InitializeComponent();
 
             MapVizContainer mvc = new MapVizContainer();
-            MeteoVizPushpin mvp = new MeteoVizPushpin();
-            MeteoVizPushpin mvp2 = new MeteoVizPushpin();
-            MeteoVizPoly mvpoly = new MeteoVizPoly();
+            MeteoVizPushpin mvp = new MeteoVizPushpin(new Meteorite("", 1, 1, "", "", DateTime.Now, 1.1, 2.2));
+            MeteoVizPushpin mvp2 = new MeteoVizPushpin(new Meteorite("", 1, 1, "", "", DateTime.Now, 1.1, 2.2));
+            MeteoVizPoly mvpoly = new MeteoVizPoly(new Meteorite("", 1, 1, "", "", DateTime.Now, 1.1, 2.2));
             //MeteoVizPoly mp = new MeteoVizPoly();
 
             Location l = new Location(36,-87);

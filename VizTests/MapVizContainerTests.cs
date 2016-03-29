@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Maps.MapControl.WPF;
+using MeteoriteLib;
 
 namespace Viz.Tests
 {
@@ -35,8 +36,8 @@ namespace Viz.Tests
 
             target.Add(Guid.NewGuid(), new AnnoVizPoly());
             target.Add(Guid.NewGuid(), new AnnoVizPushpin());
-            target.Add(Guid.NewGuid(), new MeteoVizPoly());
-            target.Add(Guid.NewGuid(), new MeteoVizPushpin());
+            target.Add(Guid.NewGuid(), new MeteoVizPoly(new Meteorite("",1,1,"","",DateTime.Now,1.1,2.2)));
+            target.Add(Guid.NewGuid(), new MeteoVizPushpin(new Meteorite("", 1, 1, "", "", DateTime.Now, 1.1, 2.2)));
             Assert.AreEqual(4, target.Count);
 
             //target.Remove(target.Keys.GetEnumerator().Current);
@@ -59,8 +60,8 @@ namespace Viz.Tests
             Assert.AreEqual(0,childrenCount);
             target.Add(Guid.NewGuid(), new AnnoVizPoly());
             target.Add(Guid.NewGuid(), new AnnoVizPushpin());
-            target.Add(Guid.NewGuid(), new MeteoVizPoly());
-            target.Add(Guid.NewGuid(), new MeteoVizPushpin());
+            target.Add(Guid.NewGuid(), new MeteoVizPoly(new Meteorite("", 1, 1, "", "", DateTime.Now, 1.1, 2.2)));
+            target.Add(Guid.NewGuid(), new MeteoVizPushpin(new Meteorite("", 1, 1, "", "", DateTime.Now, 1.1, 2.2)));
 
             target.updateMap(map);
             childrenCount = map.Children.Count;
