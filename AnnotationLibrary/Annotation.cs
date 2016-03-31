@@ -1,0 +1,54 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace AnnotationLibrary
+{
+    class Annotation
+    {
+        private int id;
+        private string anno;
+        private Meteorite meteorite;
+        private Polygon poly;
+        private Loc location;
+
+        public int getID
+        {
+            get { return id; }
+            set { id = value; }
+        }
+
+        public string getAnno
+        {
+            get { return anno; }
+            set { anno = value;  }
+        }
+
+        public Meteorite getMeteorite
+	    {
+		    get { return meteorite; }
+		    set { meteorite = value; }
+	    }
+
+        public Polygon getPolygon
+        {
+            get { return poly; }
+            set { poly = value; }
+        }
+
+        public Loc getLocation
+        {
+            get { return location; }
+            set { location = value; }
+        }
+
+        public Annotation(int ID, Loc Location)
+        {
+            id = ID;
+            location = Location;
+        }
+
+    }
+}
