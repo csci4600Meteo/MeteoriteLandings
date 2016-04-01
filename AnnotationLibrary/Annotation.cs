@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MeteoriteLib;
 
 namespace AnnotationLibrary
 {
@@ -11,7 +12,7 @@ namespace AnnotationLibrary
         private int id;
         private string anno;
         private Meteorite meteorite;
-        private Polygon poly;
+        //private Polygon poly;
         private Loc location;
 
         public int getID
@@ -32,11 +33,12 @@ namespace AnnotationLibrary
 		    set { meteorite = value; }
 	    }
 
-        public Polygon getPolygon
-        {
-            get { return poly; }
-            set { poly = value; }
-        }
+        //public Polygon getPolygon
+        //{
+        //    get { return poly; }
+        //    set { poly = value; }
+        //}
+        
 
         public Loc getLocation
         {
