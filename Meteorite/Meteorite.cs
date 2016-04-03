@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Linq.Mapping;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace MeteoriteLib
-{
+{   
+    [Table(Name="MeteoTable")]
     public class Meteorite
     {
         //members right here
@@ -21,7 +23,7 @@ namespace MeteoriteLib
 
 
         //read only properties here
-
+        [Column]
         public string Name
         {
             get
@@ -31,7 +33,7 @@ namespace MeteoriteLib
 
 
         }
-
+        [Column(IsPrimaryKey = true)]
         public int Id
         {
             get
@@ -41,7 +43,7 @@ namespace MeteoriteLib
 
 
         }
-
+        [Column]
         public int Mass
         {
             get
@@ -51,7 +53,7 @@ namespace MeteoriteLib
 
 
         }
-
+        [Column]
         public string Reclass
         {
             get
@@ -61,7 +63,7 @@ namespace MeteoriteLib
 
 
         }
-
+        [Column]
         public string Fall
         {
             get
@@ -70,7 +72,7 @@ namespace MeteoriteLib
             }
 
         }
-
+        [Column]
         public DateTime Date
         {
             get
@@ -80,7 +82,7 @@ namespace MeteoriteLib
 
 
         }
-
+        [Column]
         public double RectLat
         {
             get
@@ -90,7 +92,7 @@ namespace MeteoriteLib
 
 
         }
-
+        [Column]
         public double RectLong
         {
             get
