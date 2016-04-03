@@ -7,10 +7,19 @@
         xmlns:local="clr-namespace:MeteoriteLandings"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
-    
-        <Grid >
-            <m:Map x:Name="mainMap" CredentialsProvider="replace with appropriate key" Mode="Aerial" 
-               Center="36.533676, -87.353065" ZoomLevel="19"/>
+
+    <Grid >
+        <DockPanel>
+            <StackPanel DockPanel.Dock="Bottom">
+                <DataGrid x:Name="MeteoDataGrid"  Height="80"></DataGrid>
+            </StackPanel>
+            <StackPanel DockPanel.Dock="Right">
+                <DataGrid x:Name="AnnoDataGrid"  Width="80"></DataGrid>
+            </StackPanel>
+
+            <m:Map x:Name="mainMap" CredentialsProvider="" Mode="Aerial" 
+               Center="36.533676, -87.353065" ZoomLevel="19" />
+        </DockPanel>
     </Grid>
     
 </Window>
