@@ -16,6 +16,8 @@ namespace AnnotationLibrary
 
         }
 
+        public Table<Annotation> AnnoTable;
+
         public void CreateAnnoDB(string connection)
         {
             AnnoDB annoDB = new AnnoDB(connection);

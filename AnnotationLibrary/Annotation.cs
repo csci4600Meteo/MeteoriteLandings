@@ -1,30 +1,38 @@
 ﻿using Microsoft.Maps.MapControl.WPF;
 using System;
 using System.Collections.Generic;
+using System.Data.Linq.Mapping;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MeteoriteLib;
 
 
+
 namespace AnnotationLibrary
 {
+    
+    [Table(Name = "AnnoTable")]
     public class Annotation
     {
+
         private int id;
         private string anno;
         private Meteorite meteorite;
         //private Polygon poly;
 
+        [Column(IsPrimaryKey = true)]
         public int getID
         {
             get { return id; }
             set { id = value; }
         }
-
+        [Column]
         public Location Location { get; set; }
-        public LocationCollection LocationCollection { get; set; }
 
+        [Column]
+        public LocationCollection LocationCollection { get; set; }
+        [Column]
         public string getAnno
         {
             get { return anno; }
