@@ -41,7 +41,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="InterimDataset.cs" />
     <Compile Include="Meteorite.cs" />
     <Compile Include="Meteorites.cs" />
     <Compile Include="PolishedDatset.cs" />
