@@ -9,13 +9,12 @@ using MeteoriteLib;
 
 namespace AnnotationLibrary
 {
-    class Annotation
+    public class Annotation
     {
         private int id;
         private string anno;
         private Meteorite meteorite;
         //private Polygon poly;
-        private Loc location;
 
         public int getID
         {
@@ -51,10 +50,16 @@ namespace AnnotationLibrary
         //    set { location = value; }
         //}
 
-        public Annotation(int ID, Loc Location)
+        public Annotation(int ID, string Title, Location Loc)
         {
             id = ID;
-            location = Location;
+            Location = Loc;
+            anno = Title;
+        }
+
+        public void AddMeteor(Meteorite m)
+        {
+            meteorite = m;
         }
 
     }
