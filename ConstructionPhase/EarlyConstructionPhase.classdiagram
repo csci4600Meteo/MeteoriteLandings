@@ -5,14 +5,14 @@
       <elementDefinition Id="ac9f0152-6593-47b2-b934-d6b599b84c9b" />
       <body>This Meteorite Database will be a local database that is, as far as what it contains in the table, a mirror of the database socrata is going to pull from the internet, I'm not familiar with how to represent it in a class diagram so ill try</body>
       <annotatedElements>
-        <classMoniker Id="5d0f7bb2-fc3e-46ba-8c6c-6c2c355bce17" LastKnownName="MeteoriteDatabase" />
+        <classMoniker Id="5d0f7bb2-fc3e-46ba-8c6c-6c2c355bce17" LastKnownName="Meteorites" />
       </annotatedElements>
     </comment>
     <comment Id="46608b2e-6a97-44c3-85cb-f9399b679224">
       <elementDefinition Id="356fa1b1-243c-4a3c-b462-e06132aee42d" />
-      <body>The marshaller will be responisible for taking the raw data from the local database, deciding how to handle "bad" data (data that doesnt fit nicely in the object) and then send it to the interim data set</body>
+      <body>The meteoAdapterr will be responisible for taking the raw data from the local database, deciding how to handle "bad" data (data that doesnt fit nicely in the object) and then send it to the interim data set</body>
       <annotatedElements>
-        <classMoniker Id="9af48eee-3d08-40bc-897f-170c3ae16589" LastKnownName="Marshaller" />
+        <classMoniker Id="9af48eee-3d08-40bc-897f-170c3ae16589" LastKnownName="MeteoAdapter" />
       </annotatedElements>
     </comment>
     <comment Id="05987df6-d0f6-49ce-b44e-49b20f1d1a65">
@@ -20,13 +20,6 @@
       <body>The socrata reader will pull data from the external database on the net at the start of the application, each subsequent time the application runs, it will check for updates, if the size of the set has changed it will pull the dataset and update the one we have</body>
       <annotatedElements>
         <classMoniker Id="1b04168d-acb4-4013-9f75-e27912d44b57" LastKnownName="ExternalReader" />
-      </annotatedElements>
-    </comment>
-    <comment Id="87738036-8080-49b1-b971-21fe7e611270">
-      <elementDefinition Id="b381706d-083b-4677-ad9c-f3e9dde12f92" />
-      <body>this interim dataset will hold all the data from the database and be ready to manipulate it in any way we choose</body>
-      <annotatedElements>
-        <classMoniker Id="5c7d0f06-da3b-4095-86d8-f5deb0e644d5" LastKnownName="Interim Data source" />
       </annotatedElements>
     </comment>
     <comment Id="2f62c90f-d09b-4739-bb82-19adfdb8d2d6">
@@ -50,7 +43,7 @@
       <body>This meteorite class is the container for the information from the tables, all the members are set to private and the constructor is the only way to set values, because the only way we want to add a meteor is if the marshaller createsit, all the other operations are meant to be read only properties.
 </body>
       <annotatedElements>
-        <classMoniker Id="f5e262e9-0cb2-4a83-96c6-7b37c9b8de63" LastKnownName="Meteorite1" />
+        <classMoniker Id="f5e262e9-0cb2-4a83-96c6-7b37c9b8de63" LastKnownName="Meteorite" />
       </annotatedElements>
     </comment>
     <comment Id="9842b27e-d7f4-4585-9e2e-11ee588f9b13">
@@ -621,7 +614,7 @@ MapVizContainer is the composition of IMapViz Components with MeteoVizPoly, Anno
         </generalsInternal>
         <targetEnds>
           <association Id="d1ebf99a-78ad-444b-9a56-5dd5cf76f749" isDerived="false" sourceEndRoleName="MeteoVizPushpin" targetEndRoleName="Meteorite1" isLeaf="false" isAbstract="false">
-            <classMoniker Id="f5e262e9-0cb2-4a83-96c6-7b37c9b8de63" LastKnownName="Meteorite1" />
+            <classMoniker Id="f5e262e9-0cb2-4a83-96c6-7b37c9b8de63" LastKnownName="Meteorite" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd Id="6a7150b5-7c11-4ea4-9557-68e66b5c2180" name="MeteoVizPushpin" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
@@ -705,7 +698,7 @@ MapVizContainer is the composition of IMapViz Components with MeteoVizPoly, Anno
         </generalsInternal>
         <targetEnds>
           <association Id="ab3cee28-5d42-4f54-a474-7a01c099f0b3" isDerived="false" sourceEndRoleName="MeteoVizPoly" targetEndRoleName="Meteorite1" isLeaf="false" isAbstract="false">
-            <classMoniker Id="f5e262e9-0cb2-4a83-96c6-7b37c9b8de63" LastKnownName="Meteorite1" />
+            <classMoniker Id="f5e262e9-0cb2-4a83-96c6-7b37c9b8de63" LastKnownName="Meteorite" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd Id="3c1867cd-2eee-4ec1-9f4e-3be3a8b60955" name="MeteoVizPoly" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
@@ -1561,11 +1554,11 @@ MapVizContainer is the composition of IMapViz Components with MeteoVizPoly, Anno
       </referencedType>
     </packageHasNamedElement>
     <logicalClassDesignerModelHasTypes>
-      <class Id="f5e262e9-0cb2-4a83-96c6-7b37c9b8de63" name="Meteorite1" isAbstract="false" isLeaf="false" isActiveClass="false">
+      <class Id="f5e262e9-0cb2-4a83-96c6-7b37c9b8de63" name="Meteorite" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="ffad95f5-989a-4471-a304-8f3af6bbd57a" />
         <suppliersInternal>
           <dependency Id="a31393fd-c687-41cd-ba81-362b887c3e81">
-            <classMoniker Id="9af48eee-3d08-40bc-897f-170c3ae16589" LastKnownName="Marshaller" />
+            <classMoniker Id="9af48eee-3d08-40bc-897f-170c3ae16589" LastKnownName="MeteoAdapter" />
             <elementDefinition Id="71c0f75f-a2b6-421d-a10b-9274b96e750b" />
           </dependency>
         </suppliersInternal>
@@ -1712,7 +1705,7 @@ MapVizContainer is the composition of IMapViz Components with MeteoVizPoly, Anno
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
-      <class Id="5d0f7bb2-fc3e-46ba-8c6c-6c2c355bce17" name="MeteoriteDatabase" isAbstract="false" isLeaf="false" isActiveClass="false">
+      <class Id="5d0f7bb2-fc3e-46ba-8c6c-6c2c355bce17" name="Meteorites" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="e2ac5426-04b9-4376-b020-9e5e2a0d9e29" />
         <suppliersInternal>
           <dependency Id="353f3db0-034a-4a1d-8503-b48897074f1a">
@@ -1728,63 +1721,11 @@ MapVizContainer is the composition of IMapViz Components with MeteoVizPoly, Anno
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
-      <class Id="5c7d0f06-da3b-4095-86d8-f5deb0e644d5" name="Interim Data source" isAbstract="false" isLeaf="false" isActiveClass="false">
-        <elementDefinition Id="f8bfc544-404a-4461-a183-1dcd77ec000c" />
-        <suppliersInternal>
-          <dependency Id="9287d7a7-4bae-4e43-aa8f-1ac7f6aaff84">
-            <classMoniker Id="9af48eee-3d08-40bc-897f-170c3ae16589" LastKnownName="Marshaller" />
-            <elementDefinition Id="6e15bddc-7337-425f-a81b-cfd2618e192d" />
-          </dependency>
-        </suppliersInternal>
-        <targetEnds>
-          <association Id="f7d15094-e596-4f7b-a8b6-942cf96aa1f8" isDerived="false" sourceEndRoleName="Interim Data source" targetEndRoleName="Meteorite" isLeaf="false" isAbstract="false">
-            <classMoniker Id="f5e262e9-0cb2-4a83-96c6-7b37c9b8de63" LastKnownName="Meteorite1" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd Id="fa1649da-8391-45cb-b974-72f3a999f0a5" name="Interim Data source" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
-                  <elementDefinition Id="b8f7b2e8-cb5c-4616-87d4-31d6539d6ed5" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd Id="c10db0c1-f224-4381-bf7f-dfef208f7027" name="Meteorite" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                  <lowerValueInternal>
-                    <literalString Id="30f85b46-2cba-4365-bc74-af7a82911b81" name="Lower" value="1 to many">
-                      <elementDefinition Id="a2953d4a-7a37-4fc2-89d5-ead5be32d3d0" />
-                    </literalString>
-                  </lowerValueInternal>
-                  <upperValueInternal>
-                    <literalString Id="6c0d35e9-357c-43f4-bd79-9d3a7d57d7eb" name="Upper" value="1 to many">
-                      <elementDefinition Id="718f7fb8-bd5b-4e94-94ca-da0cf7b9a459" />
-                    </literalString>
-                  </upperValueInternal>
-                  <elementDefinition Id="bc052df3-2478-45d3-9dd9-fc541d56647c" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-            <elementDefinition Id="2bd2449d-c175-4620-adf9-7991c4fc709c" />
-          </association>
-        </targetEnds>
-        <ownedAttributesInternal>
-          <property Id="c0969c24-08a9-4385-90ff-7c9277ca8ab2" name="List Meteorites" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="562794a8-906c-4a61-8051-a7b5c7640885" />
-          </property>
-        </ownedAttributesInternal>
-        <ownedOperationsInternal>
-          <operation Id="0d4f0cc6-0d05-4c3a-bf4f-894754ad81dc" name="filterByArg" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-            <elementDefinition Id="594bfe15-dac8-4c2b-940e-488139c54222" />
-          </operation>
-          <operation Id="59881c5c-fe86-4ebe-bfa8-949488eb79a6" name="filterByAssociation" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-            <elementDefinition Id="22c323a9-edc9-4e00-81a8-0cb11b422f4f" />
-          </operation>
-        </ownedOperationsInternal>
-      </class>
-    </logicalClassDesignerModelHasTypes>
-    <logicalClassDesignerModelHasTypes>
-      <class Id="9af48eee-3d08-40bc-897f-170c3ae16589" name="Marshaller" isAbstract="false" isLeaf="false" isActiveClass="false">
+      <class Id="9af48eee-3d08-40bc-897f-170c3ae16589" name="MeteoAdapter" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="6d888ac8-2f9c-4ff4-a350-7f8ca6f87720" />
         <suppliersInternal>
           <dependency Id="f3c2be00-8b2f-43fd-93e3-6b7a93af950d">
-            <classMoniker Id="5d0f7bb2-fc3e-46ba-8c6c-6c2c355bce17" LastKnownName="MeteoriteDatabase" />
+            <classMoniker Id="5d0f7bb2-fc3e-46ba-8c6c-6c2c355bce17" LastKnownName="Meteorites" />
             <elementDefinition Id="f0c60c4f-ffff-434b-ade3-be548bc25344" />
           </dependency>
         </suppliersInternal>
@@ -1799,14 +1740,14 @@ MapVizContainer is the composition of IMapViz Components with MeteoVizPoly, Anno
       <class Id="7e7d8906-de07-404f-9f15-5026f33b0db6" name="Polished Dataset" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="aa6da45b-a842-4402-af66-0141aa6a6c1f" />
         <suppliersInternal>
-          <dependency Id="ee8fb6c5-454d-4b95-ac65-7684dafdfd22">
-            <classMoniker Id="5c7d0f06-da3b-4095-86d8-f5deb0e644d5" LastKnownName="Interim Data source" />
-            <elementDefinition Id="f6846c6c-2a24-47a0-ac03-fba7d9616da0" />
+          <dependency Id="6ddc571e-ee4c-4276-9e10-e1a39f857904">
+            <classMoniker Id="9af48eee-3d08-40bc-897f-170c3ae16589" LastKnownName="MeteoAdapter" />
+            <elementDefinition Id="153ad773-0f86-4aae-a8b0-ef4dddb850c9" />
           </dependency>
         </suppliersInternal>
         <targetEnds>
           <association Id="f85e37a2-d924-4617-a1d0-6b81cb345548" isDerived="false" sourceEndRoleName="Polished Dataset" targetEndRoleName="Meteorite" isLeaf="false" isAbstract="false">
-            <classMoniker Id="f5e262e9-0cb2-4a83-96c6-7b37c9b8de63" LastKnownName="Meteorite1" />
+            <classMoniker Id="f5e262e9-0cb2-4a83-96c6-7b37c9b8de63" LastKnownName="Meteorite" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd Id="33a65a0b-711a-4a03-b2a0-6637454b8d59" name="Polished Dataset" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
@@ -1830,22 +1771,6 @@ MapVizContainer is the composition of IMapViz Components with MeteoVizPoly, Anno
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
             <elementDefinition Id="e4dc2817-2a97-47e4-90b7-1b36bc70a49f" />
-          </association>
-          <association Id="8aa24964-2a92-4afc-9061-f4ba9737cdd8" isDerived="false" sourceEndRoleName="Polished Dataset" targetEndRoleName="Interim Data source" isLeaf="false" isAbstract="false">
-            <classMoniker Id="5c7d0f06-da3b-4095-86d8-f5deb0e644d5" LastKnownName="Interim Data source" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd Id="a9bcdb78-044e-42d9-912a-280c5e0b6425" name="Polished Dataset" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
-                  <elementDefinition Id="692ab0de-02ad-42d1-bb66-eb2b96b0f714" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd Id="71b7f7a8-6201-42f5-bce3-6171a2ecd0b2" name="Interim Data source" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
-                  <elementDefinition Id="fdde1648-1eed-4fe2-9818-9b6ec2df3d33" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-            <elementDefinition Id="5fecfe1d-40a8-44a5-add1-c0562e5b19c3" />
           </association>
         </targetEnds>
         <ownedAttributesInternal>

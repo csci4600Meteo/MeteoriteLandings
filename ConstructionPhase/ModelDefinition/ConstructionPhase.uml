@@ -10,17 +10,17 @@
       <annotatedElements>
         <classMoniker
           Id="e2ac5426-04b9-4376-b020-9e5e2a0d9e29"
-          LastKnownName="MeteoriteDatabase"
+          LastKnownName="Meteorites"
           LastKnownLocation="ConstructionPhase.uml" />
       </annotatedElements>
     </comment>
     <comment
       Id="356fa1b1-243c-4a3c-b462-e06132aee42d">
-      <body>The marshaller will be responisible for taking the raw data from the local database, deciding how to handle "bad" data (data that doesnt fit nicely in the object) and then send it to the interim data set</body>
+      <body>The meteoAdapterr will be responisible for taking the raw data from the local database, deciding how to handle "bad" data (data that doesnt fit nicely in the object) and then send it to the interim data set</body>
       <annotatedElements>
         <classMoniker
           Id="6d888ac8-2f9c-4ff4-a350-7f8ca6f87720"
-          LastKnownName="Marshaller"
+          LastKnownName="MeteoAdapter"
           LastKnownLocation="ConstructionPhase.uml" />
       </annotatedElements>
     </comment>
@@ -31,16 +31,6 @@
         <classMoniker
           Id="6caeda63-ebba-4b5e-9296-88b6bb820c40"
           LastKnownName="ExternalReader"
-          LastKnownLocation="ConstructionPhase.uml" />
-      </annotatedElements>
-    </comment>
-    <comment
-      Id="b381706d-083b-4677-ad9c-f3e9dde12f92">
-      <body>this interim dataset will hold all the data from the database and be ready to manipulate it in any way we choose</body>
-      <annotatedElements>
-        <classMoniker
-          Id="f8bfc544-404a-4461-a183-1dcd77ec000c"
-          LastKnownName="Interim Data source"
           LastKnownLocation="ConstructionPhase.uml" />
       </annotatedElements>
     </comment>
@@ -70,7 +60,7 @@
       <annotatedElements>
         <classMoniker
           Id="ffad95f5-989a-4471-a304-8f3af6bbd57a"
-          LastKnownName="Meteorite1"
+          LastKnownName="Meteorite"
           LastKnownLocation="ConstructionPhase.uml" />
       </annotatedElements>
     </comment>
@@ -910,7 +900,7 @@ MapVizContainer is the composition of IMapViz Components with MeteoVizPoly, Anno
             isAbstract="false">
             <classMoniker
               Id="ffad95f5-989a-4471-a304-8f3af6bbd57a"
-              LastKnownName="Meteorite1"
+              LastKnownName="Meteorite"
               LastKnownLocation="ConstructionPhase.uml" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
@@ -1095,7 +1085,7 @@ MapVizContainer is the composition of IMapViz Components with MeteoVizPoly, Anno
             isAbstract="false">
             <classMoniker
               Id="ffad95f5-989a-4471-a304-8f3af6bbd57a"
-              LastKnownName="Meteorite1"
+              LastKnownName="Meteorite"
               LastKnownLocation="ConstructionPhase.uml" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
@@ -2324,7 +2314,7 @@ MapVizContainer is the composition of IMapViz Components with MeteoVizPoly, Anno
     <packageHasNamedElement>
       <class
         Id="ffad95f5-989a-4471-a304-8f3af6bbd57a"
-        name="Meteorite1"
+        name="Meteorite"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
@@ -2333,7 +2323,7 @@ MapVizContainer is the composition of IMapViz Components with MeteoVizPoly, Anno
             Id="71c0f75f-a2b6-421d-a10b-9274b96e750b">
             <classMoniker
               Id="6d888ac8-2f9c-4ff4-a350-7f8ca6f87720"
-              LastKnownName="Marshaller"
+              LastKnownName="MeteoAdapter"
               LastKnownLocation="ConstructionPhase.uml" />
           </dependency>
         </suppliersInternal>
@@ -2659,7 +2649,7 @@ MapVizContainer is the composition of IMapViz Components with MeteoVizPoly, Anno
     <packageHasNamedElement>
       <class
         Id="e2ac5426-04b9-4376-b020-9e5e2a0d9e29"
-        name="MeteoriteDatabase"
+        name="Meteorites"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
@@ -2700,7 +2690,7 @@ MapVizContainer is the composition of IMapViz Components with MeteoVizPoly, Anno
             Id="6e15bddc-7337-425f-a81b-cfd2618e192d">
             <classMoniker
               Id="6d888ac8-2f9c-4ff4-a350-7f8ca6f87720"
-              LastKnownName="Marshaller"
+              LastKnownName="MeteoAdapter"
               LastKnownLocation="ConstructionPhase.uml" />
           </dependency>
         </suppliersInternal>
@@ -2714,7 +2704,7 @@ MapVizContainer is the composition of IMapViz Components with MeteoVizPoly, Anno
             isAbstract="false">
             <classMoniker
               Id="ffad95f5-989a-4471-a304-8f3af6bbd57a"
-              LastKnownName="Meteorite1"
+              LastKnownName="Meteorite"
               LastKnownLocation="ConstructionPhase.uml" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
@@ -2794,7 +2784,7 @@ MapVizContainer is the composition of IMapViz Components with MeteoVizPoly, Anno
     <packageHasNamedElement>
       <class
         Id="6d888ac8-2f9c-4ff4-a350-7f8ca6f87720"
-        name="Marshaller"
+        name="MeteoAdapter"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
@@ -2803,7 +2793,7 @@ MapVizContainer is the composition of IMapViz Components with MeteoVizPoly, Anno
             Id="f0c60c4f-ffff-434b-ade3-be548bc25344">
             <classMoniker
               Id="e2ac5426-04b9-4376-b020-9e5e2a0d9e29"
-              LastKnownName="MeteoriteDatabase"
+              LastKnownName="Meteorites"
               LastKnownLocation="ConstructionPhase.uml" />
           </dependency>
         </suppliersInternal>
@@ -2834,6 +2824,13 @@ MapVizContainer is the composition of IMapViz Components with MeteoVizPoly, Anno
               LastKnownName="Interim Data source"
               LastKnownLocation="ConstructionPhase.uml" />
           </dependency>
+          <dependency
+            Id="153ad773-0f86-4aae-a8b0-ef4dddb850c9">
+            <classMoniker
+              Id="6d888ac8-2f9c-4ff4-a350-7f8ca6f87720"
+              LastKnownName="MeteoAdapter"
+              LastKnownLocation="ConstructionPhase.uml" />
+          </dependency>
         </suppliersInternal>
         <targetEnds>
           <association
@@ -2845,7 +2842,7 @@ MapVizContainer is the composition of IMapViz Components with MeteoVizPoly, Anno
             isAbstract="false">
             <classMoniker
               Id="ffad95f5-989a-4471-a304-8f3af6bbd57a"
-              LastKnownName="Meteorite1"
+              LastKnownName="Meteorite"
               LastKnownLocation="ConstructionPhase.uml" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
