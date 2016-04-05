@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AnnoDB.cs" />
+    <Compile Include="AnnoLib.cs" />
     <Compile Include="Annotation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

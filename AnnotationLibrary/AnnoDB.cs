@@ -21,10 +21,6 @@ namespace AnnotationLibrary
         public void CreateAnnoDB(string connection)
         {
             AnnoDB annoDB = new AnnoDB(connection);
-            if (annoDB.DatabaseExists())
-            {
-                annoDB.DeleteDatabase();
-            }
             annoDB.CreateDatabase();
         }
     }

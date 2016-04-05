@@ -16,58 +16,34 @@ namespace AnnotationLibrary
     public class Annotation
     {
 
-        private int id;
-        private string anno;
-        private Meteorite meteorite;
-        //private Polygon poly;
-
         [Column(IsPrimaryKey = true)]
-        public int getID
-        {
-            get { return id; }
-            set { id = value; }
-        }
+        public int ID { get; set; }
         [Column]
         public Location Location { get; set; }
-
         [Column]
         public LocationCollection LocationCollection { get; set; }
         [Column]
-        public string getAnno
-        {
-            get { return anno; }
-            set { anno = value;  }
-        }
+        public string Anno { get; set; }
+        [Column]
+        public List<Meteorite> Meteorites { get; set; }
 
-        public Meteorite getMeteorite
+        public Meteorite getMeteorite(int i)
 	    {
-		    get { return meteorite; }
-		    set { meteorite = value; }
+            return Meteorites[i];
 	    }
-
-        //public Polygon getPolygon
-        //{
-        //    get { return poly; }
-        //    set { poly = value; }
-        //}
         
 
-        //public Loc getLocation
-        //{
-        //    get { return location; }
-        //    set { location = value; }
-        //}
-
-        public Annotation(int ID, string Title, Location Loc)
+        public Annotation(int i, string Title, Location Loc)
         {
-            id = ID;
+            ID = i;
             Location = Loc;
-            anno = Title;
+            Anno = Title;
+            Meteorites = new List<Meteorite>();
         }
 
         public void AddMeteor(Meteorite m)
         {
-            meteorite = m;
+            Meteorites.Add(m);
         }
 
     }
