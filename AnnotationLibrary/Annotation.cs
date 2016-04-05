@@ -24,7 +24,7 @@ namespace AnnotationLibrary
         public LocationCollection LocationCollection { get; set; }
         [Column]
         public string Anno { get; set; }
-        [Column]
+       // [Column]
         public List<Meteorite> Meteorites { get; set; }
 
         public Meteorite getMeteorite(int i)
