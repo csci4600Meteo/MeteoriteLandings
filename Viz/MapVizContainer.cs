@@ -37,6 +37,13 @@ namespace Viz
             this.Add(mvp.Id, mvp);
         }
 
+        public void removeMeteorite(MeteoriteLib.Meteorite meteo)
+        {
+            MeteoVizPushpin mvp = (MeteoVizPushpin)(this.Values.OfType<MeteoVizPushpin>().Select(m => m.Meteorite.Id == meteo.Id));
+            mvp.MapVizSelected -= Mvp_MapVizSelected;
+            this.Remove(mvp.Id);
+        }
+
         private void Mvp_MapVizSelected(object sender, MapVizSelectedEventArgs e)
         {
             if(sender is MeteoVizPushpin)
@@ -51,11 +58,11 @@ namespace Viz
             {
                 if(kvp.Value is AnnoVizPoly && !showAnnotations)
                 {
-                    map.Children.Remove((AnnoVizPoly)kvp.Value);
+                    ((AnnoVizPoly)kvp.Value).Visibility = System.Windows.Visibility.Hidden;
                 }
                 else if (kvp.Value is AnnoVizPushpin && !showAnnotations)
                 {
-                    map.Children.Remove((AnnoVizPushpin)kvp.Value);
+                    ((AnnoVizPushpin)kvp.Value).Visibility = System.Windows.Visibility.Hidden;
                 }
             }
         }
@@ -66,11 +73,11 @@ namespace Viz
             {
                 if (kvp.Value is AnnoVizPoly && showAnnotations)
                 {
-                    map.Children.Add((AnnoVizPoly)kvp.Value);
+                    ((AnnoVizPoly)kvp.Value).Visibility = System.Windows.Visibility.Visible;
                 }
                 else if (kvp.Value is AnnoVizPushpin && showAnnotations)
                 {
-                    map.Children.Add((AnnoVizPushpin)kvp.Value);
+                    ((AnnoVizPushpin)kvp.Value).Visibility = System.Windows.Visibility.Visible;
                 }
             }
         }
@@ -82,11 +89,11 @@ namespace Viz
             {
                 if (kvp.Value is MeteoVizPoly && showMeteors)
                 {
-                    map.Children.Add((MeteoVizPoly)kvp.Value);
+                    ((MeteoVizPoly)kvp.Value).Visibility = System.Windows.Visibility.Visible;
                 }
                 else if (kvp.Value is MeteoVizPushpin && showMeteors)
                 {
-                    map.Children.Add((MeteoVizPushpin)kvp.Value);
+                    ((MeteoVizPushpin)kvp.Value).Visibility = System.Windows.Visibility.Visible;
                 }
             }
         }
@@ -97,11 +104,11 @@ namespace Viz
             {
                 if (kvp.Value is MeteoVizPoly && !showMeteors)
                 {
-                    map.Children.Remove((MeteoVizPoly)kvp.Value);
+                    ((MeteoVizPoly)kvp.Value).Visibility = System.Windows.Visibility.Hidden;
                 }
                 else if (kvp.Value is MeteoVizPushpin && !showMeteors)
                 {
-                    map.Children.Remove((MeteoVizPushpin)kvp.Value);
+                    ((MeteoVizPushpin)kvp.Value).Visibility = System.Windows.Visibility.Hidden;
                 }
             }
         }
