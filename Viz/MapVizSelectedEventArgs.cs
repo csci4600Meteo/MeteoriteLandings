@@ -8,8 +8,8 @@ namespace Viz
 {
     public class MapVizSelectedEventArgs : EventArgs
     {
-        public object MapVizEntity { get; private set; }
-        public MapVizSelectedEventArgs(object mapVizEntity)
+        internal object MapVizEntity { get; private set; }
+        internal MapVizSelectedEventArgs(object mapVizEntity)
         {
             this.MapVizEntity = mapVizEntity;
         }

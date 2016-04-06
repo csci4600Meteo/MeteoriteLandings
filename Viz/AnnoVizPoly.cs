@@ -5,19 +5,50 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using AnnotationLibrary;
 
 namespace Viz
 {
-    public class AnnoVizPoly : MapPolygon, IMapViz
+    internal class AnnoVizPoly : MapPolygon, IMapViz
     {
         public Guid Id { get; set; }
-
-        public AnnoVizPoly()
+        public Annotation Annotation { get; private set; }
+        internal AnnoVizPoly()
         {
             this.Id = Guid.NewGuid();
         }
 
-        public event EventHandler MapVizSelected;
+        public event EventHandler<MapVizSelectedEventArgs> MapVizSelected;
+        event EventHandler<MapVizSelectedEventArgs> IMapViz.MapVizSelected
+        {
+            add
+            {
+                MapVizSelected += value;
+            }
+
+            remove
+            {
+                MapVizSelected -= value;
+            }
+        }
+
+        private void OnMapVizSelected(MapVizSelectedEventArgs e)
+        {
+            if (MapVizSelected != null)
+            {
+                MapVizSelected(this, e);
+            }
+        }
+
+
+
+        protected override void OnMouseLeftButtonDown(MouseButtonEventArgs e)
+        {
+            OnMapVizSelected(new MapVizSelectedEventArgs(this.Annotation));
+
+
+        }
+
 
         protected override void OnMouseEnter(MouseEventArgs e)
         {

@@ -7,13 +7,18 @@ using System.Threading.Tasks;
 
 namespace Viz
 {
+    /// <summary>
+    /// MapVizContainer holds all the meteorites and annotations that should be displayed on the map. To add a meteorite use the addMeteorite
+    /// method so that the appropriate event listeners can be created.  Same for annotations (addAnnotation) and the polygon versions of metorites (addMeteoritePoly) and annotations (addAnnotationPoly).
+    /// 
+    /// </summary>
     public class MapVizContainer :  Dictionary<Guid,IMapViz>
     {
         public bool showAnnotations { get; set; }
         public bool showMeteors { get; set; }
         public bool showPolys { get; set; }
         public bool showPushpins { get; set; }
-        public static IMapViz CurrentSelection { get; private set; }
+        public static object CurrentSelection { get; private set; }
 
         public MapVizContainer()
         {
@@ -32,9 +37,12 @@ namespace Viz
             this.Add(mvp.Id, mvp);
         }
 
-        private void Mvp_MapVizSelected(object sender, EventArgs e)
+        private void Mvp_MapVizSelected(object sender, MapVizSelectedEventArgs e)
         {
-            CurrentSelection = (IMapViz)sender;
+            if(sender is MeteoVizPushpin)
+            {
+                CurrentSelection = e.MapVizEntity;
+            }
         }
 
         public void hideMapAnnotations(Map map)

@@ -5,30 +5,57 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using AnnotationLibrary;
 
 namespace Viz
 {
-    public class AnnoVizPushpin : Pushpin, IMapViz
+    internal class AnnoVizPushpin : Pushpin, IMapViz
     {
         public Guid Id { get; set; }
-        //public Annotation anno {get; set;}
-        
-        
-        public AnnoVizPushpin()//Annotation anno)
+        internal Annotation Annotation {get; private set;}
+
+        public event EventHandler<MapVizSelectedEventArgs> MapVizSelected;
+        event EventHandler<MapVizSelectedEventArgs> IMapViz.MapVizSelected
         {
+            add
+            {
+                MapVizSelected += value;
+            }
+
+            remove
+            {
+                MapVizSelected -= value;
+            }
+        }
+
+        internal AnnoVizPushpin(Annotation anno)
+        {
+            this.Annotation = anno;
             this.Id = Guid.NewGuid();
             
         }
 
-        public event EventHandler MapVizSelected;
 
         protected override void OnMouseEnter(MouseEventArgs e)
         {
             ToolTip = "Todo";
         }
-        //annotation
+        private void OnMapVizSelected(MapVizSelectedEventArgs e)
+        {
+            if (MapVizSelected != null)
+            {
+                MapVizSelected(this, e);
+            }
+        }
 
-        //public bool isVisible { get; set; }
+
+
+        protected override void OnMouseLeftButtonDown(MouseButtonEventArgs e)
+        {
+            OnMapVizSelected(new MapVizSelectedEventArgs(this.Annotation));
+
+
+        }
 
 
     }

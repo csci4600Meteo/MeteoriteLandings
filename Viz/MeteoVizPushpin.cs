@@ -11,24 +11,36 @@ using MeteoriteLib;
 
 namespace Viz
 {
-    public class MeteoVizPushpin : Pushpin , IMapViz
+    internal class MeteoVizPushpin : Pushpin , IMapViz
     {
-        
-        public Meteorite Meteorite { get; }
+
+        internal Meteorite Meteorite { get; }
         public Guid Id { get; set; }
         //public delegate void MapVizSelectedhandler(IMapViz imv, MapVizSelectedEventArgs e);
-        public event EventHandler MapVizSelected;
+        public event EventHandler<MapVizSelectedEventArgs> MapVizSelected;
 
 
-        public MeteoVizPushpin(Meteorite meteo)
+        internal MeteoVizPushpin(Meteorite meteo)
         {
             this.Meteorite = meteo;
             this.Id = Guid.NewGuid();
             
         }
 
+        event EventHandler<MapVizSelectedEventArgs> IMapViz.MapVizSelected
+        {
+            add
+            {
+                MapVizSelected += value;
+            }
 
-        public void OnMapVizSelected(MapVizSelectedEventArgs e)
+            remove
+            {
+                MapVizSelected -= value;
+            }
+        }
+
+        private void OnMapVizSelected(MapVizSelectedEventArgs e)
         {
             if(MapVizSelected != null)
             {
@@ -36,23 +48,20 @@ namespace Viz
             }
         }
 
-        protected override void OnMouseEnter(MouseEventArgs e)
-        {
-            //MessageBox.Show("Hello");
-            ToolTip = string.Format("{0} --> {1} : {2}", this.Id,this.Location.Latitude,this.Location.Longitude);
-        }
+
 
         protected override void OnMouseLeftButtonDown(MouseButtonEventArgs e)
         {
             OnMapVizSelected(new MapVizSelectedEventArgs(this.Meteorite));
             
-            //todo: select the meteorite associated with this pushpin in datagrid if datagrid is visible
-            //probably need to do this via an event that the meteorite datagrid can listen.
-
-  
-            
+               
         }
 
+        protected override void OnMouseEnter(MouseEventArgs e)
+        {
+            //MessageBox.Show("Hello");
+            ToolTip = string.Format("{0} --> {1} : {2}", this.Id, this.Location.Latitude, this.Location.Longitude);
+        }
         // public bool isVisible { get; set; }
     }
 }

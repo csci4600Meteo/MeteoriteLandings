@@ -9,20 +9,48 @@ using MeteoriteLib;
 
 namespace Viz
 {
-    public class MeteoVizPoly : MapPolygon, IMapViz
+    internal class MeteoVizPoly : MapPolygon, IMapViz
     {
-        
-        public Meteorite Meteorite { get; }
-        public Guid Id { get; set; }
-        //private Meteorites meteo;
 
-        public MeteoVizPoly(Meteorite meteo)
+        internal Meteorite Meteorite { get; }
+        public Guid Id { get; set; }
+        public event EventHandler<MapVizSelectedEventArgs> MapVizSelected;
+        event EventHandler<MapVizSelectedEventArgs> IMapViz.MapVizSelected
+        {
+            add
+            {
+                MapVizSelected += value;
+            }
+
+            remove
+            {
+                MapVizSelected -= value;
+            }
+        }
+
+        internal MeteoVizPoly(Meteorite meteo)
         {
             this.Meteorite = meteo;
             this.Id = Guid.NewGuid();
         }
 
-        public event EventHandler MapVizSelected;
+
+        internal void OnMapVizSelected(MapVizSelectedEventArgs e)
+        {
+            if (MapVizSelected != null)
+            {
+                MapVizSelected(this, e);
+            }
+        }
+
+
+
+        protected override void OnMouseLeftButtonDown(MouseButtonEventArgs e)
+        {
+            OnMapVizSelected(new MapVizSelectedEventArgs(this.Meteorite));
+
+
+        }
 
         protected override void OnMouseEnter(MouseEventArgs e)
         {
