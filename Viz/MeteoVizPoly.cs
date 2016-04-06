@@ -11,6 +11,7 @@ namespace Viz
 {
     public class MeteoVizPoly : MapPolygon, IMapViz
     {
+        
         public Meteorite Meteorite { get; }
         public Guid Id { get; set; }
         //private Meteorites meteo;
@@ -20,6 +21,8 @@ namespace Viz
             this.Meteorite = meteo;
             this.Id = Guid.NewGuid();
         }
+
+        public event EventHandler MapVizSelected;
 
         protected override void OnMouseEnter(MouseEventArgs e)
         {

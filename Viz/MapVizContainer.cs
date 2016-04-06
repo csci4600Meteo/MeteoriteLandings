@@ -7,12 +7,13 @@ using System.Threading.Tasks;
 
 namespace Viz
 {
-    public  class MapVizContainer :  Dictionary<Guid,IMapViz>
+    public class MapVizContainer :  Dictionary<Guid,IMapViz>
     {
         public bool showAnnotations { get; set; }
         public bool showMeteors { get; set; }
         public bool showPolys { get; set; }
         public bool showPushpins { get; set; }
+        public static IMapViz CurrentSelection { get; private set; }
 
         public MapVizContainer()
         {
@@ -20,6 +21,20 @@ namespace Viz
             showMeteors = true;
             showPolys = true;
             showPushpins = true;
+        }
+
+        
+        public void addMeteorite(MeteoriteLib.Meteorite meteo)
+        {
+            MeteoVizPushpin mvp = new MeteoVizPushpin(meteo);
+            mvp.Location = new Location(meteo.RectLat, meteo.RectLong);
+            mvp.MapVizSelected += Mvp_MapVizSelected;
+            this.Add(mvp.Id, mvp);
+        }
+
+        private void Mvp_MapVizSelected(object sender, EventArgs e)
+        {
+            CurrentSelection = (IMapViz)sender;
         }
 
         public void hideMapAnnotations(Map map)

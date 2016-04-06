@@ -23,13 +23,14 @@ namespace MeteoriteLandings
     /// </summary>
     public partial class MainWindow : Window
     {
+        MapVizContainer mvc;
         public MainWindow()
         {
             InitializeComponent();
 
-            MapVizContainer mvc = new MapVizContainer();
-            MeteoVizPushpin mvp = new MeteoVizPushpin(new Meteorite("", 1, 1, "", "", DateTime.Now, 1.1, 2.2));
-            MeteoVizPushpin mvp2 = new MeteoVizPushpin(new Meteorite("", 1, 1, "", "", DateTime.Now, 1.1, 2.2));
+            mvc = new MapVizContainer();
+           // MeteoVizPushpin mvp = new MeteoVizPushpin(new Meteorite("George", 1, 1, "", "", DateTime.Now, 1.1, 2.2));
+           // MeteoVizPushpin mvp2 = new MeteoVizPushpin(new Meteorite("Bill", 1, 1, "", "", DateTime.Now, 1.1, 2.2));
             MeteoVizPoly mvpoly = new MeteoVizPoly(new Meteorite("", 1, 1, "", "", DateTime.Now, 1.1, 2.2));
             //MeteoVizPoly mp = new MeteoVizPoly();
 
@@ -52,12 +53,20 @@ namespace MeteoriteLandings
             mvpoly.Id = Guid.NewGuid();
             mvpoly.Fill = Brushes.Aquamarine;
             mvpoly.Opacity = 0.3;
-            mvp.Location = l;
-            mvp2.Location = l2;
-            mvc.Add(mvp.Id, mvp);
-            mvc.Add(mvp2.Id, mvp2);
+            //mvp.Location = l;
+            //mvp2.Location = l2;
+            mvc.addMeteorite(new Meteorite("George", 1, 1, "", "", DateTime.Now, 36.0, -87.0));
+            mvc.addMeteorite(new Meteorite("Bill", 1, 1, "", "", DateTime.Now, 35.0, -88.0));
             mvc.Add(mvpoly.Id, mvpoly);
             mvc.updateMap(mainMap);
+        }
+
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
+            if(MapVizContainer.CurrentSelection is MeteoVizPushpin)
+            {
+                button1.Content = ((MeteoVizPushpin)MapVizContainer.CurrentSelection).Meteorite.Name;
+            }
         }
     }
 }

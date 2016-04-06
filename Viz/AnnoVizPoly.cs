@@ -17,6 +17,8 @@ namespace Viz
             this.Id = Guid.NewGuid();
         }
 
+        public event EventHandler MapVizSelected;
+
         protected override void OnMouseEnter(MouseEventArgs e)
         {
             ToolTip = "Hello";

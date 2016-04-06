@@ -20,6 +20,8 @@ namespace Viz
             
         }
 
+        public event EventHandler MapVizSelected;
+
         protected override void OnMouseEnter(MouseEventArgs e)
         {
             ToolTip = "Todo";

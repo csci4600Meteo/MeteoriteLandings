@@ -14,6 +14,7 @@ namespace Viz
 
         Guid Id { get; set; }
 
+        event EventHandler MapVizSelected;
         //Location Location { get; set; }
 
         //LocationCollection LocationsCollection { get; }

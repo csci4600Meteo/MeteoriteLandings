@@ -11,6 +11,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		Map Subsystem Show Data Clarification.docx = Map Subsystem Show Data Clarification.docx
 		Meteorite Data Subsystem Artifact.docx = Meteorite Data Subsystem Artifact.docx
+		Bing Maps WPF Control\V1\Libraries\Microsoft.Maps.MapControl.WPF.dll = Bing Maps WPF Control\V1\Libraries\Microsoft.Maps.MapControl.WPF.dll
 		Toggle Annotation Map Visibility Clarification.docx = Toggle Annotation Map Visibility Clarification.docx
 	EndProjectSection
 EndProject
