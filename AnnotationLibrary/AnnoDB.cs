@@ -8,15 +8,16 @@ using System.Threading.Tasks;
 
 namespace AnnotationLibrary
 {
-    class AnnoDB : DataContext
+    public class AnnoDB : DataContext
     {
         public Annotation anno;
+        public Table<Annotation> AnnoTable;
         public AnnoDB(string connection) : base(connection)
         {
 
         }
 
-        public Table<Annotation> AnnoTable;
+
 
         public void CreateAnnoDB(string connection)
         {

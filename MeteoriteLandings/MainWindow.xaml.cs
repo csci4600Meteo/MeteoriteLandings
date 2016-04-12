@@ -15,6 +15,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Viz;
 using MeteoriteLib;
+using AnnotationLibrary;
 
 namespace MeteoriteLandings
 {
@@ -24,9 +25,12 @@ namespace MeteoriteLandings
     public partial class MainWindow : Window
     {
         MapVizContainer mvc;
+        AnnoDB annoDB = new AnnoDB("");
         public MainWindow()
         {
             InitializeComponent();
+            AnnoDataGrid.DataContext = annoDB;
+            //AnnoDataGrid.ItemsSource = annoDB.AnnoTable;
 
             mvc = new MapVizContainer();
            // MeteoVizPushpin mvp = new MeteoVizPushpin(new Meteorite("George", 1, 1, "", "", DateTime.Now, 1.1, 2.2));
