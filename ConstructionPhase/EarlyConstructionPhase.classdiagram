@@ -8,30 +8,12 @@
         <classMoniker Id="5d0f7bb2-fc3e-46ba-8c6c-6c2c355bce17" LastKnownName="Meteorites" />
       </annotatedElements>
     </comment>
-    <comment Id="46608b2e-6a97-44c3-85cb-f9399b679224">
-      <elementDefinition Id="356fa1b1-243c-4a3c-b462-e06132aee42d" />
-      <body>The meteoAdapterr will be responisible for taking the raw data from the local database, deciding how to handle "bad" data (data that doesnt fit nicely in the object) and then send it to the interim data set</body>
-      <annotatedElements>
-        <classMoniker Id="9af48eee-3d08-40bc-897f-170c3ae16589" LastKnownName="MeteoAdapter" />
-      </annotatedElements>
-    </comment>
-    <comment Id="05987df6-d0f6-49ce-b44e-49b20f1d1a65">
-      <elementDefinition Id="1cb39208-b86d-4a35-a12b-7991625e05a0" />
-      <body>The socrata reader will pull data from the external database on the net at the start of the application, each subsequent time the application runs, it will check for updates, if the size of the set has changed it will pull the dataset and update the one we have</body>
-      <annotatedElements>
-        <classMoniker Id="1b04168d-acb4-4013-9f75-e27912d44b57" LastKnownName="ExternalReader" />
-      </annotatedElements>
-    </comment>
     <comment Id="2f62c90f-d09b-4739-bb82-19adfdb8d2d6">
       <elementDefinition Id="20593f72-c8e8-49f8-bbe3-6706ef16b5e5" />
       <body>the polishedd dataset will be the one actually attached to the data grid, whenever infor in the interim set is manipulated, the set will be copied over to the polished set, so the interim set remains the same, and the new set is exactly what we want it to be</body>
       <annotatedElements>
         <classMoniker Id="7e7d8906-de07-404f-9f15-5026f33b0db6" LastKnownName="Polished Dataset" />
       </annotatedElements>
-    </comment>
-    <comment Id="c4af0732-55bd-4094-a652-62f747933c8c">
-      <elementDefinition Id="b728405f-1b4f-49b5-9483-82f58a43f70a" />
-      <body>wasnt sure if it depends on it, or if it is composed of it, or how to accurately portray that relationship, it so i used both connectors</body>
     </comment>
     <comment Id="396c7025-0cab-462e-b72e-f4298526998b">
       <elementDefinition Id="bf993215-36bb-46fa-98ce-3b61dde68a67" />
@@ -1556,12 +1538,6 @@ MapVizContainer is the composition of IMapViz Components with MeteoVizPoly, Anno
     <logicalClassDesignerModelHasTypes>
       <class Id="f5e262e9-0cb2-4a83-96c6-7b37c9b8de63" name="Meteorite" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="ffad95f5-989a-4471-a304-8f3af6bbd57a" />
-        <suppliersInternal>
-          <dependency Id="a31393fd-c687-41cd-ba81-362b887c3e81">
-            <classMoniker Id="9af48eee-3d08-40bc-897f-170c3ae16589" LastKnownName="MeteoAdapter" />
-            <elementDefinition Id="71c0f75f-a2b6-421d-a10b-9274b96e750b" />
-          </dependency>
-        </suppliersInternal>
         <targetEnds>
           <association Id="b32fb9b2-7a0e-48f6-bdce-aeba329e8aad" isDerived="false" sourceEndRoleName="Meteorite1" targetEndRoleName="Annotation" isLeaf="false" isAbstract="false">
             <classMoniker Id="b0f28deb-30f4-46e2-aa16-b3f8894617ee" LastKnownName="Annotation" />
@@ -1689,17 +1665,15 @@ MapVizContainer is the composition of IMapViz Components with MeteoVizPoly, Anno
     <logicalClassDesignerModelHasTypes>
       <class Id="1b04168d-acb4-4013-9f75-e27912d44b57" name="ExternalReader" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="6caeda63-ebba-4b5e-9296-88b6bb820c40" />
-        <ownedAttributesInternal>
-          <property Id="651baa36-92b2-4698-906b-6eca5f1bee9b" name="unpolishedDataSet" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="761b8e58-3676-4bab-ab95-3627c3717899" />
-          </property>
-        </ownedAttributesInternal>
+        <suppliersInternal>
+          <dependency Id="eb92affd-3c80-4600-b2e9-f505bbd413ff">
+            <classMoniker Id="8764c6bf-1719-4ea7-bd69-b3f92c9fb846" LastKnownName="CSVPull" />
+            <elementDefinition Id="868bb356-5608-4bdf-b4a8-f0b8f698fa84" />
+          </dependency>
+        </suppliersInternal>
         <ownedOperationsInternal>
-          <operation Id="22929724-7143-4045-bb33-8af075d81b53" name="PullData" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-            <elementDefinition Id="21f71ac4-baa9-4417-8299-73185fb655e7" />
-          </operation>
-          <operation Id="de773ce8-607f-4681-8bb9-b61df02ca2e8" name="CheckUpdate" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-            <elementDefinition Id="515fb6a7-c1af-47b5-80cb-4054265958e7" />
+          <operation Id="f1e2f4be-e830-43d9-b986-1d291673f335" name="ReadMeteorite" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="f03b2ecf-5d14-418a-b235-70e733272323" />
           </operation>
         </ownedOperationsInternal>
       </class>
@@ -1708,9 +1682,9 @@ MapVizContainer is the composition of IMapViz Components with MeteoVizPoly, Anno
       <class Id="5d0f7bb2-fc3e-46ba-8c6c-6c2c355bce17" name="Meteorites" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="e2ac5426-04b9-4376-b020-9e5e2a0d9e29" />
         <suppliersInternal>
-          <dependency Id="353f3db0-034a-4a1d-8503-b48897074f1a">
+          <dependency Id="19516a2d-3c25-46b0-85c5-2d5b00a7b743">
             <classMoniker Id="1b04168d-acb4-4013-9f75-e27912d44b57" LastKnownName="ExternalReader" />
-            <elementDefinition Id="3758ff07-fa03-4813-9a09-750c05c7a89d" />
+            <elementDefinition Id="fb206150-6616-41cd-a899-43a56ef84f90" />
           </dependency>
         </suppliersInternal>
         <ownedAttributesInternal>
@@ -1721,28 +1695,12 @@ MapVizContainer is the composition of IMapViz Components with MeteoVizPoly, Anno
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
-      <class Id="9af48eee-3d08-40bc-897f-170c3ae16589" name="MeteoAdapter" isAbstract="false" isLeaf="false" isActiveClass="false">
-        <elementDefinition Id="6d888ac8-2f9c-4ff4-a350-7f8ca6f87720" />
-        <suppliersInternal>
-          <dependency Id="f3c2be00-8b2f-43fd-93e3-6b7a93af950d">
-            <classMoniker Id="5d0f7bb2-fc3e-46ba-8c6c-6c2c355bce17" LastKnownName="Meteorites" />
-            <elementDefinition Id="f0c60c4f-ffff-434b-ade3-be548bc25344" />
-          </dependency>
-        </suppliersInternal>
-        <ownedOperationsInternal>
-          <operation Id="06788905-0eec-4d6b-83d4-1423b52dbd6d" name="ParseToMeteorite" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-            <elementDefinition Id="31a4960f-1223-4ae3-aaa1-5ee395558cce" />
-          </operation>
-        </ownedOperationsInternal>
-      </class>
-    </logicalClassDesignerModelHasTypes>
-    <logicalClassDesignerModelHasTypes>
       <class Id="7e7d8906-de07-404f-9f15-5026f33b0db6" name="Polished Dataset" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="aa6da45b-a842-4402-af66-0141aa6a6c1f" />
         <suppliersInternal>
-          <dependency Id="6ddc571e-ee4c-4276-9e10-e1a39f857904">
-            <classMoniker Id="9af48eee-3d08-40bc-897f-170c3ae16589" LastKnownName="MeteoAdapter" />
-            <elementDefinition Id="153ad773-0f86-4aae-a8b0-ef4dddb850c9" />
+          <dependency Id="9602888d-9833-49ac-aba1-996d4297604b">
+            <classMoniker Id="5d0f7bb2-fc3e-46ba-8c6c-6c2c355bce17" LastKnownName="Meteorites" />
+            <elementDefinition Id="9ec73fd4-e5d7-4560-a11a-57c6a1a9b3bf" />
           </dependency>
         </suppliersInternal>
         <targetEnds>
@@ -3275,6 +3233,16 @@ MapVizContainer is the composition of IMapViz Components with MeteoVizPoly, Anno
             <elementDefinition Id="d9ab2d79-b356-4cca-a27a-455fd1b304b9" />
           </property>
         </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="8764c6bf-1719-4ea7-bd69-b3f92c9fb846" name="CSVPull" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="18b851bb-7a5f-4dca-bb39-2be09ecbdf47" />
+        <ownedOperationsInternal>
+          <operation Id="d18d225a-aa28-4c86-a146-fa22fa3c9294" name="PullCSV" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="7fa72ff6-a143-451a-a16c-36f86adeb290" />
+          </operation>
+        </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
   </packagedElements>
