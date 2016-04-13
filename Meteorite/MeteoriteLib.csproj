@@ -42,7 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Meteorite.cs" />
-    <Compile Include="Meteorites.cs" />
+    <Compile Include="MeteoDB.cs" />
     <Compile Include="PolishedDatset.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

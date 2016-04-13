@@ -77,6 +77,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="DataFactory.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -110,6 +111,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AnnotationLibrary\AnnotationLibrary.csproj">
+      <Project>{537e6854-ec25-4c37-9923-ac1b821d3fca}</Project>
+      <Name>AnnotationLibrary</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Meteorite\MeteoriteLib.csproj">
       <Project>{4a7491fd-93bc-41d8-a358-90fe13ecdf1a}</Project>
       <Name>MeteoriteLib</Name>

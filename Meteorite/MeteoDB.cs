@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace MeteoriteLib
 {
-    class Meteorites : DataContext
+    public class MeteoDB : DataContext
     {
-        public Meteorites(string connectionString) : base(connectionString)
+        public MeteoDB(string connectionString) : base(connectionString)
         {
             using (SqlConnection connection =
                 new SqlConnection(connectionString))  {
