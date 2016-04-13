@@ -15,8 +15,10 @@ namespace AnnotationLibrary
     [Table(Name = "AnnoTable")]
     public class Annotation
     {
-
         [Column(IsPrimaryKey = true)]
+        private Guid guid = Guid.NewGuid();
+
+        [Column]
         public int ID { get; set; }
         [Column]
         public Location Location { get; set; }

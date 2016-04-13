@@ -19,10 +19,10 @@ namespace AnnotationLibrary
 
 
 
-        public void CreateAnnoDB(string connection)
-        {
-            AnnoDB annoDB = new AnnoDB(connection);
-            annoDB.CreateDatabase();
-        }
+        //public void CreateAnnoDB(string connection)
+        //{
+        //    AnnoDB annoDB = new AnnoDB(connection);
+        //    annoDB.CreateDatabase();
+        //}
     }
 }

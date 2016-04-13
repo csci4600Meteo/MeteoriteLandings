@@ -10,6 +10,9 @@ namespace MeteoriteLib
     [Table(Name="MeteoTable")]
     public class Meteorite
     {
+
+        [Column(IsPrimaryKey = true)]
+        private Guid guid = Guid.NewGuid();
         //members right here
         private string name;
         private int id;
@@ -33,7 +36,7 @@ namespace MeteoriteLib
 
 
         }
-        [Column(IsPrimaryKey = true)]
+        [Column]
         public int Id
         {
             get
