@@ -33,6 +33,7 @@ namespace MeteoriteLandings
             //AnnoDataGrid.ItemsSource = annoDB.AnnoTable;
 
             mvc = new MapVizContainer();
+            
            // MeteoVizPushpin mvp = new MeteoVizPushpin(new Meteorite("George", 1, 1, "", "", DateTime.Now, 1.1, 2.2));
            // MeteoVizPushpin mvp2 = new MeteoVizPushpin(new Meteorite("Bill", 1, 1, "", "", DateTime.Now, 1.1, 2.2));
             //MeteoVizPoly mvpoly = new MeteoVizPoly(new Meteorite("", 1, 1, "", "", DateTime.Now, 1.1, 2.2));

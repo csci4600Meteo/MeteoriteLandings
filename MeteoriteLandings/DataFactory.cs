@@ -11,7 +11,7 @@ using MeteoriteLib;
 namespace MeteoriteLandings
 {
     
-    public static class DataFactory
+    internal static class DataFactory
     {
         const string MDFFILENAME = "MeteoLand.mdf";
 
