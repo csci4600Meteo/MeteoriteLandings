@@ -45,12 +45,17 @@ namespace MeteoriteLandings
 
         private void initializeData()
         {
+            //List<Meteorite> meteorites; // = some function that returns list of meteors
             //annoDB = (AnnoDB)DataFactory.getDataContext(DataFactory.DataType.Annotation);
             meteoDB = (MeteoDB)DataFactory.getDataContext(DataFactory.DataType.Meteorite);
-           // AnnoDataGrid.DataContext = annoDB;
+            //AnnoDataGrid.DataContext = annoDB;
             //AnnoDataGrid.ItemsSource = annoDB.AnnoTable;
             MeteoDataGrid.DataContext = meteoDB;
             MeteoDataGrid.ItemsSource = meteoDB.MeteoTable;
+            //foreach(Meteorite meteo in meteorites)
+            //{
+            //    meteoDB.MeteoTable.InsertOnSubmit(meteo);
+            //}
         }
 
         private void button1_Click(object sender, RoutedEventArgs e)
