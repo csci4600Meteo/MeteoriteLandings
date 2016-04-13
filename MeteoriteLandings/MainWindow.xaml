@@ -14,7 +14,8 @@
                 <DataGrid x:Name="MeteoDataGrid"  Height="80"></DataGrid>
             </StackPanel>
             <StackPanel DockPanel.Dock="Right">
-                <DataGrid x:Name="AnnoDataGrid"  Width="80"></DataGrid>
+                <DataGrid x:Name="AnnoDataGrid"  Width="80">
+                </DataGrid>
                 <Button x:Name="button1" Content="Button" Height="239" VerticalAlignment="Top" Width="75" Click="button1_Click"/>
                 <RichTextBox x:Name="AnnoRichTextBox" Width="80" />
             </StackPanel>

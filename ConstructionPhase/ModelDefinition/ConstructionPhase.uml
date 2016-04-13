@@ -15,26 +15,6 @@
       </annotatedElements>
     </comment>
     <comment
-      Id="356fa1b1-243c-4a3c-b462-e06132aee42d">
-      <body>The meteoAdapterr will be responisible for taking the raw data from the local database, deciding how to handle "bad" data (data that doesnt fit nicely in the object) and then send it to the interim data set</body>
-      <annotatedElements>
-        <classMoniker
-          Id="6d888ac8-2f9c-4ff4-a350-7f8ca6f87720"
-          LastKnownName="MeteoAdapter"
-          LastKnownLocation="ConstructionPhase.uml" />
-      </annotatedElements>
-    </comment>
-    <comment
-      Id="1cb39208-b86d-4a35-a12b-7991625e05a0">
-      <body>The socrata reader will pull data from the external database on the net at the start of the application, each subsequent time the application runs, it will check for updates, if the size of the set has changed it will pull the dataset and update the one we have</body>
-      <annotatedElements>
-        <classMoniker
-          Id="6caeda63-ebba-4b5e-9296-88b6bb820c40"
-          LastKnownName="ExternalReader"
-          LastKnownLocation="ConstructionPhase.uml" />
-      </annotatedElements>
-    </comment>
-    <comment
       Id="20593f72-c8e8-49f8-bbe3-6706ef16b5e5">
       <body>the polishedd dataset will be the one actually attached to the data grid, whenever infor in the interim set is manipulated, the set will be copied over to the polished set, so the interim set remains the same, and the new set is exactly what we want it to be</body>
       <annotatedElements>
@@ -43,10 +23,6 @@
           LastKnownName="Polished Dataset"
           LastKnownLocation="ConstructionPhase.uml" />
       </annotatedElements>
-    </comment>
-    <comment
-      Id="b728405f-1b4f-49b5-9483-82f58a43f70a">
-      <body>wasnt sure if it depends on it, or if it is composed of it, or how to accurately portray that relationship, it so i used both connectors</body>
     </comment>
     <comment
       Id="bf993215-36bb-46fa-98ce-3b61dde68a67">
@@ -2613,31 +2589,19 @@ MapVizContainer is the composition of IMapViz Components with MeteoVizPoly, Anno
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
-        <ownedAttributesInternal>
-          <property
-            Id="761b8e58-3676-4bab-ab95-3627c3717899"
-            name="unpolishedDataSet"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false" />
-        </ownedAttributesInternal>
+        <suppliersInternal>
+          <dependency
+            Id="868bb356-5608-4bdf-b4a8-f0b8f698fa84">
+            <classMoniker
+              Id="18b851bb-7a5f-4dca-bb39-2be09ecbdf47"
+              LastKnownName="CSVPull"
+              LastKnownLocation="ConstructionPhase.uml" />
+          </dependency>
+        </suppliersInternal>
         <ownedOperationsInternal>
           <operation
-            Id="21f71ac4-baa9-4417-8299-73185fb655e7"
-            name="PullData"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false" />
-          <operation
-            Id="515fb6a7-c1af-47b5-80cb-4054265958e7"
-            name="CheckUpdate"
+            Id="f03b2ecf-5d14-418a-b235-70e733272323"
+            name="ReadMeteorite"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -2655,7 +2619,7 @@ MapVizContainer is the composition of IMapViz Components with MeteoVizPoly, Anno
         isActiveClass="false">
         <suppliersInternal>
           <dependency
-            Id="3758ff07-fa03-4813-9a09-750c05c7a89d">
+            Id="fb206150-6616-41cd-a899-43a56ef84f90">
             <classMoniker
               Id="6caeda63-ebba-4b5e-9296-88b6bb820c40"
               LastKnownName="ExternalReader"
@@ -2829,6 +2793,13 @@ MapVizContainer is the composition of IMapViz Components with MeteoVizPoly, Anno
             <classMoniker
               Id="6d888ac8-2f9c-4ff4-a350-7f8ca6f87720"
               LastKnownName="MeteoAdapter"
+              LastKnownLocation="ConstructionPhase.uml" />
+          </dependency>
+          <dependency
+            Id="9ec73fd4-e5d7-4560-a11a-57c6a1a9b3bf">
+            <classMoniker
+              Id="e2ac5426-04b9-4376-b020-9e5e2a0d9e29"
+              LastKnownName="Meteorites"
               LastKnownLocation="ConstructionPhase.uml" />
           </dependency>
         </suppliersInternal>
@@ -4948,6 +4919,25 @@ MapVizContainer is the composition of IMapViz Components with MeteoVizPoly, Anno
             </appliedStereotypesInternal>
           </property>
         </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="18b851bb-7a5f-4dca-bb39-2be09ecbdf47"
+        name="CSVPull"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedOperationsInternal>
+          <operation
+            Id="7fa72ff6-a143-451a-a16c-36f86adeb290"
+            name="PullCSV"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
   </packagedElements>

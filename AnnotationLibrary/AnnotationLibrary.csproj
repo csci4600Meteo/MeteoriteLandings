@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AnnoCollection.cs" />
     <Compile Include="AnnoDB.cs" />
     <Compile Include="AnnoLib.cs" />
     <Compile Include="Annotation.cs" />
@@ -54,6 +55,9 @@
       <Project>{4a7491fd-93bc-41d8-a358-90fe13ecdf1a}</Project>
       <Name>MeteoriteLib</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Annotation1.datasource" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
