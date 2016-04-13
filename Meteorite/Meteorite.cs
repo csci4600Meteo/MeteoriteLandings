@@ -29,96 +29,72 @@ namespace MeteoriteLib
         [Column]
         public string Name
         {
-            get
-            {
-                return name;
-            }
+            get; private set;
 
 
         }
         [Column]
         public int Id
         {
-            get
-            {
-                return id;
-            }
+            get; private set;
 
 
         }
         [Column]
         public int Mass
         {
-            get
-            {
-                return mass;
-            }
+            get; private set;
 
 
         }
         [Column]
         public string Reclass
         {
-            get
-            {
-                return reclass;
-            }
+            get;private  set;
 
 
         }
         [Column]
         public string Fall
         {
-            get
-            {
-                return fall;
-            }
+            get; private set;
 
         }
         [Column]
         public DateTime Date
         {
-            get
-            {
-                return date;
-            }
+            get; private set;
 
 
         }
         [Column]
         public double RectLat
         {
-            get
-            {
-                return rectLat;
-            }
+            get; private set;
 
 
         }
         [Column]
         public double RectLong
         {
-            get
-            {
-                return rectLong;
-            }
+            get;private set;
 
 
         }
 
         //geo location object here
-
+        public Meteorite() { }
 
         public Meteorite(string tname, int tid, int tmass, string treclass, string tfall, DateTime tdate, double tlat, double tlong)
         {
-            name = tname;
-            id = tid;
-            mass = tmass;
-            reclass = treclass;
-            fall = tfall;
-            date = tdate;
-            rectLat = tlat;
-            rectLong = tlong;
+            this.Name = tname;
+            this.Id = tid;
+            this.Mass = tmass;
+            this.Reclass = treclass;
+            this.Fall = tfall;
+            this.Date = tdate;
+            this.RectLat = tlat;
+            this.RectLong = tlong;
         }
 
 

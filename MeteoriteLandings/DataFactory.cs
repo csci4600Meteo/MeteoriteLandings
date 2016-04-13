@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using AnnotationLibrary;
 using MeteoriteLib;
+using System.Xml.Serialization;
 
 
 namespace MeteoriteLandings
@@ -13,7 +14,40 @@ namespace MeteoriteLandings
     
     internal static class DataFactory
     {
-        const string MDFFILENAME = "MeteoLand.mdf";
+        const string ANNOMDFFILENAME = "Annotations.mdf";
+        const string METEOMDFFILENAME = "Meteorites.mdf";
+
+
+        internal static object getDataContext(DataType dtype)
+        {
+            string connectionString;
+            switch (dtype)
+            {
+                case DataType.Annotation:
+                    connectionString = createConnectionString(ANNOMDFFILENAME);
+                    AnnoDB db = new AnnoDB(connectionString);
+                    {
+                        if (!db.DatabaseExists())
+                        {
+                            createMDF(dtype);
+                        }
+                        return db;
+                    }
+                    break;
+                case DataType.Meteorite:
+                    connectionString = createConnectionString(METEOMDFFILENAME);
+                    MeteoDB mdb = new MeteoDB(connectionString);
+                    {
+                        if (!mdb.DatabaseExists())
+                        {
+                            createMDF(dtype);
+                        }
+                        return mdb;
+                    }
+                    break;
+            }
+            return null;
+        }
 
 
 
@@ -38,10 +72,11 @@ namespace MeteoriteLandings
 
         private static void createMDF (DataType dtype )
         {
-            string connectionString = createConnectionString(MDFFILENAME);
+            string connectionString;
             switch (dtype)
             {
                 case DataType.Annotation:
+                    connectionString = createConnectionString(ANNOMDFFILENAME);
                     using (AnnoDB db = new AnnoDB(connectionString))
                     {
                         if (db.DatabaseExists())
@@ -52,6 +87,7 @@ namespace MeteoriteLandings
                     }
                     break;
                 case DataType.Meteorite:
+                    connectionString = createConnectionString(METEOMDFFILENAME);
                     using (MeteoDB db = new MeteoDB(connectionString))
                     {
                         if (db.DatabaseExists())
@@ -67,7 +103,9 @@ namespace MeteoriteLandings
 
         }
 
-        enum DataType
+        
+
+        internal enum DataType
         {
             Meteorite,
             Annotation

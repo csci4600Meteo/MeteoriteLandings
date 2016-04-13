@@ -100,6 +100,7 @@ namespace Viz
 
         public void hideMapMeteorites(Map map)
         {
+            showMeteors = false;
             foreach (KeyValuePair<Guid, IMapViz> kvp in this)
             {
                 if (kvp.Value is MeteoVizPoly && !showMeteors)
