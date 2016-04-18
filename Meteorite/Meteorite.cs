@@ -61,7 +61,13 @@ namespace MeteoriteLib
 
         }
         [Column]
-        public DateTime Date
+        private string Date
+        {
+            get;  set;
+
+
+        }
+        public DateTime CalendarDate
         {
             get; private set;
 
@@ -82,10 +88,12 @@ namespace MeteoriteLib
 
         }
 
-        //geo location object here
-        public Meteorite() { }
+        
+        public Meteorite() {
+            //this.CalendarDate = DateTime.Parse(this.Date);
+        }
 
-        public Meteorite(string tname, int tid, int tmass, string treclass, string tfall, DateTime tdate, double tlat, double tlong)
+        public Meteorite(string tname, int tid, int tmass, string treclass, string tfall, string tdate, double tlat, double tlong)
         {
             this.Name = tname;
             this.Id = tid;
@@ -95,6 +103,7 @@ namespace MeteoriteLib
             this.Date = tdate;
             this.RectLat = tlat;
             this.RectLong = tlong;
+            this.CalendarDate = DateTime.Parse(this.Date);
         }
 
 

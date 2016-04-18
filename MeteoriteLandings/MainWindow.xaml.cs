@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -37,25 +38,38 @@ namespace MeteoriteLandings
             mvc = new MapVizContainer();
 
 
-            mvc.addMeteorite(new Meteorite("George", 1, 1, "", "", DateTime.Now, 36.0, -87.0));
-            mvc.addMeteorite(new Meteorite("Bill", 1, 1, "", "", DateTime.Now, 35.0, -88.0));
+            mvc.addMeteorite(new Meteorite("George", 1, 1, "", "", DateTime.Now.ToString(), 36.0, -87.0));
+            mvc.addMeteorite(new Meteorite("Bill", 1, 1, "", "", DateTime.Now.ToString(), 35.0, -88.0));
 
             mvc.updateMap(mainMap);
         }
 
         private void initializeData()
         {
-            //List<Meteorite> meteorites; // = some function that returns list of meteors
+            WebClient client = new WebClient();
+            client.DownloadFile("https://data.nasa.gov/api/views/gh4g-9sfh/rows.csv?accessType=DOWNLOAD", "Meteorites.csv");
+            ExternalReader read = new ExternalReader("Meteorites.csv");
+
+
+            List<Meteorite> meteorites = read.ReturnList();
             //annoDB = (AnnoDB)DataFactory.getDataContext(DataFactory.DataType.Annotation);
             meteoDB = (MeteoDB)DataFactory.getDataContext(DataFactory.DataType.Meteorite);
             //AnnoDataGrid.DataContext = annoDB;
             //AnnoDataGrid.ItemsSource = annoDB.AnnoTable;
+
+           // MeteoDataGrid.Items.Refresh();
+            foreach (Meteorite meteo in meteorites)
+            {
+                meteoDB.MeteoTable.InsertOnSubmit(meteo);
+            }
+
+            meteoDB.SubmitChanges();
+
             MeteoDataGrid.DataContext = meteoDB;
             MeteoDataGrid.ItemsSource = meteoDB.MeteoTable;
-            //foreach(Meteorite meteo in meteorites)
-            //{
-            //    meteoDB.MeteoTable.InsertOnSubmit(meteo);
-            //}
+            MeteoDataGrid.Items.Refresh();
+
+           
         }
 
         private void button1_Click(object sender, RoutedEventArgs e)

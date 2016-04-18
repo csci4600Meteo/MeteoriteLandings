@@ -122,16 +122,15 @@ namespace MeteoriteLib
                 //what this above section does is add out temp string to our list  then increment the row so 
                 //the next field is added to the correct place
 
-                //-------------------- Inner Loop 2
+                //-------------------- Getting rid of bad data
                 while (position < D.Data.Length && D.Data[position] != ',')
                 {
                     position += 1;
                 }
                 if (position < D.Data.Length)
                     position += 1;
-                //that loop and If statement will move past data we already have setting us up for our next loop
+                
 
-                //--------------------Loop 3
                 while (D.Count > row)
                     D.RemoveAt(row);
                 //the above statement will Actually be the one getting rid of the data from the raw string we dont need anymore 
@@ -172,7 +171,7 @@ namespace MeteoriteLib
 
             isSuccessful = DateTime.TryParse(D[6],out tempDate);
             if (!isSuccessful)
-                tempDate = DateTime.MinValue;
+                tempDate = DateTime.MaxValue;
 
             isSuccessful = double.TryParse(D[7], out tempLat);
             if (!isSuccessful)
@@ -184,12 +183,31 @@ namespace MeteoriteLib
 
             //That beatiful code should take care of any problems we have, Yipee!!! now we can create our meteorite and send her back!
 
-            Meteorite M = new Meteorite(D[0],tempID,tempMass,D[3],D[5],tempDate,tempLat,tempLong);
+            Meteorite M = new Meteorite(D[0],tempID,tempMass,D[3],D[5],DateTime.Now.ToString(),tempLat,tempLong);
 
             return M;
 
 
         }
+
+        public List<Meteorite> ReturnList() {
+
+            List<Meteorite> list = new List<Meteorite>();
+            Meteorite m;
+
+            using (ExternalReader read = new ExternalReader("Meteorites.csv"))
+            {
+
+                while (read.EndOfStream != true)
+                {
+                    m = read.ReadMeteorite();
+                    list.Add(m);
+                }
+
+            }
+            return list;
+
+        } 
 
     }
 }
