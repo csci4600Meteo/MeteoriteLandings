@@ -21,47 +21,30 @@ namespace AnnotationLibrary
         [Column]
         public int ID { get; set; }
 
+        // If we're going to have problems serializing Locations and LocationCollections,
+        // I'm just going to use doubles for the coordinates to be saved.
         [Column]
-        private double LocationLat { get
-            {
-                return LocationLat;
-            }
-            set
-            {
-                LocationLat = Location.Latitude;
-            }
-        }
+        private double LocationLat { get; set; }
         [Column]
-        private double LocationLong
+        private double LocationLong{ get; set; }
+        [Column]
+        private string Anno { get; set; }
+
+        // We need some interface to input a location for an unconnected annotation
+        // in order for this to work.
+        public string Location
         {
-            get
-            {
-                return LocationLong;
-            }
-            set
-            {
-                LocationLong = Location.Longitude;
-            }
+            get { return LocationLat + ", " + LocationLong; }
         }
-
-
-        public Location Location {
-            get { return Location; }
-            set {
-                Location.Latitude = LocationLat;
-                Location.Longitude = LocationLong;
-            }
+        private Location makeLocation() {
+            Location loc = new Location(LocationLat, LocationLong);
+            return loc;
         }
-       //need to figure out how to store this in the db
-        public LocationCollection LocationCollection { get; set; }
-
-
-        [Column]
-        public string Anno { get; set; }
-       
+        //need to figure out how to store this in the db
+        //public LocationCollection LocationCollection { get; set; }
 
         //need to figure out how to store this in the db
-        public List<Meteorite> Meteorites { get; set; }
+        private List<Meteorite> Meteorites { get; set; }
 
         public Meteorite getMeteorite(int i)
 	    {
@@ -70,11 +53,13 @@ namespace AnnotationLibrary
 
         public Annotation() { }
 
-        public Annotation(int i, string Title, Location Loc)
+        public Annotation(int i, string title, double Lat, double Long)
         {
             ID = i;
-            Location = Loc;
-            Anno = Title;
+            //Location = Loc;
+            Anno = title;
+            LocationLat = Lat;
+            LocationLong = Long;
             Meteorites = new List<Meteorite>();
         }
 

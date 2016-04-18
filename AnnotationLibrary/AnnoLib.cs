@@ -51,7 +51,7 @@ namespace AnnotationLibrary
         }
 
         // Method addMeteors populates the Dictionary annoToMeteo by creating a new key for the annotation and its associated list or updating the key's list if it exists already.
-        public void addMeteors(Annotation a)
+        /*public void addMeteors(Annotation a)
         {
             List<Meteorite> newMeteoList = new List<Meteorite>();
             foreach (Meteorite m in a.Meteorites)
@@ -60,6 +60,6 @@ namespace AnnotationLibrary
             }
             // Adds list to key's location, creating a new entry or updating it
             annoToMeteo[a] = newMeteoList;
-        }
+        }*/
     }
 }
