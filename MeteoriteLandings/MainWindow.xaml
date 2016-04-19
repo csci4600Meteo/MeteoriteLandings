@@ -11,7 +11,7 @@
     <Grid >
         <DockPanel>
             <StackPanel DockPanel.Dock="Bottom">
-                <DataGrid x:Name="MeteoDataGrid"  Height="80"></DataGrid>
+                <DataGrid x:Name="MeteoDataGrid"  Height="80" SelectionChanged="MeteoDataGrid_SelectionChanged" MouseDoubleClick="MeteoDataGrid_MouseDoubleClick"></DataGrid>
             </StackPanel>
             <StackPanel DockPanel.Dock="Right">
                 <DataGrid x:Name="AnnoDataGrid"  Width="80">
