@@ -38,38 +38,67 @@ namespace MeteoriteLandings
             mvc = new MapVizContainer();
 
 
-            mvc.addMeteorite(new Meteorite("George", 1, 1, "", "", DateTime.Now.ToString(), 36.0, -87.0));
-            mvc.addMeteorite(new Meteorite("Bill", 1, 1, "", "", DateTime.Now.ToString(), 35.0, -88.0));
+            //mvc.addMeteorite(new Meteorite("George", 1, 1, "", "", DateTime.Now.ToString(), 36.0, -87.0));
+            //mvc.addMeteorite(new Meteorite("Bill", 1, 1, "", "", DateTime.Now.ToString(), 35.0, -88.0));
 
             mvc.updateMap(mainMap);
         }
 
-        private void initializeData()
+        private async void initializeData()
         {
-            WebClient client = new WebClient();
-            client.DownloadFile("https://data.nasa.gov/api/views/gh4g-9sfh/rows.csv?accessType=DOWNLOAD", "Meteorites.csv");
+            await task_initializeData();
+
+        }
+
+        async Task task_initializeData()
+        {
+
+            //WebClient client = new WebClient();
+            //client.DownloadFile("https://data.nasa.gov/api/views/gh4g-9sfh/rows.csv?accessType=DOWNLOAD", "Meteorites.csv");
             ExternalReader read = new ExternalReader("Meteorites.csv");
 
 
             List<Meteorite> meteorites = read.ReturnList();
-            //annoDB = (AnnoDB)DataFactory.getDataContext(DataFactory.DataType.Annotation);
+            // annoDB = (AnnoDB)DataFactory.getDataContext(DataFactory.DataType.Annotation);
             meteoDB = (MeteoDB)DataFactory.getDataContext(DataFactory.DataType.Meteorite);
-            //AnnoDataGrid.DataContext = annoDB;
-            //AnnoDataGrid.ItemsSource = annoDB.AnnoTable;
-
-           // MeteoDataGrid.Items.Refresh();
-            foreach (Meteorite meteo in meteorites)
-            {
-                meteoDB.MeteoTable.InsertOnSubmit(meteo);
-            }
-
-            meteoDB.SubmitChanges();
-
             MeteoDataGrid.DataContext = meteoDB;
             MeteoDataGrid.ItemsSource = meteoDB.MeteoTable;
             MeteoDataGrid.Items.Refresh();
+            Task<bool> updatingMeteoDb = updateMeteoDatabase(meteorites);
+            bool done = await updatingMeteoDb;
+            //}
 
-           
+            //}
+           // if(done) meteoDB.SubmitChanges();
+
+            //MeteoDataGrid.DataContext = meteoDB;
+            //MeteoDataGrid.ItemsSource = meteoDB.MeteoTable;
+            MeteoDataGrid.Items.Refresh();
+        }
+
+        private async Task<bool> updateMeteoDatabase(List<Meteorite> meteorites)
+        {
+            Action submitAllMeteo = () =>
+            {
+                foreach (Meteorite meteo in meteorites)
+                {
+                    if (!meteoDB.MeteoTable.Contains(meteo))
+                    {
+                        meteoDB.MeteoTable.InsertOnSubmit(meteo);
+                    }
+                }
+            };/*meteoDB.MeteoTable.InsertAllOnSubmit(meteorites);*/
+            Action submitChangesToDb = () => meteoDB.SubmitChanges();
+            // AnnoDataGrid.DataContext = annoDB;
+            //AnnoDataGrid.ItemsSource = annoDB.AnnoTable;
+
+            // MeteoDataGrid.Items.Refresh();
+
+
+            await Task.Run(submitAllMeteo);
+            await Task.Run(submitChangesToDb);
+            //await Task.Delay(1);
+            return true;
         }
 
         private void button1_Click(object sender, RoutedEventArgs e)
@@ -78,6 +107,27 @@ namespace MeteoriteLandings
             {
                 button1.Content = ((Meteorite)MapVizContainer.CurrentSelection).Name;
             }
+        }
+
+        private void MeteoDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void MeteoDataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            DataGrid currentDataGrid = (DataGrid)sender;
+            Meteorite currentMeteorite = (Meteorite)currentDataGrid.CurrentItem;
+            KeyValuePair<Guid, IMapViz> kvp = mvc.getKeyValuePair(currentMeteorite);
+            if(  mvc.Contains(kvp))
+            {
+                mvc.Remove(kvp.Key);
+            }
+            else
+            {
+                mvc.addMeteorite(currentMeteorite);
+            }
+            mvc.updateMap(mainMap);
         }
     }
 }

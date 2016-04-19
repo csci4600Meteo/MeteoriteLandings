@@ -12,7 +12,7 @@ namespace Viz
     /// method so that the appropriate event listeners can be created.  Same for annotations (addAnnotation) and the polygon versions of metorites (addMeteoritePoly) and annotations (addAnnotationPoly).
     /// 
     /// </summary>
-    public class MapVizContainer :  Dictionary<Guid,IMapViz>
+    public class MapVizContainer : Dictionary<Guid, IMapViz>
     {
         public bool showAnnotations { get; set; }
         public bool showMeteors { get; set; }
@@ -28,7 +28,7 @@ namespace Viz
             showPushpins = true;
         }
 
-        
+
         public void addMeteorite(MeteoriteLib.Meteorite meteo)
         {
             MeteoVizPushpin mvp = new MeteoVizPushpin(meteo);
@@ -46,7 +46,7 @@ namespace Viz
 
         private void Mvp_MapVizSelected(object sender, MapVizSelectedEventArgs e)
         {
-            if(sender is MeteoVizPushpin)
+            if (sender is MeteoVizPushpin)
             {
                 CurrentSelection = e.MapVizEntity;
             }
@@ -54,9 +54,9 @@ namespace Viz
 
         public void hideMapAnnotations(Map map)
         {
-            foreach(KeyValuePair<Guid,IMapViz> kvp in this)
+            foreach (KeyValuePair<Guid, IMapViz> kvp in this)
             {
-                if(kvp.Value is AnnoVizPoly && !showAnnotations)
+                if (kvp.Value is AnnoVizPoly && !showAnnotations)
                 {
                     ((AnnoVizPoly)kvp.Value).Visibility = System.Windows.Visibility.Hidden;
                 }
@@ -82,6 +82,23 @@ namespace Viz
             }
         }
 
+        public KeyValuePair<Guid, IMapViz> getKeyValuePair(MeteoriteLib.Meteorite meteo )
+        {
+            KeyValuePair<Guid, IMapViz> kvpOut = new KeyValuePair<Guid, IMapViz>();
+            foreach(KeyValuePair<Guid, IMapViz> kvp in this)
+            {
+                if(kvp.Value is MeteoVizPushpin)
+                {
+                    if (((MeteoVizPushpin)kvp.Value).Meteorite.Equals(meteo))
+                    {
+                        return kvp;
+                    }
+                }
+            }
+            return kvpOut;
+                
+
+        }
 
         public void showMapMeteorites(Map map)
         {
