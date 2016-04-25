@@ -1,0 +1,24 @@
+﻿<Window x:Class="MeteoriteLandings.AnnoWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:m="clr-namespace:Microsoft.Maps.MapControl.WPF;assembly=Microsoft.Maps.MapControl.WPF"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MeteoriteLandings"
+        mc:Ignorable="d" 
+        Title="AnnoWindow" Height="350" Width="525">
+    <Grid>
+        <StackPanel DockPanel.Dock="Right" Margin="0,0,0,-80" Width="123">
+            <Button x:Name="AnnoButton" Content="Create Anno" Height="20" VerticalAlignment="Top" HorizontalAlignment ="Center" Width="78" Click="AnnoButton_Click"/>
+            <DataGrid x:Name="AnnoDataGrid"  Width="100" Height="102" SelectionChanged="AnnoDataGrid_CellChanged"/>
+            <TextBlock Name="FilterAnnoText" Text="Filter by:" />
+            <ComboBox x:Name="AnnoCombo"  Text="Filter" SelectionChanged="AnnoCombo_SelectionChanged">
+                <ComboBoxItem Name="AllAnno">All Annotations</ComboBoxItem>
+                <ComboBoxItem Name="MeteoFilteredAnno">Selected Meteorite</ComboBoxItem>
+                <ComboBoxItem Name="SearchFilteredAnno">Searched Title</ComboBoxItem>
+            </ComboBox>
+            <TextBlock Name="CurrentAnnoBlock" Text="Annotation:"/>
+            <TextBox x:Name="AnnoTextBox" Width="96" Height="160" TextWrapping="Wrap"/>
+        </StackPanel>
+    </Grid>
+</Window>

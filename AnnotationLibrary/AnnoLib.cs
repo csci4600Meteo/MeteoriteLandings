@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,55 +12,41 @@ namespace AnnotationLibrary
     // This class will allow the parsing of the relationships between the Annotations and their associated Meteorites, and vice-versa.
     public class AnnoLib
     {
-        private List<Annotation> annoList;
-        private List<Meteorite> meteoList;
+        // Dictionary meteoDictionary keeps track of meteorites and their associated list of annotations
+        private Dictionary<Meteorite, ObservableCollection<Annotation>> meteoDictionary;
 
-        // Dictionary annoToMeteo uses an annotation as a key to store a list of Meteorites
-        private Dictionary<Annotation, List<Meteorite>> annoToMeteo;
-
-        public Annotation getAnno(int i)
-        {
-            return annoList[i];
-        }
-
-        public Meteorite getMeteo(int i)
-        {
-            return meteoList[i];
-        }
-
-        // Method returnMeteoList searches Dictionary annoToMeteo for the given annotation, and returns the associated Meteor List if it exists.
-        public List<Meteorite> returnMeteoList(Annotation a)
+        // Method returnAnnoList searches Dictionary meteoDictionary, and returns the associated Annotation List if it exists.
+        public ObservableCollection<Annotation> returnAnnoList(Meteorite m)
         {
             try
             {
-                return annoToMeteo[a];
+                return meteoDictionary[m];
             }
 
             catch
             {
                 // There's probably a more robust way to do this.
-                Console.WriteLine("Cannot return Meteor list: Annotation not found.");
+                Console.WriteLine("Cannot return Anno list; meteorite not found.");
                 return null;
             }
         }
 
         public AnnoLib()
         {
-            annoList = new List<Annotation>();
-            meteoList = new List<Meteorite>();
-            annoToMeteo = new Dictionary<Annotation, List<Meteorite>>();
+            meteoDictionary = new Dictionary<Meteorite, ObservableCollection<Annotation>>();
         }
 
-        // Method addMeteors populates the Dictionary annoToMeteo by creating a new key for the annotation and its associated list or updating the key's list if it exists already.
-        /*public void addMeteors(Annotation a)
+        public void addMeteo(Meteorite m, ObservableCollection<Annotation> aList)
         {
-            List<Meteorite> newMeteoList = new List<Meteorite>();
-            foreach (Meteorite m in a.Meteorites)
-            {
-                newMeteoList.Add(m);
-            }
-            // Adds list to key's location, creating a new entry or updating it
-            annoToMeteo[a] = newMeteoList;
-        }*/
+            meteoDictionary.Add(m, aList);
+        }
+
+        // Simply copies the List at the meteorite, adds the new annotation, and makes a new list
+        public void appendAnno(Meteorite m, Annotation a)
+        {
+            ObservableCollection<Annotation> newList = returnAnnoList(m);
+            newList.Add(a);
+            meteoDictionary[m] = newList;
+        }
     }
 }

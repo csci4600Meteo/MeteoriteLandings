@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Data;
 using System.Data.Linq;
 using System.Linq;
@@ -11,10 +12,10 @@ namespace AnnotationLibrary
     public class AnnoDB : DataContext
     {
         public Annotation anno;
-        public Table<Annotation> AnnoTable;
+        public ObservableCollection<Annotation> AnnoTable;
         public AnnoDB(string connection) : base(connection)
         {
-
+            AnnoTable = new ObservableCollection<Annotation>();
         }
 
 

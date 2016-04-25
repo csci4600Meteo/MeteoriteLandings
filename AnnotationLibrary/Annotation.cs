@@ -29,12 +29,10 @@ namespace AnnotationLibrary
         private double LocationLong{ get; set; }
         [Column]
         private string Anno { get; set; }
-
-        // We need some interface to input a location for an unconnected annotation
-        // in order for this to work.
-        public string Location
+        public string Title { get; set; }
+        public string getAnno()
         {
-            get { return LocationLat + ", " + LocationLong; }
+            return Anno;
         }
         private Location makeLocation() {
             Location loc = new Location(LocationLat, LocationLong);
@@ -56,13 +54,22 @@ namespace AnnotationLibrary
         public Annotation(int i, string title, double Lat, double Long)
         {
             ID = i;
-            //Location = Loc;
-            Anno = title;
+            Anno = "Enter Annotation data here!";
             LocationLat = Lat;
             LocationLong = Long;
+            Title = title;
             Meteorites = new List<Meteorite>();
         }
 
+        public Annotation(string title)
+        {
+            ID = 0;
+            Anno = "Enter Annotation data here!";
+            LocationLat = 0;
+            LocationLong = 0;
+            Title = title;
+            Meteorites = new List<Meteorite>();
+        }
         public void AddMeteor(Meteorite m)
         {
             Meteorites.Add(m);
