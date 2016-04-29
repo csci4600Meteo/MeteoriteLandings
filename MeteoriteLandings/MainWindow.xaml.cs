@@ -28,15 +28,15 @@ namespace MeteoriteLandings
         MapVizContainer mvc;
         AnnoDB annoDB;
         MeteoDB meteoDB;
-
+        AnnoWindow annoWin;
         public MainWindow()
         {
             InitializeComponent();
 
             //initializeData();
 
-            AnnoWindow annoWindow = new AnnoWindow();
-            annoWindow.Show();
+            annoWin = new AnnoWindow();
+            //annoWindow.Show();
             meteoDB = (MeteoDB)DataFactory.getDataContext(DataFactory.DataType.Meteorite);
             MeteoDataGrid.DataContext = meteoDB;
             MeteoDataGrid.ItemsSource = meteoDB.MeteoTable;
@@ -107,10 +107,10 @@ namespace MeteoriteLandings
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
-            if(MapVizContainer.CurrentSelection is Meteorite)
-            {
-                button1.Content = ((Meteorite)MapVizContainer.CurrentSelection).Name;
-            }
+                annoWin.Visibility = Visibility.Visible;
+                annoWin.Show();
+                //button1.Content = ((Meteorite)MapVizContainer.CurrentSelection).Name;
+         
         }
 
         private void MeteoDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
