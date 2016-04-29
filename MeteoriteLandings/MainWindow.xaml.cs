@@ -26,7 +26,7 @@ namespace MeteoriteLandings
     public partial class MainWindow : Window
     {
         MapVizContainer mvc;
-        //AnnoDB annoDB;
+        AnnoDB annoDB;
         MeteoDB meteoDB;
 
         public MainWindow()
@@ -37,6 +37,9 @@ namespace MeteoriteLandings
 
             AnnoWindow annoWindow = new AnnoWindow();
             annoWindow.Show();
+            meteoDB = (MeteoDB)DataFactory.getDataContext(DataFactory.DataType.Meteorite);
+            MeteoDataGrid.DataContext = meteoDB;
+            MeteoDataGrid.ItemsSource = meteoDB.MeteoTable;
 
             mvc = new MapVizContainer();
 
@@ -62,10 +65,8 @@ namespace MeteoriteLandings
 
 
             List<Meteorite> meteorites = read.ReturnList();
-            // annoDB = (AnnoDB)DataFactory.getDataContext(DataFactory.DataType.Annotation);
-            meteoDB = (MeteoDB)DataFactory.getDataContext(DataFactory.DataType.Meteorite);
-            MeteoDataGrid.DataContext = meteoDB;
-            MeteoDataGrid.ItemsSource = meteoDB.MeteoTable;
+            annoDB = (AnnoDB)DataFactory.getDataContext(DataFactory.DataType.Annotation);
+
             MeteoDataGrid.Items.Refresh();
             Task<bool> updatingMeteoDb = updateMeteoDatabase(meteorites);
             bool done = await updatingMeteoDb;
@@ -74,8 +75,8 @@ namespace MeteoriteLandings
             //}
            // if(done) meteoDB.SubmitChanges();
 
-            //MeteoDataGrid.DataContext = meteoDB;
-            //MeteoDataGrid.ItemsSource = meteoDB.MeteoTable;
+            MeteoDataGrid.DataContext = meteoDB;
+            MeteoDataGrid.ItemsSource = meteoDB.MeteoTable;
             MeteoDataGrid.Items.Refresh();
         }
 
@@ -92,10 +93,10 @@ namespace MeteoriteLandings
                 }
             };/*meteoDB.MeteoTable.InsertAllOnSubmit(meteorites);*/
             Action submitChangesToDb = () => meteoDB.SubmitChanges();
-            // AnnoDataGrid.DataContext = annoDB;
-            //AnnoDataGrid.ItemsSource = annoDB.AnnoTable;
+            AnnoDataGrid.DataContext = annoDB;
+            AnnoDataGrid.ItemsSource = annoDB.AnnoTable;
 
-            // MeteoDataGrid.Items.Refresh();
+            MeteoDataGrid.Items.Refresh();
 
 
             await Task.Run(submitAllMeteo);
