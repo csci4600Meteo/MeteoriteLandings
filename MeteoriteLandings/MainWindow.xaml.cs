@@ -26,7 +26,8 @@ namespace MeteoriteLandings
     public partial class MainWindow : Window
     {
         MapVizContainer mvc;
-        AnnoDB annoDB;
+        AnnoWindow annoWindow;
+        //AnnoDB annoDB;
         MeteoDB meteoDB;
 
         public MainWindow()
@@ -35,15 +36,18 @@ namespace MeteoriteLandings
 
             //initializeData();
 
-            AnnoWindow annoWindow = new AnnoWindow();
+            annoWindow = new AnnoWindow();
             annoWindow.Show();
             meteoDB = (MeteoDB)DataFactory.getDataContext(DataFactory.DataType.Meteorite);
+            Meteorite testMeteo = new Meteorite("George", 1, 1, "", "", DateTime.Now.ToString(), 36.0, -87.0);
+            meteoDB.MeteoTable.InsertOnSubmit(testMeteo);
+            meteoDB.SubmitChanges();
             MeteoDataGrid.DataContext = meteoDB;
             MeteoDataGrid.ItemsSource = meteoDB.MeteoTable;
 
             mvc = new MapVizContainer();
 
-
+            
             //mvc.addMeteorite(new Meteorite("George", 1, 1, "", "", DateTime.Now.ToString(), 36.0, -87.0));
             //mvc.addMeteorite(new Meteorite("Bill", 1, 1, "", "", DateTime.Now.ToString(), 35.0, -88.0));
 
@@ -65,7 +69,7 @@ namespace MeteoriteLandings
 
 
             List<Meteorite> meteorites = read.ReturnList();
-            annoDB = (AnnoDB)DataFactory.getDataContext(DataFactory.DataType.Annotation);
+            //annoDB = (AnnoDB)DataFactory.getDataContext(DataFactory.DataType.Annotation);
 
             MeteoDataGrid.Items.Refresh();
             Task<bool> updatingMeteoDb = updateMeteoDatabase(meteorites);
@@ -91,11 +95,9 @@ namespace MeteoriteLandings
                         meteoDB.MeteoTable.InsertOnSubmit(meteo);
                     }
                 }
-            };/*meteoDB.MeteoTable.InsertAllOnSubmit(meteorites);*/
+            };
+            /*meteoDB.MeteoTable.InsertAllOnSubmit(meteorites);*/
             Action submitChangesToDb = () => meteoDB.SubmitChanges();
-            AnnoDataGrid.DataContext = annoDB;
-            AnnoDataGrid.ItemsSource = annoDB.AnnoTable;
-
             MeteoDataGrid.Items.Refresh();
 
 
@@ -121,17 +123,25 @@ namespace MeteoriteLandings
         private void MeteoDataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             DataGrid currentDataGrid = (DataGrid)sender;
-            Meteorite currentMeteorite = (Meteorite)currentDataGrid.CurrentItem;
-            KeyValuePair<Guid, IMapViz> kvp = mvc.getKeyValuePair(currentMeteorite);
-            if(  mvc.Contains(kvp))
+            if (currentDataGrid.CurrentItem is Meteorite)
             {
-                mvc.Remove(kvp.Key);
+
+                Meteorite currentMeteorite = (Meteorite)currentDataGrid.CurrentItem;
+
+                // gatherMeteoData sends meteor object to be referenced in the Dictionary
+                // Currently throws a Null Object so it's commented out for now.
+                //annoWindow.gatherMeteoData(currentMeteorite);
+                KeyValuePair<Guid, IMapViz> kvp = mvc.getKeyValuePair(currentMeteorite);
+                if (mvc.Contains(kvp))
+                {
+                    mvc.Remove(kvp.Key);
+                }
+                else
+                {
+                    mvc.addMeteorite(currentMeteorite);
+                }
+                mvc.updateMap(mainMap);
             }
-            else
-            {
-                mvc.addMeteorite(currentMeteorite);
-            }
-            mvc.updateMap(mainMap);
         }
     }
 }

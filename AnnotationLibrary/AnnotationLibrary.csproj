@@ -47,7 +47,6 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AnnoCollection.cs" />
     <Compile Include="AnnoDB.cs" />
     <Compile Include="AnnoLib.cs" />
     <Compile Include="Annotation.cs" />
