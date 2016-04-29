@@ -82,7 +82,7 @@ namespace MeteoriteLandings
             {
                 foreach (Meteorite meteo in meteorites)
                 {
-                    if (!meteoDB.MeteoTable.Contains(meteo))
+                    if (meteoDB.MeteoTable.FirstOrDefault(m=>m.Id == meteo.Id) == null)
                     {
                         meteoDB.MeteoTable.InsertOnSubmit(meteo);
                     }

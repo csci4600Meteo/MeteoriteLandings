@@ -31,6 +31,7 @@ namespace Viz
 
         public void addMeteorite(MeteoriteLib.Meteorite meteo)
         {
+            if (meteo == null) return;
             MeteoVizPushpin mvp = new MeteoVizPushpin(meteo);
             mvp.Location = new Location(meteo.RectLat, meteo.RectLong);
             mvp.MapVizSelected += Mvp_MapVizSelected;
