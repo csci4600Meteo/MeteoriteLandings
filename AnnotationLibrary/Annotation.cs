@@ -11,18 +11,41 @@ using MeteoriteLib;
 
 namespace AnnotationLibrary
 {
-    
+
     [Table(Name = "AnnoTable")]
     public class Annotation
     {
         [Column(IsPrimaryKey = true)]
-        private Guid guid = Guid.NewGuid();
+        public Guid guid = Guid.NewGuid();
 
+        private int _ID;
+        [Column(Storage = "_ID")]
+        public int ID
+        {
+            get
+            {
+                return _ID;
+            }
+            set
+            {
+                _ID = value;
+            }
+        }
         [Column]
-        public int ID { get; set; }
-
-        [Column]
-        public string Title { get; set; }
+        private string _Anno;
+        private string _Title { get; set; }
+        [Column(Storage = "_Title", CanBeNull = true)]
+        public string Title
+        {
+            get
+            {
+                return _Title;
+            }
+            set
+            {
+                _Title = value;
+            }
+        }
 
         [Column]
         public double Lat { get; set; }
@@ -30,19 +53,19 @@ namespace AnnotationLibrary
         [Column]
         public double Long { get; set; }
 
-        [Column]
-        public string Anno { get; set; }
+
 
         public string getAnno()
         {
-            return Anno;
+            return _Anno;
         }
 
         public void setAnno(string text)
         {
-            Anno = text;
+            _Anno = text;
         }
-        private Location makeLocation() {
+        private Location makeLocation()
+        {
             Location loc = new Location(Lat, Long);
             return loc;
         }
@@ -50,16 +73,16 @@ namespace AnnotationLibrary
         private List<Meteorite> Meteorites { get; set; }
 
         public Meteorite getMeteorite(int i)
-	    {
+        {
             return Meteorites[i];
-	    }
+        }
 
         public Annotation() { }
 
         public Annotation(int i, string title, double LLat, double LLong)
         {
             ID = i;
-            Anno = "Enter Annotation data here!";
+            _Anno = "Enter Annotation data here!";
             Lat = LLat;
             Long = LLong;
             Title = title;
@@ -68,8 +91,8 @@ namespace AnnotationLibrary
 
         public Annotation(string title)
         {
-            ID = 0;
-            Anno = "Enter Annotation data here!";
+            ID = 1;
+            _Anno = "Enter Annotation data here!";
             Lat = 0;
             Long = 0;
             Title = title;
