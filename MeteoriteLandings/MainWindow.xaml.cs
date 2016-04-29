@@ -107,9 +107,10 @@ namespace MeteoriteLandings
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
-                annoWin.Visibility = Visibility.Visible;
-                annoWin.Show();
-                //button1.Content = ((Meteorite)MapVizContainer.CurrentSelection).Name;
+            annoWin.Visibility = Visibility.Visible;
+            annoWin.mainWindow = this;
+            annoWin.Show();
+             //button1.Content = ((Meteorite)MapVizContainer.CurrentSelection).Name;
          
         }
 
@@ -122,6 +123,14 @@ namespace MeteoriteLandings
         {
             DataGrid currentDataGrid = (DataGrid)sender;
             Meteorite currentMeteorite = (Meteorite)currentDataGrid.CurrentItem;
+            if (currentDataGrid.CurrentItem == currentMeteorite)
+            {
+                annoWin.gatherMeteoData(currentMeteorite);
+            }
+            else
+            {
+                MessageBox.Show("Current Item cannot be gathered.");
+            }
             KeyValuePair<Guid, IMapViz> kvp = mvc.getKeyValuePair(currentMeteorite);
             if(  mvc.Contains(kvp))
             {
