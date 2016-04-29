@@ -11,9 +11,6 @@
     <comment Id="2f62c90f-d09b-4739-bb82-19adfdb8d2d6">
       <elementDefinition Id="20593f72-c8e8-49f8-bbe3-6706ef16b5e5" />
       <body>the polishedd dataset will be the one actually attached to the data grid, whenever infor in the interim set is manipulated, the set will be copied over to the polished set, so the interim set remains the same, and the new set is exactly what we want it to be</body>
-      <annotatedElements>
-        <classMoniker Id="7e7d8906-de07-404f-9f15-5026f33b0db6" LastKnownName="Polished Dataset" />
-      </annotatedElements>
     </comment>
     <comment Id="396c7025-0cab-462e-b72e-f4298526998b">
       <elementDefinition Id="bf993215-36bb-46fa-98ce-3b61dde68a67" />
@@ -1686,54 +1683,14 @@ MapVizContainer is the composition of IMapViz Components with MeteoVizPoly, Anno
             <classMoniker Id="1b04168d-acb4-4013-9f75-e27912d44b57" LastKnownName="ExternalReader" />
             <elementDefinition Id="fb206150-6616-41cd-a899-43a56ef84f90" />
           </dependency>
+          <dependency Id="38b84055-a98d-4632-b9c5-c39075ad4f0a">
+            <classMoniker Id="f5e262e9-0cb2-4a83-96c6-7b37c9b8de63" LastKnownName="Meteorite" />
+            <elementDefinition Id="6e285b79-8827-4a5a-a71c-41d3f47de826" />
+          </dependency>
         </suppliersInternal>
         <ownedAttributesInternal>
           <property Id="e86dd1a7-2729-4aa4-b0ce-1ba51ee78727" name="meteoriteTable" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="3dcd566b-6139-44cb-b519-2dbace718107" />
-          </property>
-        </ownedAttributesInternal>
-      </class>
-    </logicalClassDesignerModelHasTypes>
-    <logicalClassDesignerModelHasTypes>
-      <class Id="7e7d8906-de07-404f-9f15-5026f33b0db6" name="Polished Dataset" isAbstract="false" isLeaf="false" isActiveClass="false">
-        <elementDefinition Id="aa6da45b-a842-4402-af66-0141aa6a6c1f" />
-        <suppliersInternal>
-          <dependency Id="9602888d-9833-49ac-aba1-996d4297604b">
-            <classMoniker Id="5d0f7bb2-fc3e-46ba-8c6c-6c2c355bce17" LastKnownName="Meteorites" />
-            <elementDefinition Id="9ec73fd4-e5d7-4560-a11a-57c6a1a9b3bf" />
-          </dependency>
-        </suppliersInternal>
-        <targetEnds>
-          <association Id="f85e37a2-d924-4617-a1d0-6b81cb345548" isDerived="false" sourceEndRoleName="Polished Dataset" targetEndRoleName="Meteorite" isLeaf="false" isAbstract="false">
-            <classMoniker Id="f5e262e9-0cb2-4a83-96c6-7b37c9b8de63" LastKnownName="Meteorite" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd Id="33a65a0b-711a-4a03-b2a0-6637454b8d59" name="Polished Dataset" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
-                  <elementDefinition Id="fb9084ae-3a8f-4f70-8d28-b79a6f8f057e" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd Id="10b15386-7c19-4ac0-8352-c327454b55c1" name="Meteorite" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                  <lowerValueInternal>
-                    <literalString Id="c5f8369c-36d2-42cc-b722-56d806794e26" name="Lower" value="1 to many">
-                      <elementDefinition Id="c120b0ac-bee9-43e1-bade-d2d5f5c88acf" />
-                    </literalString>
-                  </lowerValueInternal>
-                  <upperValueInternal>
-                    <literalString Id="a94e7982-bc95-4a2f-9c35-afb455e27736" name="Upper" value="1 to many">
-                      <elementDefinition Id="a37e06e8-465e-4f47-b970-c738c0cb7373" />
-                    </literalString>
-                  </upperValueInternal>
-                  <elementDefinition Id="0eff98f2-7168-4b12-96dc-94b4a39582a9" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-            <elementDefinition Id="e4dc2817-2a97-47e4-90b7-1b36bc70a49f" />
-          </association>
-        </targetEnds>
-        <ownedAttributesInternal>
-          <property Id="d42ca2eb-9db3-41e0-9508-a00680ad7942" name="List Meteorites" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="6a5dc347-abaf-4371-affa-71ff95524135" />
           </property>
         </ownedAttributesInternal>
       </class>
