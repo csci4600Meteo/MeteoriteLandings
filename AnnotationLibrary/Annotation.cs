@@ -16,36 +16,13 @@ namespace AnnotationLibrary
     public class Annotation
     {
         [Column(IsPrimaryKey = true)]
-        public Guid guid = Guid.NewGuid();
+        private Guid guid = Guid.NewGuid();
 
-        private int _ID;
-        [Column(Storage = "_ID")]
-        public int ID
-        {
-            get
-            {
-                return _ID;
-            }
-            set
-            {
-                _ID = value;
-            }
-        }
         [Column]
-        private string _Anno;
-        private string _Title { get; set; }
-        [Column(Storage = "_Title", CanBeNull = true)]
-        public string Title
-        {
-            get
-            {
-                return _Title;
-            }
-            set
-            {
-                _Title = value;
-            }
-        }
+        public int ID { get; set; }
+
+        [Column]
+        public string Title { get; set; }
 
         [Column]
         public double Lat { get; set; }
@@ -53,16 +30,17 @@ namespace AnnotationLibrary
         [Column]
         public double Long { get; set; }
 
-        
+        [Column]
+        public string Anno { get; set; }
 
         public string getAnno()
         {
-            return _Anno;
+            return Anno;
         }
 
         public void setAnno(string text)
         {
-            _Anno = text;
+            Anno = text;
         }
         private Location makeLocation() {
             Location loc = new Location(Lat, Long);
@@ -81,7 +59,7 @@ namespace AnnotationLibrary
         public Annotation(int i, string title, double LLat, double LLong)
         {
             ID = i;
-            _Anno = "Enter Annotation data here!";
+            Anno = "Enter Annotation data here!";
             Lat = LLat;
             Long = LLong;
             Title = title;
@@ -90,8 +68,8 @@ namespace AnnotationLibrary
 
         public Annotation(string title)
         {
-            ID = 1;
-            _Anno = "Enter Annotation data here!";
+            ID = 0;
+            Anno = "Enter Annotation data here!";
             Lat = 0;
             Long = 0;
             Title = title;

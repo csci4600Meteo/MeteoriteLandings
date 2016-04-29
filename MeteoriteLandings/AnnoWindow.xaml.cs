@@ -9,8 +9,6 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
-using System.Data.SqlClient;
-using System.Data.Linq;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
@@ -30,73 +28,44 @@ namespace MeteoriteLandings
     {
         AnnoDB annoDB;
         AnnoLib annoLib;
-        MeteoDB meteoDB;
-        DataGrid meteoData;
-        MainWindow mainWindow;
-
+        Meteorite testMeteo;
 
         /*
             TODO:
+                ID numbering system
                 Recieve object from Meteor Window on double click
                 Filtering through Combobox
+                Search function in AnnoSearchTextBox
+                Create MDF file for Annos
+                Display created annos in window
         */
         
         public AnnoWindow()
         {
             InitializeComponent();
             annoDB = (AnnoDB)DataFactory.getDataContext(DataFactory.DataType.Annotation);
-            meteoData = new DataGrid();
-            annoDB.makeList();
             AnnoDataGrid.DataContext = annoDB;
             AnnoDataGrid.ItemsSource = annoDB.AnnoCol;
-            AnnoDataGrid.Items.Refresh();
+        }
+        
+
+        // Tests to see if it can switch data contexts
+        public void TestAnnoLib()
+        {
+            annoLib = new AnnoLib();
+            Meteorite m = new Meteorite();
+            annoLib.addMeteo(m, new ObservableCollection<Annotation>());
+            annoLib.appendAnno(m, new Annotation("Christmas"));
+            testMeteo = m;
         }
 
         // Click AnnoButton to add new annotation or append new annotation to selected Meteorite
         private void AnnoButton_Click(object sender, RoutedEventArgs e)
         {
             Annotation newAnno = new Annotation("New");
-            annoDB.addAnno(newAnno);
-            AnnoDataGrid.Items.Refresh();
-        }
-
-        private void DelButton_Click(object sender, RoutedEventArgs e)
-        {
-            if (AnnoDataGrid.SelectedItem is Annotation)
-            {
-                Annotation victim = (Annotation)AnnoDataGrid.SelectedItem;
-                int victimID = victim.ID;
-                var deleteRow =
-                    from annos in annoDB.AnnoTable
-                    where annos.ID == victimID
-                    select annos;
-
-                foreach(var anno in deleteRow)
-                {
-                    annoDB.AnnoTable.DeleteOnSubmit(anno);
-                }
-
-                try
-                {
-                    annoDB.SubmitChanges();
-                    annoDB.AnnoCol.Remove(victim);
-                    AnnoDataGrid.Items.Refresh();
-                    MessageBox.Show("Deleted ID:" + victimID + " ?");
-                }
-                catch
-                {
-                    MessageBox.Show("No", "Not even close", MessageBoxButton.OK, MessageBoxImage.Hand);
-                }
-            }
-        }
-
-        public void gatherMeteoData(Meteorite meteo)
-        {
-            ObservableCollection<Annotation> annos = annoLib.returnAnnoList(meteo);
-            AnnoDataGrid.ItemsSource = annos;
-            AnnoCombo.SelectedItem = MeteoFilteredAnno;
-            changeButtonText(meteo);
-
+            annoDB.AnnoCol.Add(newAnno);
+            annoDB.AnnoTable.InsertOnSubmit(newAnno);
+            annoDB.SubmitChanges();
         }
 
         // Switches the ItemSource of the AnnoDataGrid when a filtering option is selected
@@ -104,29 +73,26 @@ namespace MeteoriteLandings
         {
             if (AnnoCombo.SelectedItem == AllAnno)
             {
-                Annotation context = new Annotation();
                 AnnoDataGrid.ItemsSource = annoDB.AnnoCol;
-                changeButtonText(context);
             }
 
             else if (AnnoCombo.SelectedItem == MeteoFilteredAnno)
             {
                 // Sets ItemsSource to List associated with Meteorite in AnnoLib
                 // Requires object from Meteor Selection to search annoLib
-                // Throws null object, so don't use it for now.
-                if (mainWindow.MeteoDataGrid.CurrentItem is Meteorite)
-                {
-                    Meteorite selection = (Meteorite)mainWindow.MeteoDataGrid.CurrentItem;
-                    gatherMeteoData(selection);
-                }
+            }
 
+            else if (AnnoCombo.SelectedItem == SearchFilteredAnno)
+            {
+                // I get to make a search function!
             }
         }
 
         // Updates annotation of selected data grid object
         private void AnnoTextBox_TextChanged(object sender, RoutedEventArgs e)
         {
-
+            Annotation anno = (Annotation)AnnoDataGrid.SelectedItem;
+            anno.setAnno(AnnoTextBox.Text);
         }
 
         // Fills the AnnoTextBox when element in AnnoDataGrid is selected
@@ -137,7 +103,6 @@ namespace MeteoriteLandings
             {
                 Annotation currAnno = (Annotation)currentItem;
                 AnnoTextBox.Text = currAnno.getAnno();
-                TitleTextBox.Text = currAnno.Title;
                 LatTextBox.Text = currAnno.Lat.ToString();
                 LongTextBox.Text = currAnno.Long.ToString();
             }
@@ -195,31 +160,8 @@ namespace MeteoriteLandings
 
         private void AnnoTextBox_LostFocus(object sender, RoutedEventArgs e)
         {
-            if (AnnoDataGrid.SelectedItem is Annotation)
-            {
-                Annotation a = (Annotation)AnnoDataGrid.SelectedItem;
-                a.setAnno(AnnoTextBox.Text);
-                AnnoDataGrid.Items.Refresh();
-                annoDB.SubmitChanges();
-            }
-        }
-
-        private void TitleTextBox_LostFocus(object sender, RoutedEventArgs e)
-        {
-            if (AnnoDataGrid.SelectedItem is Annotation)
-            {
-                Annotation a = (Annotation)AnnoDataGrid.SelectedItem;
-                try
-                {
-                    a.Title = TitleTextBox.Text;
-                    annoDB.SubmitChanges();
-                    AnnoDataGrid.Items.Refresh();
-                }
-                catch
-                {
-                    TitleTextBox.Text = "Invalid";
-                }
-            }
+            AnnoDataGrid.Items.Refresh();
+            annoDB.SubmitChanges();
         }
     }
 
