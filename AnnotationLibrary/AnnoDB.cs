@@ -12,10 +12,14 @@ namespace AnnotationLibrary
     public class AnnoDB : DataContext
     {
         public Annotation anno;
-        public ObservableCollection<Annotation> AnnoTable;
+        public ObservableCollection<Annotation> AnnoCol;
+        public Table<Annotation> AnnoTable
+        {
+            get { return GetTable<Annotation>(); }
+        }
         public AnnoDB(string connection) : base(connection)
         {
-            AnnoTable = new ObservableCollection<Annotation>();
+            AnnoCol = new ObservableCollection<Annotation>();
         }
 
 

@@ -21,27 +21,32 @@ namespace AnnotationLibrary
         [Column]
         public int ID { get; set; }
 
-        // If we're going to have problems serializing Locations and LocationCollections,
-        // I'm just going to use doubles for the coordinates to be saved.
         [Column]
-        private double LocationLat { get; set; }
-        [Column]
-        private double LocationLong{ get; set; }
-        [Column]
-        private string Anno { get; set; }
         public string Title { get; set; }
+
+        [Column]
+        public double Lat { get; set; }
+
+        [Column]
+        public double Long { get; set; }
+
+        [Column]
+        public string Anno { get; set; }
+
         public string getAnno()
         {
             return Anno;
         }
+
+        public void setAnno(string text)
+        {
+            Anno = text;
+        }
         private Location makeLocation() {
-            Location loc = new Location(LocationLat, LocationLong);
+            Location loc = new Location(Lat, Long);
             return loc;
         }
-        //need to figure out how to store this in the db
-        //public LocationCollection LocationCollection { get; set; }
 
-        //need to figure out how to store this in the db
         private List<Meteorite> Meteorites { get; set; }
 
         public Meteorite getMeteorite(int i)
@@ -51,12 +56,12 @@ namespace AnnotationLibrary
 
         public Annotation() { }
 
-        public Annotation(int i, string title, double Lat, double Long)
+        public Annotation(int i, string title, double LLat, double LLong)
         {
             ID = i;
             Anno = "Enter Annotation data here!";
-            LocationLat = Lat;
-            LocationLong = Long;
+            Lat = LLat;
+            Long = LLong;
             Title = title;
             Meteorites = new List<Meteorite>();
         }
@@ -65,8 +70,8 @@ namespace AnnotationLibrary
         {
             ID = 0;
             Anno = "Enter Annotation data here!";
-            LocationLat = 0;
-            LocationLong = 0;
+            Lat = 0;
+            Long = 0;
             Title = title;
             Meteorites = new List<Meteorite>();
         }

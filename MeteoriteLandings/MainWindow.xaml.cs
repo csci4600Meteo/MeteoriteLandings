@@ -33,7 +33,10 @@ namespace MeteoriteLandings
         {
             InitializeComponent();
 
-            initializeData();
+            //initializeData();
+
+            AnnoWindow annoWindow = new AnnoWindow();
+            annoWindow.Show();
 
             mvc = new MapVizContainer();
 

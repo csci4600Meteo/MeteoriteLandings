@@ -28,17 +28,26 @@ namespace MeteoriteLandings
     {
         AnnoDB annoDB;
         AnnoLib annoLib;
-        MeteoDB meteoDB;
         Meteorite testMeteo;
+
+        /*
+            TODO:
+                ID numbering system
+                Recieve object from Meteor Window on double click
+                Filtering through Combobox
+                Search function in AnnoSearchTextBox
+                Create MDF file for Annos
+                Display created annos in window
+        */
+        
         public AnnoWindow()
         {
             InitializeComponent();
             annoDB = (AnnoDB)DataFactory.getDataContext(DataFactory.DataType.Annotation);
-            TestAnnoLib();
             AnnoDataGrid.DataContext = annoDB;
-            AnnoDataGrid.ItemsSource = annoDB.AnnoTable;
-            testMeteo = new Meteorite();
+            AnnoDataGrid.ItemsSource = annoDB.AnnoCol;
         }
+        
 
         // Tests to see if it can switch data contexts
         public void TestAnnoLib()
@@ -54,7 +63,9 @@ namespace MeteoriteLandings
         private void AnnoButton_Click(object sender, RoutedEventArgs e)
         {
             Annotation newAnno = new Annotation("New");
-            annoDB.AnnoTable.Add(newAnno);
+            annoDB.AnnoCol.Add(newAnno);
+            annoDB.AnnoTable.InsertOnSubmit(newAnno);
+            annoDB.SubmitChanges();
         }
 
         // Switches the ItemSource of the AnnoDataGrid when a filtering option is selected
@@ -62,7 +73,7 @@ namespace MeteoriteLandings
         {
             if (AnnoCombo.SelectedItem == AllAnno)
             {
-                AnnoDataGrid.ItemsSource = annoDB.AnnoTable;
+                AnnoDataGrid.ItemsSource = annoDB.AnnoCol;
             }
 
             else if (AnnoCombo.SelectedItem == MeteoFilteredAnno)
@@ -77,6 +88,13 @@ namespace MeteoriteLandings
             }
         }
 
+        // Updates annotation of selected data grid object
+        private void AnnoTextBox_TextChanged(object sender, RoutedEventArgs e)
+        {
+            Annotation anno = (Annotation)AnnoDataGrid.SelectedItem;
+            anno.setAnno(AnnoTextBox.Text);
+        }
+
         // Fills the AnnoTextBox when element in AnnoDataGrid is selected
         private void AnnoDataGrid_CellChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -85,6 +103,8 @@ namespace MeteoriteLandings
             {
                 Annotation currAnno = (Annotation)currentItem;
                 AnnoTextBox.Text = currAnno.getAnno();
+                LatTextBox.Text = currAnno.Lat.ToString();
+                LongTextBox.Text = currAnno.Long.ToString();
             }
         }
 
@@ -96,6 +116,52 @@ namespace MeteoriteLandings
             else
                 AnnoButton.Content = "New Annotation";
 
+        }
+
+        // Updates selection's Latitude
+        private void LatTextBox_LostFocus(object sender, EventArgs e)
+        {
+            if (AnnoDataGrid.SelectedItem is Annotation)
+            {
+                Annotation a = (Annotation)AnnoDataGrid.SelectedItem;
+                double result;
+                if (Double.TryParse(LatTextBox.Text, out result))
+                {
+                    a.Lat = result;
+                    AnnoDataGrid.Items.Refresh();
+                    annoDB.SubmitChanges();
+                }
+                else
+                {
+                    LatTextBox.Text = "Invalid";
+                }
+            }
+        }
+
+        // Updates selection's Longitude
+        private void LongTextBox_LostFocus(object sender, EventArgs e)
+        {
+            if (AnnoDataGrid.SelectedItem is Annotation)
+            {
+                Annotation a = (Annotation)AnnoDataGrid.SelectedItem;
+                double result;
+                if (Double.TryParse(LongTextBox.Text, out result))
+                {
+                    a.Long = result;
+                    AnnoDataGrid.Items.Refresh();
+                    annoDB.SubmitChanges();
+                }
+                else
+                {
+                    LongTextBox.Text = "Invalid";
+                }
+            }
+        }
+
+        private void AnnoTextBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            AnnoDataGrid.Items.Refresh();
+            annoDB.SubmitChanges();
         }
     }
 
