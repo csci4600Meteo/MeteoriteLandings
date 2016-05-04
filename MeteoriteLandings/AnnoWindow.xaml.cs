@@ -32,12 +32,11 @@ namespace MeteoriteLandings
         AnnoLib annoLib;
         MeteoDB meteoDB;
         DataGrid meteoData;
-        MainWindow mainWindow;
+        public MainWindow mainWindow;
 
 
         /*
             TODO:
-                Recieve object from Meteor Window on double click
                 Filtering through Combobox
         */
 
@@ -45,6 +44,7 @@ namespace MeteoriteLandings
         {
             InitializeComponent();
             annoDB = (AnnoDB)DataFactory.getDataContext(DataFactory.DataType.Annotation);
+            annoLib = new AnnoLib();
             meteoData = new DataGrid();
             annoDB.makeList();
             AnnoDataGrid.DataContext = annoDB;
@@ -56,7 +56,14 @@ namespace MeteoriteLandings
         private void AnnoButton_Click(object sender, RoutedEventArgs e)
         {
             Annotation newAnno = new Annotation("New");
-            annoDB.addAnno(newAnno);
+            if (AnnoDataGrid.ItemsSource == annoDB.AnnoCol)
+            {
+                annoDB.addAnno(newAnno);
+            }
+            else
+            {
+
+            }
             AnnoDataGrid.Items.Refresh();
         }
 
@@ -81,7 +88,6 @@ namespace MeteoriteLandings
                     annoDB.SubmitChanges();
                     annoDB.AnnoCol.Remove(victim);
                     AnnoDataGrid.Items.Refresh();
-                    MessageBox.Show("Deleted ID:" + victimID + " ?");
                 }
                 catch
                 {
@@ -93,8 +99,8 @@ namespace MeteoriteLandings
         public void gatherMeteoData(Meteorite meteo)
         {
             ObservableCollection<Annotation> annos = annoLib.returnAnnoList(meteo);
+            meteoData.DataContext = annoDB;
             AnnoDataGrid.ItemsSource = annos;
-            AnnoCombo.SelectedItem = MeteoFilteredAnno;
             changeButtonText(meteo);
 
         }

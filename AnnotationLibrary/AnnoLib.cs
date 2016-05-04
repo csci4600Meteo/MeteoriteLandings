@@ -18,16 +18,25 @@ namespace AnnotationLibrary
         // Method returnAnnoList searches Dictionary meteoDictionary, and returns the associated Annotation List if it exists.
         public ObservableCollection<Annotation> returnAnnoList(Meteorite m)
         {
-            try
+            if (meteoDictionary.ContainsKey(m))
             {
-                return meteoDictionary[m];
-            }
+                try
+                {
+                    return meteoDictionary[m];
+                }
 
-            catch
+                catch
+                {
+                    // There's probably a more robust way to do this.
+                    Console.WriteLine("Cannot return Anno list; meteorite not found.");
+                    return null;
+                }
+            }
+            else
             {
-                // There's probably a more robust way to do this.
-                Console.WriteLine("Cannot return Anno list; meteorite not found.");
-                return null;
+                ObservableCollection<Annotation> newAnnos = new ObservableCollection<Annotation>();
+                addMeteo(m, newAnnos);
+                return meteoDictionary[m];
             }
         }
 
