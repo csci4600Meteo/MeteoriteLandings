@@ -14,11 +14,22 @@ namespace Viz
     /// </summary>
     public class MapVizContainer : Dictionary<Guid, IMapViz>
     {
+        
+        public event EventHandler CurrentSelectionChanged;
         public bool showAnnotations { get; set; }
         public bool showMeteors { get; set; }
         public bool showPolys { get; set; }
         public bool showPushpins { get; set; }
         public static object CurrentSelection { get; private set; }
+
+        void OnCurrenSelectionChange(EventArgs e)
+        {
+
+            if (CurrentSelectionChanged != null)
+            {
+                CurrentSelectionChanged(this, e);
+            }
+        }
 
         public MapVizContainer()
         {
@@ -50,6 +61,9 @@ namespace Viz
             if (sender is MeteoVizPushpin)
             {
                 CurrentSelection = e.MapVizEntity;
+                //EventArgs e2 = new EventArgs();
+                OnCurrenSelectionChange(e);
+                
             }
         }
 

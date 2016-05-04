@@ -54,7 +54,7 @@ namespace Viz
 
         protected override void OnMouseEnter(MouseEventArgs e)
         {
-            ToolTip = string.Format("{0} --> Some sort or descriptive text", this.Id);
+            ToolTip = string.Format("{0} ", this.Meteorite.Name);
         }
 
    // public bool isVisible { get; set; }
