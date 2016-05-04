@@ -20,7 +20,7 @@
                 
             </StackPanel>
 
-            <m:Map x:Name="mainMap" CredentialsProvider="" Mode="Aerial" 
+            <m:Map x:Name="mainMap" CredentialsProvider="NotForYourEyes" Mode="Aerial" 
                Center="36.533676, -87.353065" ZoomLevel="19" />
             
         </DockPanel>

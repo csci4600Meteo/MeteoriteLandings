@@ -201,7 +201,10 @@ namespace MeteoriteLib
                 while (read.EndOfStream != true)
                 {
                     m = read.ReadMeteorite();
-                    list.Add(m);
+                    if (m.Name != "name")
+                    {
+                        list.Add(m);
+                    }
                 }
 
             }

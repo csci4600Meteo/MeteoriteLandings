@@ -32,22 +32,24 @@ namespace MeteoriteLandings
         public MainWindow()
         {
             InitializeComponent();
-
-            //initializeData();
-
-            annoWin = new AnnoWindow();
-            //annoWindow.Show();
+            
             meteoDB = (MeteoDB)DataFactory.getDataContext(DataFactory.DataType.Meteorite);
             MeteoDataGrid.DataContext = meteoDB;
             MeteoDataGrid.ItemsSource = meteoDB.MeteoTable;
 
             mvc = new MapVizContainer();
+            mvc.CurrentSelectionChanged += Mvc_CurrentSelectionChanged;
 
-
-            //mvc.addMeteorite(new Meteorite("George", 1, 1, "", "", DateTime.Now.ToString(), 36.0, -87.0));
-            //mvc.addMeteorite(new Meteorite("Bill", 1, 1, "", "", DateTime.Now.ToString(), 35.0, -88.0));
-
+            
+            initializeData(); //this should have been in the presentation. it was missing due to a bad conflict merge on github hence Jason's utter confusion during the presentation
             mvc.updateMap(mainMap);
+        }
+
+        private void Mvc_CurrentSelectionChanged(object sender, EventArgs e)
+        {
+            MeteoDataGrid.SelectedItem = MapVizContainer.CurrentSelection;
+            MeteoDataGrid.ScrollIntoView(MeteoDataGrid.SelectedItem);
+            
         }
 
         private async void initializeData()
@@ -58,7 +60,7 @@ namespace MeteoriteLandings
 
         async Task task_initializeData()
         {
-
+            //uncomment this to download the csv file from nasa, it will cause a huge delay in opening the window though
             //WebClient client = new WebClient();
             //client.DownloadFile("https://data.nasa.gov/api/views/gh4g-9sfh/rows.csv?accessType=DOWNLOAD", "Meteorites.csv");
             ExternalReader read = new ExternalReader("Meteorites.csv");
@@ -107,10 +109,10 @@ namespace MeteoriteLandings
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
-            annoWin.Visibility = Visibility.Visible;
-            annoWin.mainWindow = this;
+            annoWin = new AnnoWindow();
+            //annoWin.Visibility = Visibility.Visible;
             annoWin.Show();
-             //button1.Content = ((Meteorite)MapVizContainer.CurrentSelection).Name;
+                //button1.Content = ((Meteorite)MapVizContainer.CurrentSelection).Name;
          
         }
 
@@ -121,16 +123,9 @@ namespace MeteoriteLandings
 
         private void MeteoDataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
+            Location l = new Location();
             DataGrid currentDataGrid = (DataGrid)sender;
             Meteorite currentMeteorite = (Meteorite)currentDataGrid.CurrentItem;
-            if (currentDataGrid.CurrentItem == currentMeteorite)
-            {
-                annoWin.gatherMeteoData(currentMeteorite);
-            }
-            else
-            {
-                MessageBox.Show("Current Item cannot be gathered.");
-            }
             KeyValuePair<Guid, IMapViz> kvp = mvc.getKeyValuePair(currentMeteorite);
             if(  mvc.Contains(kvp))
             {
@@ -141,6 +136,12 @@ namespace MeteoriteLandings
                 mvc.addMeteorite(currentMeteorite);
             }
             mvc.updateMap(mainMap);
+            
+            l.Latitude = ((Meteorite)MeteoDataGrid.SelectedItem).RectLat;
+            l.Longitude = ((Meteorite)MeteoDataGrid.SelectedItem).RectLong;
+            mainMap.Center = l;
+            mainMap.ZoomLevel = 7;
+           
         }
     }
 }

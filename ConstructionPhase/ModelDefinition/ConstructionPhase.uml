@@ -652,6 +652,24 @@ MapVizContainer is the composition of IMapViz Components with MeteoVizPoly, Anno
             </type_NamedElement>
           </property>
         </ownedAttributes>
+        <ownedOperations>
+          <operation
+            Id="a010891d-e7d8-427d-8d0f-62c8d11b4d9d"
+            name="MapVizSelected"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="2d09f495-5864-4366-8b04-1d6b8166669e"
+                  direction="Return" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperations>
       </Interface>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -927,6 +945,22 @@ MapVizContainer is the composition of IMapViz Components with MeteoVizPoly, Anno
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
+          <operation
+            Id="ca0506f3-06ce-4414-bfe8-8de6aef7cf07"
+            name="MapVizSelected"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="676b240a-a23d-4939-8916-0ac891a92ee2"
+                  direction="Return" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -1112,6 +1146,22 @@ MapVizContainer is the composition of IMapViz Components with MeteoVizPoly, Anno
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
+          <operation
+            Id="8e66c600-9e2c-48b4-845a-ae90bd5e8ccf"
+            name="MapVizSelected"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="b2c7cb0d-6538-496d-8707-e0502eeb225c"
+                  direction="Return" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -1245,6 +1295,22 @@ MapVizContainer is the composition of IMapViz Components with MeteoVizPoly, Anno
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
+          <operation
+            Id="16cf47ef-eeb1-4c4a-b718-684c352ae6f6"
+            name="MapVizSelected"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="34a805c6-738e-4331-8ec3-5fc09e908f8e"
+                  direction="Return" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -1375,6 +1441,22 @@ MapVizContainer is the composition of IMapViz Components with MeteoVizPoly, Anno
                   name="MouseEventArgs"
                   direction="In"
                   isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="afad1295-9bd7-41d4-9678-97b1caa78109"
+            name="MapVizSelected"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="86188309-6061-4287-970b-fde1a7e2227a"
+                  direction="Return" />
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
@@ -3070,8 +3152,7 @@ MapVizContainer is the composition of IMapViz Components with MeteoVizPoly, Anno
         <ownedAttributesInternal>
           <property
             Id="4f8c3aef-c899-4cbb-b6ab-db2420d40f6a"
-            name="int id"
-            visibility="Private"
+            name="int ID"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -3210,8 +3291,6 @@ MapVizContainer is the composition of IMapViz Components with MeteoVizPoly, Anno
           </property>
           <property
             Id="b5c5bf24-98c3-42a4-b69e-5f4948667f95"
-            name="Meteorite meteorite"
-            visibility="Private"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -3278,11 +3357,44 @@ MapVizContainer is the composition of IMapViz Components with MeteoVizPoly, Anno
               </stereotypeInstance>
             </appliedStereotypesInternal>
           </property>
+          <property
+            Id="da49c3e2-7512-4441-85a7-dee4e52aad21"
+            name="double Lat"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="5d3af8d4-bb19-4242-8596-d0dca15eb733"
+            name="double Long"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="aed59a74-fb91-44c9-a654-c7f5cc978959"
+            name="string Title"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
         </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation
             Id="70bbae68-50a9-4fb6-bdae-e27ae5a4ba7d"
-            name="Location"
+            name="Location makeLocation"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -4937,6 +5049,488 @@ MapVizContainer is the composition of IMapViz Components with MeteoVizPoly, Anno
             isAbstract="false"
             concurrency="Sequential"
             isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="8d102f56-fda7-4e21-b8ad-41350f9ba83a"
+        name="MapVizSelectedEventArgs"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="f389036d-6de0-40a1-94ea-c9a994297a20">
+            <interfaceMoniker
+              Id="0beffe9c-9034-4a30-bcbc-0d9a28941b10"
+              LastKnownName="IMapViz"
+              LastKnownLocation="ConstructionPhase.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <targetEnds>
+          <association
+            Id="cb042302-abfc-4bd3-ade4-0dac57b456b8"
+            isDerived="false"
+            sourceEndRoleName="MapVizSelectedEventArgs"
+            targetEndRoleName="MeteoVizPoly"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="7c91da48-ef0c-413f-bb0c-5d01b6808a04"
+              LastKnownName="MeteoVizPoly"
+              LastKnownLocation="ConstructionPhase.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="4da0d114-62d3-4137-a020-b03f3346e60d"
+                  name="MapVizSelectedEventArgs"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="a6d9fe85-115c-407e-b870-7a0f5394e31d"
+                  name="MeteoVizPoly"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="ef0af0a3-8970-426d-919f-e98357ad7ea6"
+            isDerived="false"
+            sourceEndRoleName="MapVizSelectedEventArgs"
+            targetEndRoleName="AnnoVizPoly"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="7371a58b-4945-4b59-a426-a74816b1cd25"
+              LastKnownName="AnnoVizPoly"
+              LastKnownLocation="ConstructionPhase.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="aed19cf5-31c9-4fc9-883b-5eabcb3268be"
+                  name="MapVizSelectedEventArgs"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="63009811-1777-4e39-aba3-fd295ede8cf0"
+                  name="AnnoVizPoly"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="1a25cd6e-28b5-456e-b6a9-8b9ffe6d25ab"
+            isDerived="false"
+            sourceEndRoleName="MapVizSelectedEventArgs"
+            targetEndRoleName="Pushpin - Bing Map API"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="273efabf-87e3-4870-a763-b6ac5da8e3c7"
+              LastKnownName="Pushpin - Bing Map API"
+              LastKnownLocation="ConstructionPhase.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="9af0d53e-de14-472b-853d-48699291a036"
+                  name="MapVizSelectedEventArgs"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="16c0295e-c0eb-4a65-aad5-869e936e0e63"
+                  name="Pushpin - Bing Map API"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="a069f2a2-b841-4a5f-bb11-ccf26e0fe090"
+            isDerived="false"
+            sourceEndRoleName="MapVizSelectedEventArgs"
+            targetEndRoleName="MeteoVizPushpin"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="e3bbb832-8795-43ba-a04a-e9e12a4bbd8b"
+              LastKnownName="MeteoVizPushpin"
+              LastKnownLocation="ConstructionPhase.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="dadb98ba-c931-42b2-9817-98085afa4318"
+                  name="MapVizSelectedEventArgs"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="765d6bb0-9322-4961-ae9f-42dbbba1f04c"
+                  name="MeteoVizPushpin"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="1fa8cec4-aa23-471c-93b0-743c56dadf1e"
+            name="MapVizEntity"
+            visibility="Package"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="c5babf22-fcae-4d34-ac17-b408ba4832ec"
+            name="MapVizSelectedEventArgs"
+            visibility="Package"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="b729f594-5053-4ea1-8a97-4c1d972c51b1"
+                  name="object"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="7e890fe8-26c6-4bea-a7d3-09c80a9dd05a"
+            name="MapVizSelected"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="bc967d79-0c96-4320-a555-24e262274ccb"
+                  direction="Return" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="4345e08e-86bb-46de-ad7a-2d87d08d6eb7"
+        name="AnnoLib"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="f1aec2f3-6645-4a7e-9d55-6de8bd18d1b5"
+            isDerived="false"
+            sourceEndRoleName="AnnoLib"
+            targetEndRoleName="Annotation"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="225a3c35-664c-4675-acf3-68ee5696dde7"
+              LastKnownName="Annotation"
+              LastKnownLocation="ConstructionPhase.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="60b2dae0-6ac5-469e-abc1-7ad52d67171b"
+                  name="AnnoLib"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Shared"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="0e2ecbc8-fcd2-42dd-b82e-d119ffd04cbb"
+                  name="Annotation"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="174ed20a-4f32-402b-b3f2-6f300a109237"
+                      name="Lower"
+                      value="0" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="b93bd731-7185-446d-86ad-d3a9fe3fa5d3"
+                      name="Upper"
+                      value=". *" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="ab1df452-a6c4-4588-95cf-83a596a2deb6"
+            name="Dictionary&lt;Meteorite, ObservableCollection&lt;Annotation&gt; meteoDictionary"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="f9397a45-3c79-425c-8ef8-d9aac3d83262"
+            name="ObservableCollection&lt;Annotation&gt; returnAnnoList"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="bec77aab-978a-49a0-96e1-ef4ad48a296d"
+                  name="Meteorite"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="09f53f11-9d5b-4a66-a47b-b051551f9184"
+            name="+ void addMeteo(Meteorite, ObservableCollection&gt;"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="d08f39c6-d325-48c7-a21a-0519e2054de3"
+            name="void appendAnno"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="09524fe9-39c9-4165-b870-553f802fcecc"
+                  name="Meteorite"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="b1d541e5-e35c-45c6-8c66-37a2547d88b1"
+                  name="Annotation"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="87158ef5-4ceb-4518-9179-09e80782dfe4"
+        name="AnnoDB : DataContext"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="723ec0df-1da2-4d81-ab45-c812162043dc"
+            isDerived="false"
+            sourceEndRoleName="AnnoDB : DataContext"
+            targetEndRoleName="Annotation"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="225a3c35-664c-4675-acf3-68ee5696dde7"
+              LastKnownName="Annotation"
+              LastKnownLocation="ConstructionPhase.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="3ac73b01-5fb3-4011-94f0-ceb356b6aea7"
+                  name="AnnoDB : DataContext"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Shared"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="99bc0f2f-b5f2-41cd-9652-d75c9e17b40d"
+                  name="Annotation"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="843c8e5e-d6fd-4811-9da6-6d9ce8e9cc9c"
+                      name="Lower"
+                      value="0" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="6fb7fe65-922e-41ca-85fa-0182c4b1d449"
+                      name="Upper"
+                      value=".*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="e59c6194-fa86-40c6-99c5-eeb62882f265"
+            name="ObservableCollection&lt;Annotation&gt; AnnoCol"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="446e27f7-42b9-4ece-afa4-7673c0fe4725"
+            name="List&lt;Annotation&gt; AnnoList"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="9d346654-6f3b-433a-a741-722b368f22f4"
+            name="public Table&lt;Annotation&gt; AnnoTable"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="09133ddc-cf7c-4bad-b6b7-193fad841104"
+            name="public void makeList"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="940af18a-a0c6-49df-b727-57edd68a99e7"
+            name="AnnoDB"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="c02a9f04-061b-41cd-97df-0ad610840621"
+                  name="string"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>

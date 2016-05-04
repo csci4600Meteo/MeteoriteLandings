@@ -14,7 +14,7 @@ namespace MeteoriteLandings
     
     internal static class DataFactory
     {
-        const string ANNOMDFFILENAME = "Annotations.mdf";
+        const string ANNOMDFFILENAME = "Annotation.mdf";
         static string METEOMDFFILENAME = "Meteorite.mdf";
 
 
