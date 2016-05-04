@@ -31,7 +31,7 @@ namespace MeteoriteLandings
         AnnoDB annoDB;
         AnnoLib annoLib;
         MeteoDB meteoDB;
-        DataGrid meteoData;
+        LibDB libDB;
         public MainWindow mainWindow;
 
 
@@ -43,10 +43,8 @@ namespace MeteoriteLandings
         public AnnoWindow()
         {
             InitializeComponent();
-            annoDB = (AnnoDB)DataFactory.getDataContext(DataFactory.DataType.Annotation);
-            annoLib = new AnnoLib();
-            meteoData = new DataGrid();
             annoDB.makeList();
+            libDB.makeTable();
             AnnoDataGrid.DataContext = annoDB;
             AnnoDataGrid.ItemsSource = annoDB.AnnoCol;
             AnnoDataGrid.Items.Refresh();
@@ -99,7 +97,7 @@ namespace MeteoriteLandings
         public void gatherMeteoData(Meteorite meteo)
         {
             ObservableCollection<Annotation> annos = annoLib.returnAnnoList(meteo);
-            meteoData.DataContext = annoDB;
+            AnnoDataGrid.DataContext = libDB;
             AnnoDataGrid.ItemsSource = annos;
             changeButtonText(meteo);
 
