@@ -70,23 +70,17 @@ namespace AnnotationLibrary
             return loc;
         }
 
-        private List<Meteorite> Meteorites { get; set; }
-
-        public Meteorite getMeteorite(int i)
-        {
-            return Meteorites[i];
-        }
+        private Meteorite Meteorite { get; set; }
 
         public Annotation() { }
 
-        public Annotation(int i, string title, double LLat, double LLong)
+        public Annotation(int id, string title, string anno, double LLat, double LLong)
         {
-            ID = i;
-            _Anno = "Enter Annotation data here!";
+            ID = id;
+            _Anno = anno;
             Lat = LLat;
             Long = LLong;
             Title = title;
-            Meteorites = new List<Meteorite>();
         }
 
         public Annotation(string title)
@@ -96,12 +90,14 @@ namespace AnnotationLibrary
             Lat = 0;
             Long = 0;
             Title = title;
-            Meteorites = new List<Meteorite>();
         }
-        public void AddMeteor(Meteorite m)
+        public Annotation(string title, string anno)
         {
-            Meteorites.Add(m);
+            ID = 1;
+            _Anno = anno;
+            Lat = 0;
+            Long = 0;
+            Title = title;
         }
-
     }
 }

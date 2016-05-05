@@ -11,15 +11,16 @@
     <Grid >
         <DockPanel>
             <StackPanel DockPanel.Dock="Bottom">
-                <DataGrid x:Name="MeteoDataGrid"  Height="80" SelectionChanged="MeteoDataGrid_SelectionChanged" MouseDoubleClick="MeteoDataGrid_MouseDoubleClick"></DataGrid>
+                <DataGrid x:Name="MeteoDataGrid"  Height="150" SelectionChanged="MeteoDataGrid_SelectionChanged" MouseDoubleClick="MeteoDataGrid_MouseDoubleClick"></DataGrid>
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal"  Height="29">
+                        <TextBlock x:Name="MeteoAmountPrompt" Text="Enter amount of meteors to load: " Margin="10,5,5,5"></TextBlock>
+                        <TextBox x:Name="MeteoAmountTextBox" Width="70" Margin="10,5,10,5" TextChanged="MeteoAmountTextBox_TextChanged"/>
+                        <Button x:Name="MeteoDownloadButton" Content="Download meteors" Height="20" Margin="10,5,10,5" Click="MeteoDownloadButton_Click"/>
+                        <TextBlock x:Name="MeteoLoadedTextBlock" Margin ="0,0,0,0" Width="100"/>
+                    </StackPanel>
+                </StackPanel>
             </StackPanel>
-            <StackPanel DockPanel.Dock="Right">
-                <DataGrid x:Name="AnnoDataGrid"  Width="80">
-                </DataGrid>
-                <Button x:Name="button1" Content="Button" Height="239" VerticalAlignment="Top" Width="75" Click="button1_Click"/>
-                
-            </StackPanel>
-
             <m:Map x:Name="mainMap" CredentialsProvider="NotForYourEyes" Mode="Aerial" 
                Center="36.533676, -87.353065" ZoomLevel="19" />
             

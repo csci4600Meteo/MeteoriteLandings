@@ -33,6 +33,8 @@ namespace MeteoriteLandings
         MeteoDB meteoDB;
         LibDB libDB;
         public MainWindow mainWindow;
+        Meteorite currMeteo;
+        ObservableCollection<Annotation> annoCollection;
 
 
         /*
@@ -40,13 +42,18 @@ namespace MeteoriteLandings
                 Filtering through Combobox
         */
 
-        public AnnoWindow()
+        public AnnoWindow(AnnoDB db, MeteoDB mdb)
         {
             InitializeComponent();
+            annoDB = db;
+            meteoDB = mdb;
             annoDB.makeList();
-            libDB.makeTable();
+            libDB = (LibDB)DataFactory.getDataContext(DataFactory.DataType.LibObject);
+            libDB.makeList(mdb.MeteoTable.ToList());
+            annoLib = libDB.library;
+            annoCollection = annoDB.AnnoCol;
             AnnoDataGrid.DataContext = annoDB;
-            AnnoDataGrid.ItemsSource = annoDB.AnnoCol;
+            AnnoDataGrid.ItemsSource = annoCollection;
             AnnoDataGrid.Items.Refresh();
         }
 
@@ -54,13 +61,15 @@ namespace MeteoriteLandings
         private void AnnoButton_Click(object sender, RoutedEventArgs e)
         {
             Annotation newAnno = new Annotation("New");
+
             if (AnnoDataGrid.ItemsSource == annoDB.AnnoCol)
             {
+                
                 annoDB.addAnno(newAnno);
             }
             else
             {
-
+                libDB.addToLib(currMeteo, newAnno);
             }
             AnnoDataGrid.Items.Refresh();
         }
@@ -70,35 +79,44 @@ namespace MeteoriteLandings
             if (AnnoDataGrid.SelectedItem is Annotation)
             {
                 Annotation victim = (Annotation)AnnoDataGrid.SelectedItem;
-                int victimID = victim.ID;
-                var deleteRow =
-                    from annos in annoDB.AnnoTable
-                    where annos.ID == victimID
-                    select annos;
+                if (AnnoDataGrid.DataContext is AnnoDB)
+                {
+                    
+                    int victimID = victim.ID;
+                    var deleteRow =
+                        from annos in annoDB.AnnoTable
+                        where annos.ID == victimID
+                        select annos;
 
-                foreach (var anno in deleteRow)
-                {
-                    annoDB.AnnoTable.DeleteOnSubmit(anno);
-                }
+                    foreach (var anno in deleteRow)
+                    {
+                        annoDB.AnnoTable.DeleteOnSubmit(anno);
+                    }
 
-                try
-                {
-                    annoDB.SubmitChanges();
-                    annoDB.AnnoCol.Remove(victim);
-                    AnnoDataGrid.Items.Refresh();
+                    try
+                    {
+                        annoDB.SubmitChanges();
+                        annoDB.AnnoCol.Remove(victim);
+                        AnnoDataGrid.Items.Refresh();
+                    }
+                    catch
+                    {
+                        MessageBox.Show("No", "Not even close", MessageBoxButton.OK, MessageBoxImage.Hand);
+                    }
                 }
-                catch
+                else
                 {
-                    MessageBox.Show("No", "Not even close", MessageBoxButton.OK, MessageBoxImage.Hand);
+                    libDB.delLib(currMeteo, victim);
                 }
             }
         }
 
         public void gatherMeteoData(Meteorite meteo)
         {
-            ObservableCollection<Annotation> annos = annoLib.returnAnnoList(meteo);
+            annoCollection = annoLib.returnAnnoList(meteo);
+            currMeteo = meteo;
             AnnoDataGrid.DataContext = libDB;
-            AnnoDataGrid.ItemsSource = annos;
+            AnnoDataGrid.ItemsSource = annoCollection;
             changeButtonText(meteo);
 
         }
@@ -109,7 +127,10 @@ namespace MeteoriteLandings
             if (AnnoCombo.SelectedItem == AllAnno)
             {
                 Annotation context = new Annotation();
-                AnnoDataGrid.ItemsSource = annoDB.AnnoCol;
+                annoCollection = annoDB.AnnoCol;
+                AnnoDataGrid.DataContext = annoDB;
+                AnnoDataGrid.ItemsSource = annoCollection;
+                AnnoDataGrid.Items.Refresh();
                 changeButtonText(context);
             }
 
@@ -118,12 +139,12 @@ namespace MeteoriteLandings
                 // Sets ItemsSource to List associated with Meteorite in AnnoLib
                 // Requires object from Meteor Selection to search annoLib
                 // Throws null object, so don't use it for now.
-                if (mainWindow.MeteoDataGrid.CurrentItem is Meteorite)
-                {
-                    Meteorite selection = (Meteorite)mainWindow.MeteoDataGrid.CurrentItem;
-                    gatherMeteoData(selection);
-                }
-
+                Meteorite context = new Meteorite();
+                annoCollection = libDB.collection;
+                AnnoDataGrid.DataContext = libDB;
+                AnnoDataGrid.ItemsSource = annoCollection;
+                AnnoDataGrid.Items.Refresh();
+                changeButtonText(context);
             }
         }
 
@@ -201,10 +222,20 @@ namespace MeteoriteLandings
         {
             if (AnnoDataGrid.SelectedItem is Annotation)
             {
+
                 Annotation a = (Annotation)AnnoDataGrid.SelectedItem;
-                a.setAnno(AnnoTextBox.Text);
+                if (AnnoDataGrid.DataContext is AnnoDB)
+                {
+                    a.setAnno(AnnoTextBox.Text);
+                    annoDB.SubmitChanges();
+                }
+                else
+                {
+                    a.setAnno(AnnoTextBox.Text);
+                    libDB.editLib(currMeteo, a);
+                    libDB.SubmitChanges();
+                }
                 AnnoDataGrid.Items.Refresh();
-                annoDB.SubmitChanges();
             }
         }
 

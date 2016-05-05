@@ -7,15 +7,17 @@ using System.Threading.Tasks;
 using AnnotationLibrary;
 using MeteoriteLib;
 using System.Xml.Serialization;
+using System.Windows;
 
 
 namespace MeteoriteLandings
 {
-    
+
     internal static class DataFactory
     {
-        const string ANNOMDFFILENAME = "Annotation.mdf";
-        static string METEOMDFFILENAME = "Meteorite.mdf";
+        const string ANNOMDFFILENAME = "ThisHereIsAnnotations.mdf";
+        const string LIBRARYFILENAME = "UpdatedLibraryTestSeven.mdf";
+        static string METEOMDFFILENAME = "MeteoriteLibraryTwo.mdf";
 
 
         internal static object getDataContext(DataType dtype)
@@ -45,6 +47,17 @@ namespace MeteoriteLandings
                         return mdb;
                     }
                     break;
+                case DataType.LibObject:
+                    connectionString = createConnectionString(LIBRARYFILENAME);
+                    LibDB lib = new LibDB(connectionString);
+                    {
+                        if (!lib.DatabaseExists())
+                        {
+                            createMDF(dtype);
+                        }
+                        return lib;
+                    }
+                    break;
             }
             return null;
         }
@@ -70,7 +83,7 @@ namespace MeteoriteLandings
             return sb.ToString();
         }
 
-        private static void createMDF (DataType dtype )
+        private static void createMDF(DataType dtype)
         {
             string connectionString;
             switch (dtype)
@@ -98,17 +111,29 @@ namespace MeteoriteLandings
                         //db.MeteoTable.InsertOnSubmit(new Meteorite());
                     }
                     break;
+                case DataType.LibObject:
+                    connectionString = createConnectionString(LIBRARYFILENAME);
+                    using (LibDB db = new LibDB(connectionString))
+                    {
+                        if (db.DatabaseExists())
+                        {
+                            db.DeleteDatabase();
+                        }
+                        db.CreateDatabase();
+                    }
+                    break;
             }
-                        
+
 
         }
 
-        
+
 
         internal enum DataType
         {
             Meteorite,
-            Annotation
+            Annotation,
+            LibObject
         }
     }
 }
