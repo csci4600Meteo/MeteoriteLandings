@@ -85,8 +85,8 @@ namespace MeteoriteLandings
         async Task task_pullMeteo(int start, int finish)
         {
             //uncomment this to download the csv file from nasa, it will cause a huge delay in opening the window though
-            //WebClient client = new WebClient();
-            //client.DownloadFile("https://data.nasa.gov/api/views/gh4g-9sfh/rows.csv?accessType=DOWNLOAD", "Meteorites.csv");
+            WebClient client = new WebClient();
+            client.DownloadFile("https://data.nasa.gov/api/views/gh4g-9sfh/rows.csv?accessType=DOWNLOAD", "Meteorites.csv");
             MeteoLoadedTextBlock.Text = "Loading...";
             System.Diagnostics.Debug.Write("\nInitializing data...\n");
             ExternalReader read = new ExternalReader("Meteorites.csv");
